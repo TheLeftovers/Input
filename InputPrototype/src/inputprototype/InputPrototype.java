@@ -11,7 +11,7 @@ public class InputPrototype {
 
     public static void main(String[] args) {
 
-        String fileNameDefined = "..\\csv\\Monitoring.csv";
+        String fileNameDefined = "..\\csv\\Positions.csv";
 
         File file = new File(fileNameDefined);
 
