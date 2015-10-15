@@ -13,8 +13,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ParserPrototype {
+
+    ArrayList<Event> events = new ArrayList<Event>();
 
     public static void main(String[] args) {
 
@@ -26,6 +29,7 @@ public class ParserPrototype {
     public void run() {
 
         String csvFile = "..//csv//events.csv";
+        
         BufferedReader br = null;
         String line;
         String csvSplitBy = ";";
@@ -40,10 +44,23 @@ public class ParserPrototype {
                 String unitId = csvLineArray[1];
                 String port = csvLineArray[2];
                 String value = csvLineArray[3];
+                Event event = new Event();
+                event.setDateTime(dateTime);
+                event.setUnitId(unitId);
+                event.setPort(port);
+                event.setValue(value);
+                events.add(event);
+            }
 
-                System.out.println("DateTime = " + dateTime
-                        + " , UnitId=" + unitId + " , Port=" + port + " , Value=" + value + "");
-
+            System.out.println("______________________________________________________________________________");
+            System.out.println("__Done reading file and filling array. Program will now start reading array.__");
+            System.out.println("______________________________________________________________________________");
+            for (Event event : events) {
+                System.out.println(event.getDateTime());
+                System.out.println(event.getUnitId());
+                System.out.println(event.getPort());
+                System.out.println(event.getValue());
+                System.out.println("_____________________________________________");
             }
 
         } catch (FileNotFoundException e) {
@@ -59,7 +76,5 @@ public class ParserPrototype {
                 }
             }
         }
-
     }
-
 }
