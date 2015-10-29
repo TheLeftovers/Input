@@ -20,6 +20,7 @@ public class ParserPrototype {
 
     ArrayList<Event> events = new ArrayList<Event>();
     ArrayList<Position> positions = new ArrayList<Position>();
+    ArrayList<Connection> connections = new ArrayList<Connection>();
     static BufferedReader br = null;
     static String line;
     static String csvSplitBy = ";";
@@ -27,11 +28,67 @@ public class ParserPrototype {
     public static void main(String[] args) {
         ParserPrototype obj = new ParserPrototype();
         obj.runEventCsv();
+        obj.runConnectionsCsv();
         obj.runPositionsCsv();
     }
 
-    public void runMonitoringCsv() {
-        String csvFile = "..//csv//monitoring.csv";
+    public void runConnectionsCsv() {
+        String csvFile = "..//csv//connections.csv";
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] csvLineArray = line.split(csvSplitBy);
+                String dateTime = csvLineArray[0];
+                String[] dateTimeArray = dateTime.split(" ");
+                String date = dateTimeArray[0];
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                Date dateAsDate = null;
+                try {
+                    dateAsDate = format.parse(date);
+                } catch (ParseException ex) {
+                    Logger.getLogger(ParserPrototype.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String time = dateTimeArray[1];
+                String unitId = csvLineArray[1];
+                long longUnitId = Long.parseLong(unitId);
+                String port = csvLineArray[2];
+                String value = csvLineArray[3];
+                short intValue = Short.parseShort(value);
+                
+                Connection connection = new Connection();
+                
+                connection.setDate(dateAsDate);
+                connection.setTime(time);
+                connection.setPort(port);
+                connection.setUnitId(longUnitId);
+                connection.setValue(intValue);
+                
+                connections.add(connection);
+            }
+            System.out.println("______________________________________________________________________________");
+            System.out.println("__Done reading Connections file and filling array. ___________________________");
+            System.out.println("______________________________________________________________________________");
+            System.out.println("Date: " + connections.get(connections.size() - 1).getDate());
+            System.out.println("Time: " + connections.get(connections.size() - 1).getTime());
+            System.out.println("Port: " + connections.get(connections.size() - 1).getPort());
+            System.out.println("UnitId: " + connections.get(connections.size() - 1).getUnitId());
+            System.out.println("Value: " + connections.get(connections.size() - 1).getValue());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void runEventCsv() {
