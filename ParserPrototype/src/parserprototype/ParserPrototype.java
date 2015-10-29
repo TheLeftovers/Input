@@ -21,6 +21,7 @@ public class ParserPrototype {
     ArrayList<Event> events = new ArrayList<Event>();
     ArrayList<Position> positions = new ArrayList<Position>();
     ArrayList<Connection> connections = new ArrayList<Connection>();
+    ArrayList<Monitoring> monitoring = new ArrayList<Monitoring>();
     static BufferedReader br = null;
     static String line;
     static String csvSplitBy = ";";
@@ -30,6 +31,13 @@ public class ParserPrototype {
         obj.runEventCsv();
         obj.runConnectionsCsv();
         obj.runPositionsCsv();
+        obj.runMonitoringCsv();
+    }
+    
+    public void runMonitoringCsv(){
+        String csvFile = "..//csv//monitoring.csv";
+        
+        
     }
 
     public void runConnectionsCsv() {
