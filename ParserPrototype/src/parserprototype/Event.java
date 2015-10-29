@@ -1,51 +1,60 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package parserprototype;
+
+import java.util.Date;
 
 /**
  * @author Roy van den Heuvel
  */
 public class Event {
-    private String dateTime;
-    private String unitId;
+
+    private Date date;
+    private String time;
+    private long unitId;
     private String port;
-    private String value;
-    public Event(){
-        
+    private int value;
+
+    public Event() {
+
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public String getUnitId() {
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public long getUnitId() {
         return unitId;
+    }
+
+    public void setUnitId(long unitId) {
+        this.unitId = unitId;
     }
 
     public String getPort() {
         return port;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public void setUnitId(String unitId) {
-        this.unitId = unitId;
-    }
-
     public void setPort(String port) {
         this.port = port;
     }
 
-    public void setValue(String value) {
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
         this.value = value;
     }
+
 }
