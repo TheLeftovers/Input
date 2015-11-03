@@ -12,8 +12,10 @@ import java.util.Date;
  * @author Roy van den Heuvel
  */
 public class Connection {
-    public Connection(){}
-    
+
+    public Connection() {
+    }
+
     private Date date;
     private String time;
     private long unitId;
@@ -59,6 +61,5 @@ public class Connection {
     public void setValue(short value) {
         this.value = value;
     }
-    
-    
+
 }

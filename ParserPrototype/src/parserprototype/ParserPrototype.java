@@ -21,7 +21,7 @@ public class ParserPrototype {
     ArrayList<Event> events = new ArrayList<Event>();
     ArrayList<Position> positions = new ArrayList<Position>();
     ArrayList<Connection> connections = new ArrayList<Connection>();
-    ArrayList<Monitoring> monitoring = new ArrayList<Monitoring>();
+    ArrayList<Monitoring> monitoringArray = new ArrayList<Monitoring>();
     static BufferedReader br = null;
     static String line;
     static String csvSplitBy = ";";
@@ -33,11 +33,63 @@ public class ParserPrototype {
         obj.runPositionsCsv();
         obj.runMonitoringCsv();
     }
-    
-    public void runMonitoringCsv(){
+
+    public void runMonitoringCsv() {
         String csvFile = "..//csv//monitoring.csv";
-        
-        
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] csvLineArray = line.split(csvSplitBy);
+
+                String unitId = csvLineArray[0];
+                long longUnitId = Long.parseLong(unitId);
+
+                String beginTime = csvLineArray[1];
+
+                String endTime = csvLineArray[2];
+
+                String type = csvLineArray[3];
+
+                String min = csvLineArray[4];
+                long longMin = Long.parseLong(min);
+
+                String max = csvLineArray[5];
+                long longMax = Long.parseLong(max);
+
+                String sum = csvLineArray[6];
+                long longSum = Long.parseLong(sum);
+
+                Monitoring monitoring = new Monitoring();
+
+                monitoring.setBeginTime(beginTime);
+                monitoring.setEndTime(endTime);
+                monitoring.setMax(longMax);
+                monitoring.setMin(longMin);
+                monitoring.setSum(longSum);
+                monitoring.setType(type);
+                monitoring.setUnitId(longUnitId);
+
+                monitoringArray.add(monitoring);
+            }
+            System.out.println("______________________________________________________________________________");
+            System.out.println("__Done reading Monitoring file and filling array. ____________________________");
+            System.out.println("______________________________________________________________________________");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void runConnectionsCsv() {
@@ -65,15 +117,15 @@ public class ParserPrototype {
                 String port = csvLineArray[2];
                 String value = csvLineArray[3];
                 short intValue = Short.parseShort(value);
-                
+
                 Connection connection = new Connection();
-                
+
                 connection.setDate(dateAsDate);
                 connection.setTime(time);
                 connection.setPort(port);
                 connection.setUnitId(longUnitId);
                 connection.setValue(intValue);
-                
+
                 connections.add(connection);
             }
             System.out.println("______________________________________________________________________________");
@@ -136,7 +188,7 @@ public class ParserPrototype {
             }
 
             System.out.println("______________________________________________________________________________");
-            System.out.println("__Done reading Events file and filling array. Program will now start reading array.__");
+            System.out.println("__Done reading Events file and filling array._________________________________");
             System.out.println("______________________________________________________________________________");
             System.out.println("Date: " + events.get(events.size() - 1).getDate());
             System.out.println("Time: " + events.get(events.size() - 1).getTime());
@@ -213,7 +265,7 @@ public class ParserPrototype {
             }
 
             System.out.println("______________________________________________________________________________");
-            System.out.println("__Done reading Positions file and filling array. Program will now start reading array.__");
+            System.out.println("__Done reading Positions file and filling array.______________________________");
             System.out.println("______________________________________________________________________________");
             Position position = positions.get(positions.size() - 1);
             System.out.println("Date: " + position.getDate());
