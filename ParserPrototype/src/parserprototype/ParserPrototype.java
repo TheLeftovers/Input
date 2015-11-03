@@ -54,13 +54,13 @@ public class ParserPrototype {
                 String type = csvLineArray[3];
 
                 String min = csvLineArray[4];
-                long longMin = Long.parseLong(min);
+                long longMin = Double.valueOf(min).longValue();
 
                 String max = csvLineArray[5];
-                long longMax = Long.parseLong(max);
+                long longMax = Double.valueOf(max).longValue();
 
                 String sum = csvLineArray[6];
-                long longSum = Long.parseLong(sum);
+                long longSum = Double.valueOf(sum).longValue();
 
                 Monitoring monitoring = new Monitoring();
 
@@ -77,6 +77,13 @@ public class ParserPrototype {
             System.out.println("______________________________________________________________________________");
             System.out.println("__Done reading Monitoring file and filling array. ____________________________");
             System.out.println("______________________________________________________________________________");
+            System.out.println("UnitId: " + monitoringArray.get(monitoringArray.size() - 1).getUnitId());
+            System.out.println("BeginTime: " + monitoringArray.get(monitoringArray.size() - 1).getBeginTime());
+            System.out.println("EndTime: " + monitoringArray.get(monitoringArray.size() - 1).getEndTime());
+            System.out.println("Min: " + monitoringArray.get(monitoringArray.size() - 1).getMin());
+            System.out.println("Max: " + monitoringArray.get(monitoringArray.size() - 1).getMax());
+            System.out.println("Sum: " + monitoringArray.get(monitoringArray.size() - 1).getSum());
+            System.out.println("Type: " + monitoringArray.get(monitoringArray.size() - 1).getType());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
