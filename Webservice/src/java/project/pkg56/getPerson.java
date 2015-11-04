@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.person;
+package project.pkg56;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

@@ -2,7 +2,10 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
     <service name="getPerson">
-      <implementation-class>com.person.getPerson</implementation-class>
+      <implementation-class>project.pkg56.getPerson</implementation-class>
+    </service>
+    <service name="getPositions">
+      <implementation-class>project.pkg56.getPositions</implementation-class>
     </service>
   </services>
   <clients/>
