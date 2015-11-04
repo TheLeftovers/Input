@@ -1,7 +1,7 @@
 package parserprototype;
 
 /**
- * @author Roy van den Heuvel test
+ * @author Roy van den Heuvel
  */
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
