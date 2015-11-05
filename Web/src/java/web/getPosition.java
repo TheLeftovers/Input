@@ -29,26 +29,22 @@ public class getPosition {
      */
     @WebMethod(operationName = "getUnitID")
     public ArrayList<Long> getUnitID() {
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+       SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		
 		Session session = sessionFactory.getCurrentSession();
                 ArrayList<Long> units = new ArrayList<Long>();
 		
-		try {
-                    for(long id=14010206; id < 14100016; id=id+89809){
+	
                     session.beginTransaction();
-                    Positions dbPosition = (Positions) session.get(Positions.class, id);
+                    List unit = session.createSQLQuery("SELECT DISTINCT p.unit_id FROM positions p").list();
                     
-                    if(dbPosition != null){
-                        units.add(dbPosition.getUnitId());
-                        }
-                    }	
-			session.getTransaction().commit();
-		}
-		catch (HibernateException e) {
-			e.printStackTrace();
-			session.getTransaction().rollback();
-		}
+                    
+                    
+                    if(unit != null){units.addAll(unit);}
+                    else{return null;}
+                    
+			session.getTransaction().commit();		
+		
         return units;
     }
     
@@ -63,22 +59,15 @@ public class getPosition {
                 ArrayList<Integer> speeds = new ArrayList<Integer>();
 		
 	
-                  try {
-                    for(long id=14010206; id < 14100016; id=id+89809){
                     session.beginTransaction();
-                    Positions dbPosition = (Positions) session.get(Positions.class, id);
+                    List speed = session.createSQLQuery("SELECT DISTINCT p.speed FROM positions p ORDER BY p.speed DESC").list();
                     
-                    if(dbPosition != null){
-                        speeds.add(dbPosition.getSpeed());
-                        }
-                    }	
-			session.getTransaction().commit();
-		}
-		catch (HibernateException e) {
-			e.printStackTrace();
-			session.getTransaction().rollback();
-		}
-		
+                    
+                    
+                    if(speed != null){speeds.addAll(speed);}
+                    else{return null;}
+                    
+			session.getTransaction().commit();		
 		
         return speeds;
     }
