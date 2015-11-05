@@ -2,9 +2,9 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.4.4
--- Dumped by pg_dump version 9.4.4
--- Started on 2015-11-04 15:43:43
+-- Dumped from database version 9.4.5
+-- Dumped by pg_dump version 9.4.5
+-- Started on 2015-11-05 13:36:08
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -37,7 +37,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 172 (class 1259 OID 16505)
+-- TOC entry 172 (class 1259 OID 16523)
 -- Name: connections; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -53,7 +53,7 @@ CREATE TABLE connections (
 ALTER TABLE connections OWNER TO postgres;
 
 --
--- TOC entry 173 (class 1259 OID 16511)
+-- TOC entry 173 (class 1259 OID 16529)
 -- Name: events; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -69,7 +69,7 @@ CREATE TABLE events (
 ALTER TABLE events OWNER TO postgres;
 
 --
--- TOC entry 174 (class 1259 OID 16523)
+-- TOC entry 174 (class 1259 OID 16535)
 -- Name: monitoring; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -96,14 +96,14 @@ COMMENT ON TABLE monitoring IS 'lot of double values, not sure what to make the 
 
 
 --
--- TOC entry 175 (class 1259 OID 16529)
+-- TOC entry 175 (class 1259 OID 16541)
 -- Name: positions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE positions (
     unit_id bigint NOT NULL,
-    rd_x integer NOT NULL,
-    rd_y integer NOT NULL,
+    rd_x double precision NOT NULL,
+    rd_y double precision NOT NULL,
     speed integer NOT NULL,
     course integer NOT NULL,
     num_satellites integer NOT NULL,
@@ -116,7 +116,10 @@ CREATE TABLE positions (
 
 ALTER TABLE positions OWNER TO postgres;
 
--- TOC entry 1896 (class 2606 OID 16576)
+
+
+--
+-- TOC entry 1896 (class 2606 OID 16548)
 -- Name: connections_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -125,7 +128,7 @@ ALTER TABLE ONLY connections
 
 
 --
--- TOC entry 1898 (class 2606 OID 16585)
+-- TOC entry 1898 (class 2606 OID 16550)
 -- Name: events_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -134,7 +137,7 @@ ALTER TABLE ONLY events
 
 
 --
--- TOC entry 1900 (class 2606 OID 16594)
+-- TOC entry 1900 (class 2606 OID 16552)
 -- Name: monitoring_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -143,7 +146,7 @@ ALTER TABLE ONLY monitoring
 
 
 --
--- TOC entry 1902 (class 2606 OID 16603)
+-- TOC entry 1902 (class 2606 OID 16554)
 -- Name: positions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -163,7 +166,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2015-11-04 15:43:43
+-- Completed on 2015-11-05 13:36:08
 
 --
 -- PostgreSQL database dump complete

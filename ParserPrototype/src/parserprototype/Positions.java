@@ -41,10 +41,10 @@ public class Positions implements Serializable {
     protected PositionsPK positionsPK;
     @Basic(optional = false)
     @Column(name = "rd_x")
-    private int rdX;
+    private double rdX;
     @Basic(optional = false)
     @Column(name = "rd_y")
-    private int rdY;
+    private double rdY;
     @Basic(optional = false)
     @Column(name = "speed")
     private int speed;
@@ -68,7 +68,7 @@ public class Positions implements Serializable {
         this.positionsPK = positionsPK;
     }
 
-    public Positions(PositionsPK positionsPK, int rdX, int rdY, int speed, int course, int numSatellites, int hdop, String quality) {
+    public Positions(PositionsPK positionsPK, double rdX, double rdY, int speed, int course, int numSatellites, int hdop, String quality) {
         this.positionsPK = positionsPK;
         this.rdX = rdX;
         this.rdY = rdY;
@@ -91,19 +91,19 @@ public class Positions implements Serializable {
         this.positionsPK = positionsPK;
     }
 
-    public int getRdX() {
+    public double getRdX() {
         return rdX;
     }
 
-    public void setRdX(int rdX) {
+    public void setRdX(double rdX) {
         this.rdX = rdX;
     }
 
-    public int getRdY() {
+    public double getRdY() {
         return rdY;
     }
 
-    public void setRdY(int rdY) {
+    public void setRdY(double rdY) {
         this.rdY = rdY;
     }
 
