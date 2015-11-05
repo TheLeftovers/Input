@@ -91,13 +91,7 @@ public class ParserPrototype {
             System.out.println("______________________________________________________________________________");
             System.out.println("__Done reading Monitoring file and filling array. ____________________________");
             System.out.println("______________________________________________________________________________");
-            System.out.println("UnitId: " + monitoringArray.get(monitoringArray.size() - 1).getMonitoringPK().getUnitId());
-            System.out.println("BeginTime: " + monitoringArray.get(monitoringArray.size() - 1).getMonitoringPK().getBeginTime());
-            System.out.println("EndTime: " + monitoringArray.get(monitoringArray.size() - 1).getMonitoringPK().getEndTime());
-            System.out.println("Min: " + monitoringArray.get(monitoringArray.size() - 1).getMin());
-            System.out.println("Max: " + monitoringArray.get(monitoringArray.size() - 1).getMax());
-            System.out.println("Sum: " + monitoringArray.get(monitoringArray.size() - 1).getSum());
-            System.out.println("Type: " + monitoringArray.get(monitoringArray.size() - 1).getMonitoringPK().getType());
+           
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -154,11 +148,7 @@ public class ParserPrototype {
      System.out.println("______________________________________________________________________________");
      System.out.println("__Done reading Connections file and filling array. ___________________________");
      System.out.println("______________________________________________________________________________");
-     System.out.println("Date: " + connections.get(connections.size() - 1).getDate());
-     System.out.println("Time: " + connections.get(connections.size() - 1).getTime());
-     System.out.println("Port: " + connections.get(connections.size() - 1).getPort());
-     System.out.println("UnitId: " + connections.get(connections.size() - 1).getUnitId());
-     System.out.println("Value: " + connections.get(connections.size() - 1).getValue());
+
      } catch (FileNotFoundException e) {
      e.printStackTrace();
      } catch (IOException e) {
@@ -213,11 +203,7 @@ public class ParserPrototype {
      System.out.println("______________________________________________________________________________");
      System.out.println("__Done reading Events file and filling array._________________________________");
      System.out.println("______________________________________________________________________________");
-     System.out.println("Date: " + events.get(events.size() - 1).getDate());
-     System.out.println("Time: " + events.get(events.size() - 1).getTime());
-     System.out.println("Port: " + events.get(events.size() - 1).getPort());
-     System.out.println("UnitId: " + events.get(events.size() - 1).getUnitId());
-     System.out.println("Value: " + events.get(events.size() - 1).getValue());
+  
 
      } catch (FileNotFoundException e) {
      e.printStackTrace();
@@ -290,18 +276,6 @@ public class ParserPrototype {
      System.out.println("______________________________________________________________________________");
      System.out.println("__Done reading Positions file and filling array.______________________________");
      System.out.println("______________________________________________________________________________");
-     Position position = positions.get(positions.size() - 1);
-     System.out.println("Date: " + position.getDate());
-     System.out.println("Time: " + position.getTime());
-     System.out.println("UnitId: " + position.getUnitId());
-     System.out.println("Rdx: " + position.getRdx());
-     System.out.println("Rdy: " + position.getRdy());
-     System.out.println("Speed: " + position.getSpeed());
-     System.out.println("Course: " + position.getCourse());
-     System.out.println("NumSatallites: " + position.getNumSatallites());
-     System.out.println("HDOP: " + position.getHDOP());
-     System.out.println("Quality: " + position.getQuality());
-     System.out.println("_____________________________________________");
 
      } catch (FileNotFoundException e) {
      e.printStackTrace();
