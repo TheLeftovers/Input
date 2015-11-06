@@ -36,7 +36,7 @@ public class getPosition {
 		
 	
                     session.beginTransaction();
-                    List unit = session.createSQLQuery("SELECT DISTINCT p.unit_id FROM positions p WHERE p.speed IN (SELECT DISTINCT p.speed FROM positions p LIMIT 10) ORDER BY p.speed DESC LIMIT 10").list();
+                    List unit = session.createSQLQuery("SELECT DISTINCT p.unit_id FROM positions p WHERE p.speed IN (SELECT DISTINCT p.speed FROM positions p WHERE p.speed BETWEEN '40' AND '46')").list();
                     
                     
                     
