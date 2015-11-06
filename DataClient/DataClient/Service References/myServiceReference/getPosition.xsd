@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://web/" targetNamespace="http://web/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getSpeed" type="tns:getSpeed" />
+  <xs:element name="getSpeedResponse" type="tns:getSpeedResponse" />
+  <xs:element name="getUnitID" type="tns:getUnitID" />
+  <xs:element name="getUnitIDResponse" type="tns:getUnitIDResponse" />
+  <xs:complexType name="getUnitID">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getUnitIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSpeed">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getSpeedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -217,16 +217,10 @@
     <Content Include="Global.asax" />
     <None Include="Service References\myServiceReference\configuration91.svcinfo" />
     <None Include="Service References\myServiceReference\configuration.svcinfo" />
-    <Content Include="Service References\myServiceReference\DataClient.myServiceReference.GetHoursResponse.datasource">
+    <Content Include="Service References\myServiceReference\DataClient.myServiceReference.getSpeedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\myServiceReference\DataClient.myServiceReference.GetIDResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\myServiceReference\DataClient.myServiceReference.GetPersonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\myServiceReference\DataClient.myServiceReference.GetFirstNameResponse.datasource">
+    <Content Include="Service References\myServiceReference\DataClient.myServiceReference.getUnitIDResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\myServiceReference\Reference.svcmap">
@@ -241,8 +235,8 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Service References\myServiceReference\getPerson.wsdl" />
-    <None Include="Service References\myServiceReference\getPerson.xsd">
+    <None Include="Service References\myServiceReference\getPosition.wsdl" />
+    <None Include="Service References\myServiceReference\getPosition.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">

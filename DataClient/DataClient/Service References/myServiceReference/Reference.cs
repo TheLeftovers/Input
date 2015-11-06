@@ -12,267 +12,151 @@ namespace DataClient.myServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://person.com/", ConfigurationName="myServiceReference.getPerson")]
-    public interface getPerson {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web/", ConfigurationName="myServiceReference.getPosition")]
+    public interface getPosition {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetHoursRequest", ReplyAction="http://person.com/getPerson/GetHoursResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web/getPosition/getUnitIDRequest", ReplyAction="http://web/getPosition/getUnitIDResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        DataClient.myServiceReference.GetHoursResponse GetHours(DataClient.myServiceReference.GetHoursRequest request);
+        DataClient.myServiceReference.getUnitIDResponse getUnitID(DataClient.myServiceReference.getUnitIDRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetHoursRequest", ReplyAction="http://person.com/getPerson/GetHoursResponse")]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetHoursResponse> GetHoursAsync(DataClient.myServiceReference.GetHoursRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://web/getPosition/getUnitIDRequest", ReplyAction="http://web/getPosition/getUnitIDResponse")]
+        System.Threading.Tasks.Task<DataClient.myServiceReference.getUnitIDResponse> getUnitIDAsync(DataClient.myServiceReference.getUnitIDRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetIDRequest", ReplyAction="http://person.com/getPerson/GetIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web/getPosition/getSpeedRequest", ReplyAction="http://web/getPosition/getSpeedResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        DataClient.myServiceReference.GetIDResponse GetID(DataClient.myServiceReference.GetIDRequest request);
+        DataClient.myServiceReference.getSpeedResponse getSpeed(DataClient.myServiceReference.getSpeedRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetIDRequest", ReplyAction="http://person.com/getPerson/GetIDResponse")]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetIDResponse> GetIDAsync(DataClient.myServiceReference.GetIDRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetPersonRequest", ReplyAction="http://person.com/getPerson/GetPersonResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        DataClient.myServiceReference.GetPersonResponse GetPerson(DataClient.myServiceReference.GetPersonRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetPersonRequest", ReplyAction="http://person.com/getPerson/GetPersonResponse")]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetPersonResponse> GetPersonAsync(DataClient.myServiceReference.GetPersonRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetFirstNameRequest", ReplyAction="http://person.com/getPerson/GetFirstNameResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        DataClient.myServiceReference.GetFirstNameResponse GetFirstName(DataClient.myServiceReference.GetFirstNameRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://person.com/getPerson/GetFirstNameRequest", ReplyAction="http://person.com/getPerson/GetFirstNameResponse")]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetFirstNameResponse> GetFirstNameAsync(DataClient.myServiceReference.GetFirstNameRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://web/getPosition/getSpeedRequest", ReplyAction="http://web/getPosition/getSpeedResponse")]
+        System.Threading.Tasks.Task<DataClient.myServiceReference.getSpeedResponse> getSpeedAsync(DataClient.myServiceReference.getSpeedRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetHours", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetHoursRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUnitID", WrapperNamespace="http://web/", IsWrapped=true)]
+    public partial class getUnitIDRequest {
         
-        public GetHoursRequest() {
+        public getUnitIDRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetHoursResponse", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetHoursResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUnitIDResponse", WrapperNamespace="http://web/", IsWrapped=true)]
+    public partial class getUnitIDResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://person.com/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public long[] @return;
+        
+        public getUnitIDResponse() {
+        }
+        
+        public getUnitIDResponse(long[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getSpeed", WrapperNamespace="http://web/", IsWrapped=true)]
+    public partial class getSpeedRequest {
+        
+        public getSpeedRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getSpeedResponse", WrapperNamespace="http://web/", IsWrapped=true)]
+    public partial class getSpeedResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int[] @return;
         
-        public GetHoursResponse() {
+        public getSpeedResponse() {
         }
         
-        public GetHoursResponse(int[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetID", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetIDRequest {
-        
-        public GetIDRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetIDResponse", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetIDResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://person.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int[] @return;
-        
-        public GetIDResponse() {
-        }
-        
-        public GetIDResponse(int[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPerson", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetPersonRequest {
-        
-        public GetPersonRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPersonResponse", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetPersonResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://person.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string @return;
-        
-        public GetPersonResponse() {
-        }
-        
-        public GetPersonResponse(string @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFirstName", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetFirstNameRequest {
-        
-        public GetFirstNameRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFirstNameResponse", WrapperNamespace="http://person.com/", IsWrapped=true)]
-    public partial class GetFirstNameResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://person.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string[] @return;
-        
-        public GetFirstNameResponse() {
-        }
-        
-        public GetFirstNameResponse(string[] @return) {
+        public getSpeedResponse(int[] @return) {
             this.@return = @return;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface getPersonChannel : DataClient.myServiceReference.getPerson, System.ServiceModel.IClientChannel {
+    public interface getPositionChannel : DataClient.myServiceReference.getPosition, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class getPersonClient : System.ServiceModel.ClientBase<DataClient.myServiceReference.getPerson>, DataClient.myServiceReference.getPerson {
+    public partial class getPositionClient : System.ServiceModel.ClientBase<DataClient.myServiceReference.getPosition>, DataClient.myServiceReference.getPosition {
         
-        public getPersonClient() {
+        public getPositionClient() {
         }
         
-        public getPersonClient(string endpointConfigurationName) : 
+        public getPositionClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public getPersonClient(string endpointConfigurationName, string remoteAddress) : 
+        public getPositionClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public getPersonClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public getPositionClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public getPersonClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public getPositionClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DataClient.myServiceReference.GetHoursResponse DataClient.myServiceReference.getPerson.GetHours(DataClient.myServiceReference.GetHoursRequest request) {
-            return base.Channel.GetHours(request);
+        DataClient.myServiceReference.getUnitIDResponse DataClient.myServiceReference.getPosition.getUnitID(DataClient.myServiceReference.getUnitIDRequest request) {
+            return base.Channel.getUnitID(request);
         }
         
-        public int[] GetHours() {
-            DataClient.myServiceReference.GetHoursRequest inValue = new DataClient.myServiceReference.GetHoursRequest();
-            DataClient.myServiceReference.GetHoursResponse retVal = ((DataClient.myServiceReference.getPerson)(this)).GetHours(inValue);
+        public long[] getUnitID() {
+            DataClient.myServiceReference.getUnitIDRequest inValue = new DataClient.myServiceReference.getUnitIDRequest();
+            DataClient.myServiceReference.getUnitIDResponse retVal = ((DataClient.myServiceReference.getPosition)(this)).getUnitID(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetHoursResponse> DataClient.myServiceReference.getPerson.GetHoursAsync(DataClient.myServiceReference.GetHoursRequest request) {
-            return base.Channel.GetHoursAsync(request);
+        System.Threading.Tasks.Task<DataClient.myServiceReference.getUnitIDResponse> DataClient.myServiceReference.getPosition.getUnitIDAsync(DataClient.myServiceReference.getUnitIDRequest request) {
+            return base.Channel.getUnitIDAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DataClient.myServiceReference.GetHoursResponse> GetHoursAsync() {
-            DataClient.myServiceReference.GetHoursRequest inValue = new DataClient.myServiceReference.GetHoursRequest();
-            return ((DataClient.myServiceReference.getPerson)(this)).GetHoursAsync(inValue);
+        public System.Threading.Tasks.Task<DataClient.myServiceReference.getUnitIDResponse> getUnitIDAsync() {
+            DataClient.myServiceReference.getUnitIDRequest inValue = new DataClient.myServiceReference.getUnitIDRequest();
+            return ((DataClient.myServiceReference.getPosition)(this)).getUnitIDAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DataClient.myServiceReference.GetIDResponse DataClient.myServiceReference.getPerson.GetID(DataClient.myServiceReference.GetIDRequest request) {
-            return base.Channel.GetID(request);
+        DataClient.myServiceReference.getSpeedResponse DataClient.myServiceReference.getPosition.getSpeed(DataClient.myServiceReference.getSpeedRequest request) {
+            return base.Channel.getSpeed(request);
         }
         
-        public int[] GetID() {
-            DataClient.myServiceReference.GetIDRequest inValue = new DataClient.myServiceReference.GetIDRequest();
-            DataClient.myServiceReference.GetIDResponse retVal = ((DataClient.myServiceReference.getPerson)(this)).GetID(inValue);
+        public int[] getSpeed() {
+            DataClient.myServiceReference.getSpeedRequest inValue = new DataClient.myServiceReference.getSpeedRequest();
+            DataClient.myServiceReference.getSpeedResponse retVal = ((DataClient.myServiceReference.getPosition)(this)).getSpeed(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetIDResponse> DataClient.myServiceReference.getPerson.GetIDAsync(DataClient.myServiceReference.GetIDRequest request) {
-            return base.Channel.GetIDAsync(request);
+        System.Threading.Tasks.Task<DataClient.myServiceReference.getSpeedResponse> DataClient.myServiceReference.getPosition.getSpeedAsync(DataClient.myServiceReference.getSpeedRequest request) {
+            return base.Channel.getSpeedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DataClient.myServiceReference.GetIDResponse> GetIDAsync() {
-            DataClient.myServiceReference.GetIDRequest inValue = new DataClient.myServiceReference.GetIDRequest();
-            return ((DataClient.myServiceReference.getPerson)(this)).GetIDAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DataClient.myServiceReference.GetPersonResponse DataClient.myServiceReference.getPerson.GetPerson(DataClient.myServiceReference.GetPersonRequest request) {
-            return base.Channel.GetPerson(request);
-        }
-        
-        public string GetPerson() {
-            DataClient.myServiceReference.GetPersonRequest inValue = new DataClient.myServiceReference.GetPersonRequest();
-            DataClient.myServiceReference.GetPersonResponse retVal = ((DataClient.myServiceReference.getPerson)(this)).GetPerson(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetPersonResponse> DataClient.myServiceReference.getPerson.GetPersonAsync(DataClient.myServiceReference.GetPersonRequest request) {
-            return base.Channel.GetPersonAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<DataClient.myServiceReference.GetPersonResponse> GetPersonAsync() {
-            DataClient.myServiceReference.GetPersonRequest inValue = new DataClient.myServiceReference.GetPersonRequest();
-            return ((DataClient.myServiceReference.getPerson)(this)).GetPersonAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DataClient.myServiceReference.GetFirstNameResponse DataClient.myServiceReference.getPerson.GetFirstName(DataClient.myServiceReference.GetFirstNameRequest request) {
-            return base.Channel.GetFirstName(request);
-        }
-        
-        public string[] GetFirstName() {
-            DataClient.myServiceReference.GetFirstNameRequest inValue = new DataClient.myServiceReference.GetFirstNameRequest();
-            DataClient.myServiceReference.GetFirstNameResponse retVal = ((DataClient.myServiceReference.getPerson)(this)).GetFirstName(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DataClient.myServiceReference.GetFirstNameResponse> DataClient.myServiceReference.getPerson.GetFirstNameAsync(DataClient.myServiceReference.GetFirstNameRequest request) {
-            return base.Channel.GetFirstNameAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<DataClient.myServiceReference.GetFirstNameResponse> GetFirstNameAsync() {
-            DataClient.myServiceReference.GetFirstNameRequest inValue = new DataClient.myServiceReference.GetFirstNameRequest();
-            return ((DataClient.myServiceReference.getPerson)(this)).GetFirstNameAsync(inValue);
+        public System.Threading.Tasks.Task<DataClient.myServiceReference.getSpeedResponse> getSpeedAsync() {
+            DataClient.myServiceReference.getSpeedRequest inValue = new DataClient.myServiceReference.getSpeedRequest();
+            return ((DataClient.myServiceReference.getPosition)(this)).getSpeedAsync(inValue);
         }
     }
 }
