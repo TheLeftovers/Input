@@ -14,27 +14,29 @@ namespace DataClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            myServiceReference.getPositionClient proxy = new myServiceReference.getPositionClient();
+            myServiceReference.getPositionClient position = new myServiceReference.getPositionClient();
 
-            ArrayList units = new ArrayList(proxy.getUnitID());
-            ArrayList speeds = new ArrayList(proxy.getSpeed());
+            ArrayList units = new ArrayList(position.getUnitID());
+            ArrayList speeds = new ArrayList(position.getSpeed());
 
             Chart1.Series.Clear();
             Chart1.Series.Add(new Series("2"));
             Chart1.Series["2"].ChartType = SeriesChartType.Column;
             Chart1.Series["2"].ChartArea = "ChartArea1";
-            Chart1.Series["2"].Points.DataBindXY(speeds, units);
-            Chart1.ChartAreas[0].AxisY.Title = "Unit ID";
-            Chart1.ChartAreas[0].AxisX.Title = "Speed(KM/U)";
-            Chart1.ChartAreas[0].AxisX.Interval = 1;
+            Chart1.Series["2"].Points.DataBindXY(units, speeds);
+            Chart1.Series["2"].SmartLabelStyle.Enabled = true;
+            Chart1.Series["2"].IsXValueIndexed = true;
 
-
-
-
-
+            Chart1.ChartAreas[0].AxisX.Title = "Unit ID";
+            Chart1.ChartAreas[0].AxisX.IsStartedFromZero = false;
+            Chart1.ChartAreas[0].AxisY.Title = "Speed(KM/H)";
+            Chart1.ChartAreas[0].RecalculateAxesScale();
+            Chart1.ChartAreas[0].AxisY.IsStartedFromZero = true;
+            Chart1.ChartAreas[0].AxisY.Minimum = position.getSpeed().Min();
+            Chart1.ChartAreas[0].AxisY.Maximum = position.getSpeed().Max();
 
         }
 
-    
+
     }
 }

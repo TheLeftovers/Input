@@ -5,7 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    
 
-    <asp:Chart ID="Chart1" runat="server" Palette="Excel" OnLoad="Page_Load">
+    <asp:Chart ID="Chart1" runat="server" Palette="EarthTones" OnLoad="Page_Load" Height="500px" Width="500px">
         <Series>
             <asp:Series Name="Series1" IsXValueIndexed="True"></asp:Series>
         </Series>
