@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                assembly="w"
+                namespace="w">
+  <class name="Positions">
+    <id name="UnitId" column="unit_id">
+      <generator class="native" />
+    </id>
+    <property name="RdX" column="rd_x"/>
+    <property name="RdY" column="rd_y"/>
+    <property name="Speed" column="speed"/>
+    <property name="Course" column="course"/>
+    <property name="NumSatellites" column="num_satellites"/>
+    <property name="Quality" column="quality"/>
+    <property name="Time" column="time"/>
+    <property name="Date" column="date"/>
+    <property name="Hdop" column="hdop"/>
+  </class>
+</hibernate-mapping>
