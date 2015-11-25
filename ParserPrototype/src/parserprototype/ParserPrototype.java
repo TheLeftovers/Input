@@ -27,10 +27,10 @@ public class ParserPrototype {
 
     public static void main(String[] args) {
         ParserPrototype obj = new ParserPrototype();
-        //obj.runEventCsv();
-        //obj.runConnectionsCsv();
+        obj.runEventCsv();
+        obj.runConnectionsCsv();
         obj.runPositionsCsv();
-        //obj.runMonitoringCsv();
+        obj.runMonitoringCsv();
     }
 
     public void runMonitoringCsv() {
@@ -90,7 +90,7 @@ public class ParserPrototype {
 
             }
             System.out.println("______________________________________________________________________________");
-            System.out.println("__Done reading Monitoring file and filling database. ____________________________");
+            System.out.println("__Done reading Monitoring file and filling database. _________________________");
             System.out.println("______________________________________________________________________________");
 
         } catch (FileNotFoundException e) {
@@ -107,120 +107,124 @@ public class ParserPrototype {
             }
         }
     }
-    /*
 
-     public void runConnectionsCsv() {
-     String csvFile = "..//csv//connections.csv";
+    public void runConnectionsCsv() {
+        String csvFile = "..//csv//connections.csv";
 
-     try {
+        try {
 
-     br = new BufferedReader(new FileReader(csvFile));
-     br.readLine();
-     while ((line = br.readLine()) != null) {
-     String[] csvLineArray = line.split(csvSplitBy);
-     String dateTime = csvLineArray[0];
-     String[] dateTimeArray = dateTime.split(" ");
-     String date = dateTimeArray[0];
-     DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-     Date dateAsDate = null;
-     try {
-     dateAsDate = format.parse(date);
-     } catch (ParseException ex) {
-     Logger.getLogger(ParserPrototype.class.getName()).log(Level.SEVERE, null, ex);
-     }
-     String time = dateTimeArray[1];
-     String unitId = csvLineArray[1];
-     long longUnitId = Long.parseLong(unitId);
-     String port = csvLineArray[2];
-     String value = csvLineArray[3];
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] csvLineArray = line.split(csvSplitBy);
+                String dateTime = csvLineArray[0];
+                String[] dateTimeArray = dateTime.split(" ");
+                String date = dateTimeArray[0];
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                Date dateAsDate = null;
+                try {
+                    dateAsDate = format.parse(date);
+                } catch (ParseException ex) {
+                    Logger.getLogger(ParserPrototype.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String time = dateTimeArray[1];
+                String unitId = csvLineArray[1];
+                long longUnitId = Long.parseLong(unitId);
+                String port = csvLineArray[2];
+                String value = csvLineArray[3];
+                
+                Time timeDate = Time.valueOf(time);
 
-     boolean boolValue = convertToBoolean(value);
+                boolean boolValue = convertToBoolean(value);
 
-     Connections connection = new Connections();
+                Connections connection = new Connections();
+                
+                connection.setDate(dateAsDate);
+                connection.setTime(timeDate);
+                connection.setUnitId(longUnitId);
+                connection.setPort(port);       
+                connection.setValue(boolValue);
+                
+                
+                persist(connection);
+            }
+            System.out.println("______________________________________________________________________________");
+            System.out.println("__Done reading Connections file and filling array. ___________________________");
+            System.out.println("______________________________________________________________________________");
 
-     connection.setDate(dateAsDate);
-     connection.setTime(time);
-     connection.setPort(port);
-     connection.setUnitId(longUnitId);
-     connection.setValue(boolValue);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
-     connections.add(connection);
-     }
-     System.out.println("______________________________________________________________________________");
-     System.out.println("__Done reading Connections file and filling array. ___________________________");
-     System.out.println("______________________________________________________________________________");
+    public void runEventCsv() {
+        String csvFile = "..//csv//events.csv";
 
-     } catch (FileNotFoundException e) {
-     e.printStackTrace();
-     } catch (IOException e) {
-     e.printStackTrace();
-     } finally {
-     if (br != null) {
-     try {
-     br.close();
-     } catch (IOException e) {
-     e.printStackTrace();
-     }
-     }
-     }
-     }
+        try {
 
-     public void runEventCsv() {
-     String csvFile = "..//csv//events.csv";
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
 
-     try {
+                String[] csvLineArray = line.split(csvSplitBy);
+                String dateTime = csvLineArray[0];
+                String unitId = csvLineArray[1];
+                long longUnitId = Long.parseLong(unitId);
+                String port = csvLineArray[2];
+                String value = csvLineArray[3];
+                boolean boolValue = convertToBoolean(value);
+                String[] dateTimeArray = dateTime.split(" ");
+                String date = dateTimeArray[0];
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                Date dateAsDate = null;
+                try {
+                    dateAsDate = format.parse(date);
+                } catch (ParseException ex) {
+                    Logger.getLogger(ParserPrototype.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String time = dateTimeArray[1];
+                Time timeDate = Time.valueOf(time);
 
-     br = new BufferedReader(new FileReader(csvFile));
-     br.readLine();
-     while ((line = br.readLine()) != null) {
+                Events event = new Events();
 
-     String[] csvLineArray = line.split(csvSplitBy);
-     String dateTime = csvLineArray[0];
-     String unitId = csvLineArray[1];
-     long longUnitId = Long.parseLong(unitId);
-     String port = csvLineArray[2];
-     String value = csvLineArray[3];
-     boolean boolValue = convertToBoolean(value);
-     String[] dateTimeArray = dateTime.split(" ");
-     String date = dateTimeArray[0];
-     DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-     Date dateAsDate = null;
-     try {
-     dateAsDate = format.parse(date);
-     } catch (ParseException ex) {
-     Logger.getLogger(ParserPrototype.class.getName()).log(Level.SEVERE, null, ex);
-     }
-     String time = dateTimeArray[1];
-     Event event = new Event();
+                event.setDate(dateAsDate);
+                event.setTime(timeDate);
+                event.setUnitId(longUnitId);
+                event.setPort(port);
+                event.setValue(boolValue);
+                
+                persist(event);
 
-     event.setDate(dateAsDate);
-     event.setTime(time);
-     event.setUnitId(longUnitId);
-     event.setPort(port);
-     event.setValue(boolValue);
-     events.add(event);
-     }
+            }
 
-     System.out.println("______________________________________________________________________________");
-     System.out.println("__Done reading Events file and filling array._________________________________");
-     System.out.println("______________________________________________________________________________");
-  
+            System.out.println("______________________________________________________________________________");
+            System.out.println("__Done reading Events file and filling array._________________________________");
+            System.out.println("______________________________________________________________________________");
 
-     } catch (FileNotFoundException e) {
-     e.printStackTrace();
-     } catch (IOException e) {
-     e.printStackTrace();
-     } finally {
-     if (br != null) {
-     try {
-     br.close();
-     } catch (IOException e) {
-     e.printStackTrace();
-     }
-     }
-     }
-     }
-     */
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     public void runPositionsCsv() {
         String csvFile = "..//csv//positions.csv";
@@ -251,7 +255,7 @@ public class ParserPrototype {
                 String numSatallites = csvLineArray[6];
                 String HDOP = csvLineArray[7];
                 String quality = csvLineArray[8];
-                
+
                 Time timeDate = Time.valueOf(time);
 
                 long longUnitId = Long.parseLong(unitId);
@@ -282,7 +286,7 @@ public class ParserPrototype {
             }
 
             System.out.println("______________________________________________________________________________");
-            System.out.println("__Done reading Positions file and filling database.______________________________");
+            System.out.println("__Done reading Positions file and filling database.___________________________");
             System.out.println("______________________________________________________________________________");
 
         } catch (FileNotFoundException e) {
@@ -315,6 +319,7 @@ public class ParserPrototype {
         try {
             em.persist(object);
             em.getTransaction().commit();
+            
         } catch (Exception e) {
             e.printStackTrace();
             em.getTransaction().rollback();

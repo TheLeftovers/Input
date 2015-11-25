@@ -9,11 +9,15 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -25,45 +29,59 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Connections.findAll", query = "SELECT c FROM Connections c"),
-    @NamedQuery(name = "Connections.findByUnitId", query = "SELECT c FROM Connections c WHERE c.connectionsPK.unitId = :unitId"),
+    @NamedQuery(name = "Connections.findByUnitId", query = "SELECT c FROM Connections c WHERE c.unitId = :unitId"),
     @NamedQuery(name = "Connections.findByPort", query = "SELECT c FROM Connections c WHERE c.port = :port"),
     @NamedQuery(name = "Connections.findByValue", query = "SELECT c FROM Connections c WHERE c.value = :value"),
-    @NamedQuery(name = "Connections.findByDate", query = "SELECT c FROM Connections c WHERE c.connectionsPK.date = :date"),
-    @NamedQuery(name = "Connections.findByTime", query = "SELECT c FROM Connections c WHERE c.connectionsPK.time = :time")})
+    @NamedQuery(name = "Connections.findByDate", query = "SELECT c FROM Connections c WHERE c.date = :date"),
+    @NamedQuery(name = "Connections.findByTime", query = "SELECT c FROM Connections c WHERE c.time = :time"),
+    @NamedQuery(name = "Connections.findByConnId", query = "SELECT c FROM Connections c WHERE c.connId = :connId")})
 public class Connections implements Serializable {
     private static final long serialVersionUID = 1L;
-    @EmbeddedId
-    protected ConnectionsPK connectionsPK;
+    @Basic(optional = false)
+    @Column(name = "unit_id")
+    private long unitId;
     @Basic(optional = false)
     @Column(name = "port")
     private String port;
     @Basic(optional = false)
     @Column(name = "value")
     private boolean value;
+    @Basic(optional = false)
+    @Column(name = "date")
+    @Temporal(TemporalType.DATE)
+    private Date date;
+    @Basic(optional = false)
+    @Column(name = "time")
+    @Temporal(TemporalType.TIME)
+    private Date time;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "conn_id")
+    private Integer connId;
 
     public Connections() {
     }
 
-    public Connections(ConnectionsPK connectionsPK) {
-        this.connectionsPK = connectionsPK;
+    public Connections(Integer connId) {
+        this.connId = connId;
     }
 
-    public Connections(ConnectionsPK connectionsPK, String port, boolean value) {
-        this.connectionsPK = connectionsPK;
+    public Connections(Integer connId, long unitId, String port, boolean value, Date date, Date time) {
+        this.connId = connId;
+        this.unitId = unitId;
         this.port = port;
         this.value = value;
+        this.date = date;
+        this.time = time;
     }
 
-    public Connections(long unitId, Date date, Date time) {
-        this.connectionsPK = new ConnectionsPK(unitId, date, time);
+    public long getUnitId() {
+        return unitId;
     }
 
-    public ConnectionsPK getConnectionsPK() {
-        return connectionsPK;
-    }
-
-    public void setConnectionsPK(ConnectionsPK connectionsPK) {
-        this.connectionsPK = connectionsPK;
+    public void setUnitId(long unitId) {
+        this.unitId = unitId;
     }
 
     public String getPort() {
@@ -82,10 +100,34 @@ public class Connections implements Serializable {
         this.value = value;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public Integer getConnId() {
+        return connId;
+    }
+
+    public void setConnId(Integer connId) {
+        this.connId = connId;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (connectionsPK != null ? connectionsPK.hashCode() : 0);
+        hash += (connId != null ? connId.hashCode() : 0);
         return hash;
     }
 
@@ -96,7 +138,7 @@ public class Connections implements Serializable {
             return false;
         }
         Connections other = (Connections) object;
-        if ((this.connectionsPK == null && other.connectionsPK != null) || (this.connectionsPK != null && !this.connectionsPK.equals(other.connectionsPK))) {
+        if ((this.connId == null && other.connId != null) || (this.connId != null && !this.connId.equals(other.connId))) {
             return false;
         }
         return true;
@@ -104,7 +146,7 @@ public class Connections implements Serializable {
 
     @Override
     public String toString() {
-        return "parserprototype.Connections[ connectionsPK=" + connectionsPK + " ]";
+        return "parserprototype.Connections[ connId=" + connId + " ]";
     }
     
 }
