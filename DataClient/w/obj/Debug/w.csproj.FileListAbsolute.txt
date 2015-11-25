@@ -9,3 +9,4 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\w\bin\Debug\NHibernat
 d:\johan\documenten\visual studio 2015\Projects\DataClient\w\bin\Debug\Npgsql.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\w\obj\Debug\w.exe
 d:\johan\documenten\visual studio 2015\Projects\DataClient\w\obj\Debug\w.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\w\obj\Debug\w.csprojResolveAssemblyReference.cache

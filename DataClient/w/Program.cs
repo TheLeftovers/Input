@@ -2,6 +2,7 @@
 using NHibernate.Dialect;
 using NHibernate.Driver;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -14,30 +15,41 @@ namespace w
     {
         static void Main(string[] args)
         {
+            GoGet();
+        }
+
+        public static ArrayList GoGet()
+        {
             var cfg = new Configuration();
+            ArrayList Pos = new ArrayList();
+
             cfg.DataBaseIntegration(x =>
             {
                 x.ConnectionString = "Server=localhost;database=project56;user id=postgres;password=root";
                 x.Driver<NHibernate.Driver.NpgsqlDriver>();
                 x.Dialect<NHibernate.Dialect.PostgreSQLDialect>();
             });
+
             cfg.AddAssembly(Assembly.GetExecutingAssembly());
             var sessionFactory = cfg.BuildSessionFactory();
+
             using (var session = sessionFactory.OpenSession())
             {
                 using (var tx = session.BeginTransaction())
                 {
-                    var positions = session.CreateCriteria<Positions>()
-                        .List<Positions>();
+                    var positions = session.CreateCriteria<Positions>().List<Positions>();
+
                     foreach (var pos in positions)
                     {
                         Console.WriteLine("Units: " + pos.UnitId.ToString() + "\n" + "Speed:" + pos.Speed.ToString() + "\n");
+                        Pos.Add(positions);
                     }
                     tx.Commit();
                 }
                 Console.WriteLine("Press <ENTER> to exit...");
                 Console.ReadLine();
             }
-        }
+            return Pos;
+        }   
     }
 }
