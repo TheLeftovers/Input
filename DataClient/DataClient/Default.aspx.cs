@@ -4,37 +4,46 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DataClient.myServiceReference;
 using System.Collections;
 using System.Web.UI.DataVisualization.Charting;
+using Webservice;
 
-namespace DataClient
+namespace DataWebsite
 {
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            myServiceReference.getPositionClient position = new myServiceReference.getPositionClient();
 
-            ArrayList units = new ArrayList(position.getUnitID());
-            ArrayList speeds = new ArrayList(position.getSpeed());
+            List<Positions> Posit = Webservice.getPosition.GoGet();
+            ArrayList units = new ArrayList();
+            ArrayList speeds = new ArrayList();
 
+            for (int i=0; i< Posit.Count; i++) {
+                units.Add(Posit[i].UnitId);
+                speeds.Add(Posit[i].Speed);
+            }
+
+
+            TextBox1.Text = speeds.ToString();
+            /*
             Chart1.Series.Clear();
-            Chart1.Series.Add(new Series("2"));
-            Chart1.Series["2"].ChartType = SeriesChartType.Column;
-            Chart1.Series["2"].ChartArea = "ChartArea1";
-            Chart1.Series["2"].Points.DataBindXY(units, speeds);
-            Chart1.Series["2"].SmartLabelStyle.Enabled = true;
-            Chart1.Series["2"].IsXValueIndexed = true;
+            Chart1.Series.Add(new Series("1"));
+            Chart1.Series["1"].ChartType = SeriesChartType.Column;
+            Chart1.Series["1"].ChartArea = "ChartArea1";
+            Chart1.Series["1"].Points.DataBindXY(units, speeds);
+            Chart1.Series["1"].SmartLabelStyle.Enabled = true;
+            Chart1.Series["1"].IsXValueIndexed = true;
 
             Chart1.ChartAreas[0].AxisX.Title = "Unit ID";
             Chart1.ChartAreas[0].AxisX.IsStartedFromZero = false;
             Chart1.ChartAreas[0].AxisY.Title = "Speed(KM/H)";
-            Chart1.ChartAreas[0].RecalculateAxesScale();
-            Chart1.ChartAreas[0].AxisY.IsStartedFromZero = true;
-            Chart1.ChartAreas[0].AxisY.Minimum = position.getSpeed().Min();
+            Chart1.ChartAreas[0].AxisY.Interval = 1;
+            Chart1.ChartAreas[0].AxisY.Minimum = (position.getSpeed().Min() -1);
             Chart1.ChartAreas[0].AxisY.Maximum = position.getSpeed().Max();
-
+            Chart1.ChartAreas[0].RecalculateAxesScale();
+            */
+            
         }
 
 

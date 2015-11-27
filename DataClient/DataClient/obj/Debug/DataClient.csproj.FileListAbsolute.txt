@@ -64,3 +64,7 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\bin\Micros
 d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\bin\Microsoft.Owin.Security.OAuth.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\obj\Debug\DataClient.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\obj\Debug\DataClient.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\bin\Iesi.Collections.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\bin\NHibernate.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\bin\Iesi.Collections.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\DataClient\bin\NHibernate.xml
