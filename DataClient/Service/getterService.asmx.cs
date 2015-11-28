@@ -21,11 +21,9 @@ namespace Service
     // [System.Web.Script.Services.ScriptService]
     public class getterService : System.Web.Services.WebService
     {
-
-
         [WebMethod]
         [XmlInclude(typeof(Positions))]
-        public List<Positions> GetPositionsList(int max)
+        public List<Positions> GetPositionsList(int max, string order)
         {
             var cfg = new Configuration();
             List<Positions> Positions = new List<Positions>();
@@ -45,7 +43,7 @@ namespace Service
 
             using (var tx = session.BeginTransaction())
             {
-                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(1000).AddOrder(Order.Desc("Speed")).List();
+                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(1000).AddOrder(Order.Desc(order)).List();
 
                 foreach (Positions pos in poslist)
                 {

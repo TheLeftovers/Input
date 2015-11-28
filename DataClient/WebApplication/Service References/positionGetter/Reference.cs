@@ -198,7 +198,7 @@ namespace WebApplication.positionGetter {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="positionGetter.getterServiceSoap")]
     public interface getterServiceSoap {
         
-        // CODEGEN: Generating message contract since element name GetPositionsListResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name order from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPositionsList", ReplyAction="*")]
         WebApplication.positionGetter.GetPositionsListResponse GetPositionsList(WebApplication.positionGetter.GetPositionsListRequest request);
         
@@ -232,11 +232,15 @@ namespace WebApplication.positionGetter {
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public int max;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string order;
+        
         public GetPositionsListRequestBody() {
         }
         
-        public GetPositionsListRequestBody(int max) {
+        public GetPositionsListRequestBody(int max, string order) {
             this.max = max;
+            this.order = order;
         }
     }
     
@@ -306,10 +310,11 @@ namespace WebApplication.positionGetter {
             return base.Channel.GetPositionsList(request);
         }
         
-        public WebApplication.positionGetter.Positions[] GetPositionsList(int max) {
+        public WebApplication.positionGetter.Positions[] GetPositionsList(int max, string order) {
             WebApplication.positionGetter.GetPositionsListRequest inValue = new WebApplication.positionGetter.GetPositionsListRequest();
             inValue.Body = new WebApplication.positionGetter.GetPositionsListRequestBody();
             inValue.Body.max = max;
+            inValue.Body.order = order;
             WebApplication.positionGetter.GetPositionsListResponse retVal = ((WebApplication.positionGetter.getterServiceSoap)(this)).GetPositionsList(inValue);
             return retVal.Body.GetPositionsListResult;
         }
@@ -319,10 +324,11 @@ namespace WebApplication.positionGetter {
             return base.Channel.GetPositionsListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WebApplication.positionGetter.GetPositionsListResponse> GetPositionsListAsync(int max) {
+        public System.Threading.Tasks.Task<WebApplication.positionGetter.GetPositionsListResponse> GetPositionsListAsync(int max, string order) {
             WebApplication.positionGetter.GetPositionsListRequest inValue = new WebApplication.positionGetter.GetPositionsListRequest();
             inValue.Body = new WebApplication.positionGetter.GetPositionsListRequestBody();
             inValue.Body.max = max;
+            inValue.Body.order = order;
             return ((WebApplication.positionGetter.getterServiceSoap)(this)).GetPositionsListAsync(inValue);
         }
     }
