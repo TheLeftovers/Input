@@ -26,14 +26,34 @@ public class ParserPrototype {
     static String csvSplitBy = ";";
 
     public static void main(String[] args) {
-        ParserPrototype obj = new ParserPrototype();
-        obj.runEventCsv();
-        obj.runConnectionsCsv();
-        obj.runPositionsCsv();
-        obj.runMonitoringCsv();
+        
+        new Thread(){
+            public void run(){
+                runEventCsv();
+            }
+        }.run();
+        
+        new Thread(){
+            public void run(){
+                runConnectionsCsv();
+            }
+        }.run();
+        
+        new Thread(){
+            public void run(){
+                runMonitoringCsv();
+            }
+        }.run();
+        
+        new Thread(){
+            public void run(){
+                runPositionsCsv();
+            }
+        }.run();
+        
     }
 
-    public void runMonitoringCsv() {
+    public static void runMonitoringCsv() {
         String csvFile = "..//csv//monitoring.csv";
 
         try {
@@ -108,7 +128,7 @@ public class ParserPrototype {
         }
     }
 
-    public void runConnectionsCsv() {
+    public static void runConnectionsCsv() {
         String csvFile = "..//csv//connections.csv";
 
         try {
@@ -132,20 +152,19 @@ public class ParserPrototype {
                 long longUnitId = Long.parseLong(unitId);
                 String port = csvLineArray[2];
                 String value = csvLineArray[3];
-                
+
                 Time timeDate = Time.valueOf(time);
 
                 boolean boolValue = convertToBoolean(value);
 
                 Connections connection = new Connections();
-                
+
                 connection.setDate(dateAsDate);
                 connection.setTime(timeDate);
                 connection.setUnitId(longUnitId);
-                connection.setPort(port);       
+                connection.setPort(port);
                 connection.setValue(boolValue);
-                
-                
+
                 persist(connection);
             }
             System.out.println("______________________________________________________________________________");
@@ -167,7 +186,7 @@ public class ParserPrototype {
         }
     }
 
-    public void runEventCsv() {
+    public static void runEventCsv() {
         String csvFile = "..//csv//events.csv";
 
         try {
@@ -202,7 +221,7 @@ public class ParserPrototype {
                 event.setUnitId(longUnitId);
                 event.setPort(port);
                 event.setValue(boolValue);
-                
+
                 persist(event);
 
             }
@@ -226,7 +245,7 @@ public class ParserPrototype {
         }
     }
 
-    public void runPositionsCsv() {
+    public static void runPositionsCsv() {
         String csvFile = "..//csv//positions.csv";
 
         try {
@@ -304,7 +323,7 @@ public class ParserPrototype {
         }
     }
 
-    private boolean convertToBoolean(String value) {
+    private static boolean convertToBoolean(String value) {
         boolean returnValue = false;
         if ("1".equalsIgnoreCase(value)) {
             returnValue = true;
@@ -312,14 +331,14 @@ public class ParserPrototype {
         return returnValue;
     }
 
-    public void persist(Object object) {
+    public static void persist(Object object) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ParserPrototypePU");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         try {
             em.persist(object);
             em.getTransaction().commit();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             em.getTransaction().rollback();
