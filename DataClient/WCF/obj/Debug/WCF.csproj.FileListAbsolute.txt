@@ -1,0 +1,12 @@
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\WCF.dll.config
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\WCF.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\WCF.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\Iesi.Collections.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\NHibernate.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\Npgsql.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\Iesi.Collections.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\NHibernate.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\Npgsql.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\obj\Debug\WCF.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\obj\Debug\WCF.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\obj\Debug\WCF.csprojResolveAssemblyReference.cache
