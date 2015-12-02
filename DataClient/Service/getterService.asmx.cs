@@ -45,7 +45,7 @@ namespace Service
             using (var session = sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(50).AddOrder(Order.Desc("Speed")).List();
+                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(50).AddOrder(Order.Desc(order)).List();
 
                 foreach (Positions pos in poslist)
                 {

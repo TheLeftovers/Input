@@ -1,4 +1,5 @@
 ﻿using NHibernate.Cfg;
+using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,9 @@ namespace WCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        [WebInvoke(Method="GET",
-                    ResponseFormat = WebMessageFormat.Json,
-                    UriTemplate = "pos/{max}")]
-        public List<Positions> GetPositionsList(int max)
+       
+        [WebGet]
+        public List<Positions> GetPositionsList(int max, string order)
         {
             var cfg = new Configuration();
             List<Positions> Position = new List<Positions>();
@@ -33,11 +33,11 @@ namespace WCF
             cfg.AddAssembly(Assembly.GetExecutingAssembly());
             var sessionFactory = cfg.BuildSessionFactory();
 
-
+            
             using (var session = sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(50).List();
+                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(50).AddOrder(Order.Desc(order)).List();
 
                 foreach (Positions pos in poslist)
                 {
