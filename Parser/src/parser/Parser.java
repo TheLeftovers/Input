@@ -9,14 +9,17 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.BatchUpdateException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Time;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,11 +45,113 @@ public class Parser {
             e.printStackTrace();
         }
 
-        new Thread() {
-            public void run() {
-                readPositionsCsv();
+        readMonitoringCsv();
+        readPositionsCsv();
+    }
+
+    public static void insertMonitoringInDb(ArrayList<Monitoring> monitoringArray) {
+        try {
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO monitoring VALUES(?, ?, ?, ?, ?, ?, ?);");
+
+            for (Monitoring mon : monitoringArray) {
+                ps.setLong(1, mon.getUnitId());
+                ps.setString(2, mon.getType());
+                ps.setLong(3, mon.getMin());
+                ps.setLong(4, mon.getMax());
+                ps.setLong(5, mon.getSum());
+                ps.setDate(6, mon.getBeginTime());
+                ps.setDate(7, mon.getEndTime());
+
+                ps.addBatch();
             }
-        }.start();
+
+            ps.executeBatch();
+            ps.close();
+            System.out.println("Done with the insertion of monitoring into the database.");
+        } catch (BatchUpdateException e) {
+            e.getNextException().printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void readMonitoringCsv() {
+        String csvFile = "..//csv//monitoring.csv";
+        ArrayList monArray = new ArrayList<Monitoring>();
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+
+                String[] csvLineArray = line.split(csvSplitBy);
+
+                String unitId = csvLineArray[0];
+                long longUnitId = Long.parseLong(unitId);
+
+                String beginTimeA = csvLineArray[1];
+
+                String endTimeA = csvLineArray[2];
+
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+                java.util.Date beginTime = null;
+                java.util.Date endTime = null;
+                java.sql.Date sqlBeginTime = null;
+                java.sql.Date sqlEndTime = null;
+                try {
+                    beginTime = format.parse(beginTimeA);
+                    sqlBeginTime = new java.sql.Date(beginTime.getTime());
+                    endTime = format.parse(endTimeA);
+                    sqlEndTime = new java.sql.Date(endTime.getTime());
+                } catch (ParseException ex) {
+                    Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                String type = csvLineArray[3];
+
+                String min = csvLineArray[4];
+                long longMin = Double.valueOf(min).longValue();
+
+                String max = csvLineArray[5];
+                long longMax = Double.valueOf(max).longValue();
+
+                String sum = csvLineArray[6];
+                long longSum = Double.valueOf(sum).longValue();
+
+                Monitoring mon = new Monitoring();
+                mon.setBeginTime(sqlBeginTime);
+                mon.setEndTime(sqlEndTime);
+                mon.setMax(longMax);
+                mon.setMin(longMin);
+                mon.setSum(longSum);
+                mon.setType(type);
+                mon.setUnitId(longUnitId);
+
+                monArray.add(mon);
+
+                if (monArray.size() >= 150) {
+                    insertMonitoringInDb(monArray);
+                    monArray.removeAll(monArray);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    if (monArray.size() < 150) {
+                        insertMonitoringInDb(monArray);
+                        monArray.removeAll(monArray);
+                    }
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public static void insertPositionsInDb(ArrayList<Position> Positions) {
@@ -71,10 +176,12 @@ public class Parser {
 
             ps.executeBatch();
             ps.close();
+            System.out.println("Done with the insertion of positions into the database.");
+        } catch (BatchUpdateException e) {
+            e.getNextException().printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static void readPositionsCsv() {
