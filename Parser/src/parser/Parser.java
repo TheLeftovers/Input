@@ -67,7 +67,7 @@ public class Parser {
 
             ps.executeBatch();
             ps.close();
-            System.out.println("Done with the insertion of monitoring into the database.");
+            
         } catch (BatchUpdateException e) {
             e.getNextException().printStackTrace();
         } catch (Exception e) {
@@ -176,7 +176,7 @@ public class Parser {
 
             ps.executeBatch();
             ps.close();
-            System.out.println("Done with the insertion of positions into the database.");
+            
         } catch (BatchUpdateException e) {
             e.getNextException().printStackTrace();
         } catch (Exception e) {
