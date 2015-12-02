@@ -44,17 +44,106 @@ public class Parser {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
+        readEventsCsv();
+        System.out.println("Yay events!");
         readConnectionsCsv();
         System.out.println("Yay connections!");
         readMonitoringCsv();
         System.out.println("Yay monitoring!");
         readPositionsCsv();
-        System.out.println("Yay positions!"); 
-       
+        System.out.println("Yay positions!");
+
     }
     
-     public static void insertConnectionsInDb(ArrayList<Connections> connectionArray) {
+    public static void insertEventInDb(ArrayList<Event> eventsArray) {
+        try {
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO events VALUES(?, ?, ?, ?, ?);");
+
+            for (Event event : eventsArray) {
+                ps.setLong(1, event.getUnitId());
+                ps.setString(2, event.getPort());
+                ps.setBoolean(3, event.isValue());
+                ps.setDate(4, event.getDate());
+                ps.setTime(5, event.getTime());
+
+                ps.addBatch();
+            }
+
+            ps.executeBatch();
+            ps.close();
+        } catch (BatchUpdateException e) {
+            e.getNextException().printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void readEventsCsv(){
+        String csvFile = "..//csv//events.csv";
+        ArrayList eventsArray = new ArrayList<Event>();
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+
+                String[] csvLineArray = line.split(csvSplitBy);
+                String dateTime = csvLineArray[0];
+                String unitId = csvLineArray[1];
+                long longUnitId = Long.parseLong(unitId);
+                String port = csvLineArray[2];
+                String value = csvLineArray[3];
+                boolean boolValue = convertToBoolean(value);
+                String[] dateTimeArray = dateTime.split(" ");
+                String date = dateTimeArray[0];
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                Date dateAsDate = null;
+                java.sql.Date sqlDate = null;
+                try {
+                    dateAsDate = format.parse(date);
+                    sqlDate = new java.sql.Date(dateAsDate.getTime());
+                } catch (ParseException ex) {
+                    Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String time = dateTimeArray[1];
+                Time timeDate = Time.valueOf(time);
+
+                Event event = new Event();
+
+                event.setDate(sqlDate);
+                event.setTime(timeDate);
+                event.setUnitId(longUnitId);
+                event.setPort(port);
+                event.setValue(boolValue);
+                
+                eventsArray.add(event);
+                if (eventsArray.size() >= 150) {
+                    insertEventInDb(eventsArray);
+                    eventsArray.removeAll(eventsArray);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    if (eventsArray.size() < 150) {
+                        insertEventInDb(eventsArray);
+                        eventsArray.removeAll(eventsArray);
+                    }
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    public static void insertConnectionsInDb(ArrayList<Connections> connectionArray) {
         try {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO connections VALUES(?, ?, ?, ?, ?);");
 
@@ -64,10 +153,10 @@ public class Parser {
                 ps.setBoolean(3, con.getValue());
                 ps.setDate(4, con.getDate());
                 ps.setTime(5, con.getTime());
-                
+
                 ps.addBatch();
             }
-            
+
             ps.executeBatch();
             ps.close();
         } catch (BatchUpdateException e) {
@@ -76,8 +165,8 @@ public class Parser {
             e.printStackTrace();
         }
     }
-    
-    public static void readConnectionsCsv(){
+
+    public static void readConnectionsCsv() {
         String csvFile = "..//csv//connections.csv";
         ArrayList conArray = new ArrayList<Connections>();
 
@@ -99,7 +188,7 @@ public class Parser {
                     sqlDate = new java.sql.Date(dateAsDate.getTime());
                 } catch (ParseException ex) {
                     Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
-                    
+
                 }
                 String time = dateTimeArray[1];
                 String unitId = csvLineArray[1];
@@ -118,7 +207,7 @@ public class Parser {
                 connection.setUnitId(longUnitId);
                 connection.setPort(port);
                 connection.setValue(boolValue);
-                
+
                 conArray.add(connection);
                 if (conArray.size() >= 150) {
                     insertConnectionsInDb(conArray);
@@ -156,13 +245,13 @@ public class Parser {
                 ps.setLong(5, mon.getSum());
                 ps.setTimestamp(6, mon.getBeginTime());
                 ps.setTimestamp(7, mon.getEndTime());
-                
+
                 ps.addBatch();
             }
 
             ps.executeBatch();
             ps.close();
-            
+
         } catch (BatchUpdateException e) {
             e.getNextException().printStackTrace();
         } catch (Exception e) {
@@ -186,7 +275,7 @@ public class Parser {
                 long longUnitId = Long.parseLong(unitId);
 
                 String beginTimeA = csvLineArray[1];
-                
+
                 String endTimeA = csvLineArray[2];
 
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
@@ -271,7 +360,7 @@ public class Parser {
 
             ps.executeBatch();
             ps.close();
-            
+
         } catch (BatchUpdateException e) {
             e.getNextException().printStackTrace();
         } catch (Exception e) {
@@ -357,7 +446,7 @@ public class Parser {
             }
         }
     }
-    
+
     private static boolean convertToBoolean(String value) {
         boolean returnValue = false;
         if ("1".equalsIgnoreCase(value)) {
