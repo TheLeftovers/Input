@@ -3,9 +3,11 @@ using NHibernate.Criterion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Services;
 using System.Xml.Serialization;
 
@@ -21,12 +23,13 @@ namespace Service
     // [System.Web.Script.Services.ScriptService]
     public class getterService : System.Web.Services.WebService
     {
+
         [WebMethod]
-        [XmlInclude(typeof(Positions))]
         public List<Positions> GetPositionsList(int max, string order)
         {
             var cfg = new Configuration();
-            List<Positions> Positions = new List<Positions>();
+            List<Positions> Position = new List<Positions>();
+
 
             cfg.DataBaseIntegration(x =>
             {
@@ -40,24 +43,22 @@ namespace Service
 
 
             using (var session = sessionFactory.OpenSession())
-
             using (var tx = session.BeginTransaction())
             {
-                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(1000).AddOrder(Order.Desc(order)).List();
+                var poslist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(50).AddOrder(Order.Desc("Speed")).List();
 
                 foreach (Positions pos in poslist)
                 {
-                    Positions positions = session.Get<Positions>(pos.UnitId);
-                    Positions.Add(positions);
+                    Positions P = session.Get<Positions>(pos.UnitId);
+                    Position.Add(P);
                 }
 
-
+                poslist.Clear();
                 tx.Commit();
-                session.Connection.Close();
-                session.Close();
+                Position.TrimExcess();
+                return Position;
 
-
-                return Positions;
+                
             }
         }
     }

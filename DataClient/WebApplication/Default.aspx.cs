@@ -15,12 +15,14 @@ namespace WebApplication
             ArrayList unit = new ArrayList();
             ArrayList speed = new ArrayList();
 
+            int max = 10;
+
             proxy.Open();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < max+1; i++)
             {
-                unit.Add(proxy.GetPositionsList(10, "Speed")[i].UnitId);
-                speed.Add(proxy.GetPositionsList(10, "Speed")[i].Speed);
+                unit.Add(proxy.GetPositionsList(max, "Speed")[i].UnitId);
+                speed.Add(proxy.GetPositionsList(max, "Speed")[i].Speed);
             }
             Chart1.Series.Clear();
             Chart1.Series.Add(new System.Web.UI.DataVisualization.Charting.Series("1"));
