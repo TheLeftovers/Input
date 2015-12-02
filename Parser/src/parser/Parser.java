@@ -44,9 +44,104 @@ public class Parser {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
+        readConnectionsCsv();
+        System.out.println("Yay connections!");
         readMonitoringCsv();
+        System.out.println("Yay monitoring!");
         readPositionsCsv();
+        System.out.println("Yay positions!"); 
+       
+    }
+    
+     public static void insertConnectionsInDb(ArrayList<Connections> connectionArray) {
+        try {
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO connections VALUES(?, ?, ?, ?, ?);");
+
+            for (Connections con : connectionArray) {
+                ps.setLong(1, con.getUnitId());
+                ps.setString(2, con.getPort());
+                ps.setBoolean(3, con.getValue());
+                ps.setDate(4, con.getDate());
+                ps.setTime(5, con.getTime());
+                
+                ps.addBatch();
+            }
+            
+            ps.executeBatch();
+            ps.close();
+        } catch (BatchUpdateException e) {
+            e.getNextException().printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void readConnectionsCsv(){
+        String csvFile = "..//csv//connections.csv";
+        ArrayList conArray = new ArrayList<Connections>();
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+
+                String[] csvLineArray = line.split(csvSplitBy);
+                String dateTime = csvLineArray[0];
+                String[] dateTimeArray = dateTime.split(" ");
+                String date = dateTimeArray[0];
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                Date dateAsDate = null;
+                java.sql.Date sqlDate = null;
+                try {
+                    dateAsDate = format.parse(date);
+                    sqlDate = new java.sql.Date(dateAsDate.getTime());
+                } catch (ParseException ex) {
+                    Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
+                    
+                }
+                String time = dateTimeArray[1];
+                String unitId = csvLineArray[1];
+                long longUnitId = Long.parseLong(unitId);
+                String port = csvLineArray[2];
+                String value = csvLineArray[3];
+
+                Time timeDate = Time.valueOf(time);
+
+                boolean boolValue = convertToBoolean(value);
+
+                Connections connection = new Connections();
+
+                connection.setDate(sqlDate);
+                connection.setTime(timeDate);
+                connection.setUnitId(longUnitId);
+                connection.setPort(port);
+                connection.setValue(boolValue);
+                
+                conArray.add(connection);
+                if (conArray.size() >= 150) {
+                    insertConnectionsInDb(conArray);
+                    conArray.removeAll(conArray);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    if (conArray.size() < 150) {
+                        insertConnectionsInDb(conArray);
+                        conArray.removeAll(conArray);
+                    }
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public static void insertMonitoringInDb(ArrayList<Monitoring> monitoringArray) {
@@ -261,5 +356,13 @@ public class Parser {
                 }
             }
         }
+    }
+    
+    private static boolean convertToBoolean(String value) {
+        boolean returnValue = false;
+        if ("1".equalsIgnoreCase(value)) {
+            returnValue = true;
+        }
+        return returnValue;
     }
 }
