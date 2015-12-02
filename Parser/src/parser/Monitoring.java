@@ -5,7 +5,7 @@
  */
 package parser;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -17,9 +17,25 @@ public class Monitoring {
     String type;
     long min;
     long max;
-    Date beginTime;
-    Date endTime;
+    Timestamp beginTime;
+    Timestamp endTime;
     long sum;
+
+    public Timestamp getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Timestamp beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public Timestamp getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
+    }
 
     public long getUnitId() {
         return unitId;
@@ -52,23 +68,7 @@ public class Monitoring {
     public void setMax(long max) {
         this.max = max;
     }
-
-    public Date getBeginTime() {
-        return beginTime;
-    }
-
-    public void setBeginTime(Date beginTime) {
-        this.beginTime = beginTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
+    
     public long getSum() {
         return sum;
     }

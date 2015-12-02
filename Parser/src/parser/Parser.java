@@ -59,9 +59,9 @@ public class Parser {
                 ps.setLong(3, mon.getMin());
                 ps.setLong(4, mon.getMax());
                 ps.setLong(5, mon.getSum());
-                ps.setDate(6, mon.getBeginTime());
-                ps.setDate(7, mon.getEndTime());
-
+                ps.setTimestamp(6, mon.getBeginTime());
+                ps.setTimestamp(7, mon.getEndTime());
+                
                 ps.addBatch();
             }
 
@@ -91,19 +91,19 @@ public class Parser {
                 long longUnitId = Long.parseLong(unitId);
 
                 String beginTimeA = csvLineArray[1];
-
+                
                 String endTimeA = csvLineArray[2];
 
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
                 java.util.Date beginTime = null;
                 java.util.Date endTime = null;
-                java.sql.Date sqlBeginTime = null;
-                java.sql.Date sqlEndTime = null;
+                java.sql.Timestamp sqlBeginTime = null;
+                java.sql.Timestamp sqlEndTime = null;
                 try {
                     beginTime = format.parse(beginTimeA);
-                    sqlBeginTime = new java.sql.Date(beginTime.getTime());
+                    sqlBeginTime = new java.sql.Timestamp(beginTime.getTime());
                     endTime = format.parse(endTimeA);
-                    sqlEndTime = new java.sql.Date(endTime.getTime());
+                    sqlEndTime = new java.sql.Timestamp(endTime.getTime());
                 } catch (ParseException ex) {
                     Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
                 }
