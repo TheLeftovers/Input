@@ -22,6 +22,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import static parser.FileWatcher.watchDirectoryPath;
 
 /**
  *
@@ -45,15 +48,10 @@ public class Parser {
             e.printStackTrace();
         }
 
-        readEventsCsv();
-        System.out.println("Yay events!");
-        readConnectionsCsv();
-        System.out.println("Yay connections!");
-        readMonitoringCsv();
-        System.out.println("Yay monitoring!");
-        readPositionsCsv();
-        System.out.println("Yay positions!");
-
+        Path path = Paths.get("../csv/");
+        while(true){
+            watchDirectoryPath(path);
+        }
     }
     
     public static void insertEventInDb(ArrayList<Event> eventsArray) {
