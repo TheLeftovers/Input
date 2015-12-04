@@ -64,3 +64,9 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Mi
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Release\WebApplication.csprojResolveAssemblyReference.cache
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Release\WebApplication.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Release\WebApplication.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Iesi.Collections.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\NHibernate.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Npgsql.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Iesi.Collections.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\NHibernate.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Npgsql.xml

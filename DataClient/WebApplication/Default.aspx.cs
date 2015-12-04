@@ -12,20 +12,37 @@ namespace WebApplication
         {
             getterServiceSoapClient proxy = new getterServiceSoapClient();
 
+            //New ArrayLists of data used in chart(XY)
             ArrayList unit = new ArrayList();
             ArrayList speed = new ArrayList();
 
-            int Max = 10;
+            //Parameters getPositionsList
+            int max = 10;
             string OrderBy = "Speed";
 
             proxy.Open();
 
-            for(int i=0; i < Max; i++)
+            //Place values needed in ArrayList
+            for(int i=0; i < max; i++)
             {
-                unit.Add(proxy.GetPositionsList(Max, OrderBy)[i].UnitId);
-                speed.Add(proxy.GetPositionsList(Max, OrderBy)[i].Speed);
+                unit.Add(proxy.GetPositionsList(max, OrderBy)[i].UnitId);
+                speed.Add(proxy.GetPositionsList(max, OrderBy)[i].Speed);
             }
 
+            //Get Minimum and Maximum value in ArrayList 'speed'
+            speed.Sort();
+            int Max = int.MinValue;
+            int Min = int.MaxValue;
+
+            foreach (int x in speed)
+            {
+                if (Max < x)
+                {   Max = x;    }
+                if (Min > x)
+                {   Min = x;    }
+            }
+
+            //Setup Chart
             Chart1.Series.Clear();
             Chart1.Series.Add(new System.Web.UI.DataVisualization.Charting.Series("1"));
             Chart1.Series["1"].ChartType = SeriesChartType.Column;
@@ -38,8 +55,8 @@ namespace WebApplication
             Chart1.ChartAreas[0].AxisX.IsStartedFromZero = false;
             Chart1.ChartAreas[0].AxisY.Title = "Speed(KM/H)";
             Chart1.ChartAreas[0].AxisY.Interval = 1;
-            Chart1.ChartAreas[0].AxisY.Minimum = 157;
-            Chart1.ChartAreas[0].AxisY.Maximum = 166;
+            Chart1.ChartAreas[0].AxisY.Minimum = Min-1;
+            Chart1.ChartAreas[0].AxisY.Maximum = Max;
             Chart1.Series["1"].Sort(PointSortOrder.Descending, "Y");
             Chart1.ChartAreas[0].RecalculateAxesScale();
 

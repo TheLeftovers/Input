@@ -69,3 +69,4 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Mi
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.Owin.Security.OAuth.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
