@@ -92,7 +92,9 @@
   <ItemGroup>
     <Content Include="getterService.asmx" />
     <EmbeddedResource Include="Position.hbm.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="getterService.asmx.cs">

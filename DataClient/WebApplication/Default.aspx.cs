@@ -15,15 +15,17 @@ namespace WebApplication
             ArrayList unit = new ArrayList();
             ArrayList speed = new ArrayList();
 
-            int max = 10;
+            int Max = 10;
+            string OrderBy = "Speed";
 
             proxy.Open();
 
-            for (int i = 0; i < max+1; i++)
+            for(int i=0; i < Max; i++)
             {
-                unit.Add(proxy.GetPositionsList(max, "Speed")[i].UnitId);
-                speed.Add(proxy.GetPositionsList(max, "Speed")[i].Speed);
+                unit.Add(proxy.GetPositionsList(Max, OrderBy)[i].UnitId);
+                speed.Add(proxy.GetPositionsList(Max, OrderBy)[i].Speed);
             }
+
             Chart1.Series.Clear();
             Chart1.Series.Add(new System.Web.UI.DataVisualization.Charting.Series("1"));
             Chart1.Series["1"].ChartType = SeriesChartType.Column;
@@ -35,10 +37,10 @@ namespace WebApplication
             Chart1.ChartAreas[0].AxisX.Title = "Unit ID";
             Chart1.ChartAreas[0].AxisX.IsStartedFromZero = false;
             Chart1.ChartAreas[0].AxisY.Title = "Speed(KM/H)";
-            //Chart1.ChartAreas[0].AxisY.Interval = 1;
-            //Chart1.ChartAreas[0].AxisY.Minimum = 159;
-            //Chart1.ChartAreas[0].AxisY.Maximum = 166;
-            Chart1.Series["1"].Sort(PointSortOrder.Ascending, "X");
+            Chart1.ChartAreas[0].AxisY.Interval = 1;
+            Chart1.ChartAreas[0].AxisY.Minimum = 157;
+            Chart1.ChartAreas[0].AxisY.Maximum = 166;
+            Chart1.Series["1"].Sort(PointSortOrder.Descending, "Y");
             Chart1.ChartAreas[0].RecalculateAxesScale();
 
             proxy.Close();

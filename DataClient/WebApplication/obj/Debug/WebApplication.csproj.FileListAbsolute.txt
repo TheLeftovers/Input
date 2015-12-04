@@ -18,6 +18,7 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\As
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\AspNet.ScriptManager.jQuery.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\EntityFramework.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\EntityFramework.SqlServer.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Iesi.Collections.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.AspNet.Identity.Core.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.AspNet.Identity.EntityFramework.dll
@@ -37,11 +38,16 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Mi
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.ScriptManager.WebForms.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.Web.Infrastructure.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Newtonsoft.Json.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\NHibernate.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Npgsql.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Owin.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Optimization.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Providers.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\WebGrease.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Iesi.Collections.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\NHibernate.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Npgsql.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Optimization.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Antlr3.Runtime.pdb
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Newtonsoft.Json.xml
@@ -61,6 +67,5 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Mi
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.Owin.Security.Twitter.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Microsoft.Owin.Security.OAuth.xml
-d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.pdb

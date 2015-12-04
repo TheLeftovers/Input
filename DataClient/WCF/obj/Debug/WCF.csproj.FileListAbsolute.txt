@@ -9,4 +9,3 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\NHibernate.xm
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\bin\Npgsql.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\obj\Debug\WCF.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\obj\Debug\WCF.pdb
-d:\johan\documenten\visual studio 2015\Projects\DataClient\WCF\obj\Debug\WCF.csprojResolveAssemblyReference.cache
