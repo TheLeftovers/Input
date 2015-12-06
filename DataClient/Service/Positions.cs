@@ -13,7 +13,7 @@ namespace Service
         public virtual int Speed { get; set; }
         public virtual int Course { get; set; }
         public virtual DateTime Date { get; set; }
-        public virtual DateTime Time { get; set; }
+        public virtual string Time { get; set; }
         public virtual int NumSatellites { get; set; }
         public virtual string Quality { get; set; }
         public virtual int Hdop { get; set; }
@@ -21,7 +21,7 @@ namespace Service
         public Positions()
         {}
 
-        public Positions(DateTime Time, long UnitId, DateTime Date, int RdX, int RdY, int Speed, string Quality, int Hdop, int Course, int NumSatellites)
+        public Positions(string Time, long UnitId, DateTime Date, int RdX, int RdY, int Speed, string Quality, int Hdop, int Course, int NumSatellites)
         {
             this.Course = Course;
             this.Date = Date;

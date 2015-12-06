@@ -194,6 +194,111 @@ namespace WebApplication.positionGetter {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Events", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Events : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private long UnitIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PortField;
+        
+        private bool ValueField;
+        
+        private System.DateTime DateField;
+        
+        private System.DateTime TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long UnitId {
+            get {
+                return this.UnitIdField;
+            }
+            set {
+                if ((this.UnitIdField.Equals(value) != true)) {
+                    this.UnitIdField = value;
+                    this.RaisePropertyChanged("UnitId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Port {
+            get {
+                return this.PortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PortField, value) != true)) {
+                    this.PortField = value;
+                    this.RaisePropertyChanged("Port");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public bool Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="positionGetter.getterServiceSoap")]
     public interface getterServiceSoap {
@@ -204,6 +309,13 @@ namespace WebApplication.positionGetter {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPositionsList", ReplyAction="*")]
         System.Threading.Tasks.Task<WebApplication.positionGetter.GetPositionsListResponse> GetPositionsListAsync(WebApplication.positionGetter.GetPositionsListRequest request);
+        
+        // CODEGEN: Generating message contract since element name order from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEventsList", ReplyAction="*")]
+        WebApplication.positionGetter.GetEventsListResponse GetEventsList(WebApplication.positionGetter.GetEventsListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEventsList", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.positionGetter.GetEventsListResponse> GetEventsListAsync(WebApplication.positionGetter.GetEventsListRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -278,6 +390,78 @@ namespace WebApplication.positionGetter {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEventsListRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEventsList", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.positionGetter.GetEventsListRequestBody Body;
+        
+        public GetEventsListRequest() {
+        }
+        
+        public GetEventsListRequest(WebApplication.positionGetter.GetEventsListRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEventsListRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int max;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string order;
+        
+        public GetEventsListRequestBody() {
+        }
+        
+        public GetEventsListRequestBody(int max, string order) {
+            this.max = max;
+            this.order = order;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEventsListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEventsListResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.positionGetter.GetEventsListResponseBody Body;
+        
+        public GetEventsListResponse() {
+        }
+        
+        public GetEventsListResponse(WebApplication.positionGetter.GetEventsListResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEventsListResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.positionGetter.Events[] GetEventsListResult;
+        
+        public GetEventsListResponseBody() {
+        }
+        
+        public GetEventsListResponseBody(WebApplication.positionGetter.Events[] GetEventsListResult) {
+            this.GetEventsListResult = GetEventsListResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface getterServiceSoapChannel : WebApplication.positionGetter.getterServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -330,6 +514,33 @@ namespace WebApplication.positionGetter {
             inValue.Body.max = max;
             inValue.Body.order = order;
             return ((WebApplication.positionGetter.getterServiceSoap)(this)).GetPositionsListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.positionGetter.GetEventsListResponse WebApplication.positionGetter.getterServiceSoap.GetEventsList(WebApplication.positionGetter.GetEventsListRequest request) {
+            return base.Channel.GetEventsList(request);
+        }
+        
+        public WebApplication.positionGetter.Events[] GetEventsList(int max, string order) {
+            WebApplication.positionGetter.GetEventsListRequest inValue = new WebApplication.positionGetter.GetEventsListRequest();
+            inValue.Body = new WebApplication.positionGetter.GetEventsListRequestBody();
+            inValue.Body.max = max;
+            inValue.Body.order = order;
+            WebApplication.positionGetter.GetEventsListResponse retVal = ((WebApplication.positionGetter.getterServiceSoap)(this)).GetEventsList(inValue);
+            return retVal.Body.GetEventsListResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.positionGetter.GetEventsListResponse> WebApplication.positionGetter.getterServiceSoap.GetEventsListAsync(WebApplication.positionGetter.GetEventsListRequest request) {
+            return base.Channel.GetEventsListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.positionGetter.GetEventsListResponse> GetEventsListAsync(int max, string order) {
+            WebApplication.positionGetter.GetEventsListRequest inValue = new WebApplication.positionGetter.GetEventsListRequest();
+            inValue.Body = new WebApplication.positionGetter.GetEventsListRequestBody();
+            inValue.Body.max = max;
+            inValue.Body.order = order;
+            return ((WebApplication.positionGetter.getterServiceSoap)(this)).GetEventsListAsync(inValue);
         }
     }
 }

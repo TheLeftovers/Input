@@ -36,6 +36,35 @@
           <s:element minOccurs="1" maxOccurs="1" name="Hdop" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetEventsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="max" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="order" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEventsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEventsListResult" type="tns:ArrayOfEvents" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEvents">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Events" nillable="true" type="tns:Events" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Events">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UnitId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Port" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetPositionsListSoapIn">
@@ -44,10 +73,20 @@
   <wsdl:message name="GetPositionsListSoapOut">
     <wsdl:part name="parameters" element="tns:GetPositionsListResponse" />
   </wsdl:message>
+  <wsdl:message name="GetEventsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEventsList" />
+  </wsdl:message>
+  <wsdl:message name="GetEventsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEventsListResponse" />
+  </wsdl:message>
   <wsdl:portType name="getterServiceSoap">
     <wsdl:operation name="GetPositionsList">
       <wsdl:input message="tns:GetPositionsListSoapIn" />
       <wsdl:output message="tns:GetPositionsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsList">
+      <wsdl:input message="tns:GetEventsListSoapIn" />
+      <wsdl:output message="tns:GetEventsListSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="getterServiceSoap" type="tns:getterServiceSoap">
@@ -61,11 +100,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetEventsList">
+      <soap:operation soapAction="http://tempuri.org/GetEventsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="getterServiceSoap12" type="tns:getterServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetPositionsList">
       <soap12:operation soapAction="http://tempuri.org/GetPositionsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsList">
+      <soap12:operation soapAction="http://tempuri.org/GetEventsList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

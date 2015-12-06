@@ -190,10 +190,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/02/2015 11:52:56</publishTime>
     </File>
     <File Include="bin/WebApplication.dll">
-      <publishTime>12/04/2015 19:00:40</publishTime>
+      <publishTime>12/06/2015 21:10:41</publishTime>
     </File>
     <File Include="bin/WebApplication.pdb">
-      <publishTime>12/04/2015 19:00:40</publishTime>
+      <publishTime>12/06/2015 21:10:41</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>11/02/2015 11:52:42</publishTime>
@@ -214,7 +214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 18:41:35</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>12/06/2015 10:39:15</publishTime>
+      <publishTime>12/06/2015 21:06:32</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>11/28/2015 18:41:31</publishTime>
@@ -327,11 +327,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/_references.js">
       <publishTime>11/28/2015 18:41:33</publishTime>
     </File>
+    <File Include="Service References/positionGetter/WebApplication.positionGetter.Events.datasource">
+      <publishTime>12/06/2015 21:04:52</publishTime>
+    </File>
+    <File Include="Service References/positionGetter/WebApplication.positionGetter.GetEventsListResponse.datasource">
+      <publishTime>12/06/2015 21:04:52</publishTime>
+    </File>
     <File Include="Service References/positionGetter/WebApplication.positionGetter.GetPositionsListResponse.datasource">
-      <publishTime>12/04/2015 14:23:09</publishTime>
+      <publishTime>12/06/2015 21:04:52</publishTime>
     </File>
     <File Include="Service References/positionGetter/WebApplication.positionGetter.Positions.datasource">
-      <publishTime>12/04/2015 14:23:09</publishTime>
+      <publishTime>12/06/2015 21:04:52</publishTime>
     </File>
     <File Include="Site.Master">
       <publishTime>11/28/2015 18:41:35</publishTime>
@@ -343,7 +349,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 18:41:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/04/2015 16:56:36</publishTime>
+      <publishTime>12/06/2015 21:10:41</publishTime>
     </File>
   </ItemGroup>
 </Project>
