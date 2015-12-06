@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Webservice.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -92,11 +93,13 @@
   <ItemGroup>
     <Content Include="getterService.asmx" />
     <EmbeddedResource Include="Position.hbm.xml" />
+    <EmbeddedResource Include="Events.hbm.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events.cs" />
     <Compile Include="getterService.asmx.cs">
       <DependentUpon>getterService.asmx</DependentUpon>
       <SubType>Component</SubType>
