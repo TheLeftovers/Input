@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                assembly="WCF"
+                namespace="WCF">
+  <class name="Events">
+    <id name="UnitId" column="unit_id">
+      <generator class="native" />
+    </id>
+    <property name="Port" column="port"/>
+    <property name="Value" column="value"/>
+    <property name="Time" column="time"/>
+    <property name="Date" column="date"/>
+  </class>
+</hibernate-mapping>

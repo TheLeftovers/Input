@@ -12,9 +12,12 @@ namespace WCF
     [ServiceContract]
     public interface IService1
     {
-        [OperationContract(Name ="GetPositions")]
+        [OperationContract(Name ="DBGetter")]
         [WebGet]
         List<Positions> GetPositionsList(int max, string order);
+
+        [WebGet]
+        List<Events> GetEventsList(int max, string order);
 
     }
 }
