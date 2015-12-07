@@ -24,6 +24,24 @@ public class Position {
     Time time;
     int HDOP;
 
+    public Position(long unitId, double rdx, double rdy, int speed, int course, int numSatellites, String quality, Date date, Time time, int HDOP) {
+        this.unitId = unitId;
+        this.rdx = rdx;
+        this.rdy = rdy;
+        this.speed = speed;
+        this.course = course;
+        this.numSatellites = numSatellites;
+        this.quality = quality;
+        this.date = date;
+        this.time = time;
+        this.HDOP = HDOP;
+    }
+
+    public Position() {
+    }
+
+    
+    
     public int getHDOP() {
         return HDOP;
     }
