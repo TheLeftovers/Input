@@ -24,3 +24,5 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\Npgsql.xm
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.pdb
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\nunit.framework.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\nunit.framework.xml
