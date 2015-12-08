@@ -13,6 +13,24 @@ namespace WebApplication {
     public partial class SiteMaster {
         
         /// <summary>
+        /// AnonymousUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnonymousUser;
+        
+        /// <summary>
+        /// AuthorizedUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AuthorizedUser;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

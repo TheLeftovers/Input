@@ -81,8 +81,13 @@
                 <li><a href="#">CityGIS</a></li>
                 <li><a href="#">Commercieel</a></li>
                     <ul class="login">
+                        <div id="AnonymousUser" runat="server">
                         <li><a runat="server" href="~/Account/Login">Log in</a></li>
                         <li><a runat="server" href="~/Account/Register">Registreer</a></li>
+                    </div>
+                    <div id="AuthorizedUser" runat="server">
+                        Ingelogd als <%: WebApplication.SiteMaster.UserName %>
+                    </div>
                     </ul>
             </ul>
 

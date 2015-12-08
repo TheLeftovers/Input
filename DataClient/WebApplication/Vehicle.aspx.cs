@@ -10,6 +10,15 @@ namespace WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (WebApplication.SiteMaster.LoggedIn)
+            {
+                AnonymousContent.Visible = false;
+                AuthorizedContent.Visible = true;
+            } else
+            {
+                AnonymousContent.Visible = true;
+                AuthorizedContent.Visible = false;
+            }
             getterServiceSoapClient proxy = new getterServiceSoapClient();
 
             //New ArrayLists of data used in chart(XY)

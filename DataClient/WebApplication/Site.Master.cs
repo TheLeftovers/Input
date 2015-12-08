@@ -16,6 +16,9 @@ namespace WebApplication
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
 
+        public static bool LoggedIn { get; internal set; }
+        public static string UserName { get; internal set; }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             // The code below helps to protect against XSRF attacks
@@ -69,7 +72,15 @@ namespace WebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(LoggedIn)
+            {
+                AuthorizedUser.Visible = true;
+                AnonymousUser.Visible = false;
+            } else
+            {
+                AuthorizedUser.Visible = false;
+                AnonymousUser.Visible = true;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
