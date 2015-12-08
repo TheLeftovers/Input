@@ -49,7 +49,7 @@ public class Parser {
             e.printStackTrace();
         }
 
-        Path path = Paths.get("../csv/");
+        Path path = Paths.get("C:/Uploads/");
         
         while(true){
             watchDirectoryPath(path);
