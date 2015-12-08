@@ -24,29 +24,3 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\Npgsql.xm
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.pdb
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-C:\Github\Input\DataClient\Service\bin\roslyn\csc.exe
-C:\Github\Input\DataClient\Service\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Github\Input\DataClient\Service\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Github\Input\DataClient\Service\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Github\Input\DataClient\Service\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Github\Input\DataClient\Service\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Github\Input\DataClient\Service\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Github\Input\DataClient\Service\bin\roslyn\System.Collections.Immutable.dll
-C:\Github\Input\DataClient\Service\bin\roslyn\System.Reflection.Metadata.dll
-C:\Github\Input\DataClient\Service\bin\roslyn\vbc.exe
-C:\Github\Input\DataClient\Service\bin\roslyn\VBCSCompiler.exe
-C:\Github\Input\DataClient\Service\bin\roslyn\VBCSCompiler.exe.config
-C:\Github\Input\DataClient\Service\bin\Service.dll.config
-C:\Github\Input\DataClient\Service\bin\Service.dll
-C:\Github\Input\DataClient\Service\bin\Service.pdb
-C:\Github\Input\DataClient\Service\bin\Iesi.Collections.dll
-C:\Github\Input\DataClient\Service\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Github\Input\DataClient\Service\bin\NHibernate.dll
-C:\Github\Input\DataClient\Service\bin\Npgsql.dll
-C:\Github\Input\DataClient\Service\bin\Iesi.Collections.xml
-C:\Github\Input\DataClient\Service\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Github\Input\DataClient\Service\bin\NHibernate.xml
-C:\Github\Input\DataClient\Service\bin\Npgsql.xml
-C:\Github\Input\DataClient\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-C:\Github\Input\DataClient\Service\obj\Debug\Service.dll
-C:\Github\Input\DataClient\Service\obj\Debug\Service.pdb

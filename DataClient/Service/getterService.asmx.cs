@@ -55,16 +55,16 @@ namespace Service
 
             cfg.AddAssembly(Assembly.GetExecutingAssembly());
             var sessionFactory = cfg.BuildSessionFactory();
-            
+
 
             using (var session = sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-
+                session.CacheMode = CacheMode.Ignore;
                 session.FlushMode = FlushMode.Never;
                 session.DefaultReadOnly = true;
 
-                var positionlist = session.CreateCriteria<Positions>().SetMaxResults(max).SetReadOnly(true).SetFetchSize(100).AddOrder(Order.Desc(order)).List();
+                var positionlist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(100).AddOrder(Order.Desc(order)).List();
 
                 foreach (Positions position in positionlist)
                 {
@@ -74,14 +74,11 @@ namespace Service
 
                 positionlist.Clear();
                 tx.Commit();
-                session.Flush();
-                session.Clear();
-                session.Close();
                 Position.TrimExcess();
                 return Position;
             }
         }
-        /*
+
         [WebMethod]
         public List<Events> GetEventsList(int max, string order)
         {
@@ -113,9 +110,12 @@ namespace Service
             var sessionFactory = cfg.BuildSessionFactory();
 
 
-            using (var session = sessionFactory.OpenStatelessSession())
+            using (var session = sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
+                session.CacheMode = CacheMode.Ignore;
+                session.FlushMode = FlushMode.Never;
+                session.DefaultReadOnly = true;
 
                 var eventlist = session.CreateCriteria<Events>().SetMaxResults(max).SetFetchSize(100).AddOrder(Order.Desc(order)).List();
 
@@ -130,8 +130,6 @@ namespace Service
                 Event.TrimExcess();
                 return Event;
             }
-            
         }
-        */
     }
 }
