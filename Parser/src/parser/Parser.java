@@ -40,6 +40,7 @@ public class Parser {
     static String csvSplitBy = ";";
     static String url = "jdbc:postgresql://localhost:5432/project56";
     static Connection conn = null;
+    static int arraySizeMax = 10000;
 
     public static void main(String[] args) {
         try {
@@ -118,7 +119,7 @@ public class Parser {
                 event.setValue(boolValue);
                 
                 eventsArray.add(event);
-                if (eventsArray.size() >= 150) {
+                if (eventsArray.size() >= arraySizeMax) {
                     insertEventInDb(eventsArray);
                     eventsArray.removeAll(eventsArray);
                 }
@@ -130,7 +131,7 @@ public class Parser {
         } finally {
             if (br != null) {
                 try {
-                    if (eventsArray.size() < 150) {
+                    if (eventsArray.size() < arraySizeMax) {
                         insertEventInDb(eventsArray);
                         eventsArray.removeAll(eventsArray);
                     }
@@ -208,7 +209,7 @@ public class Parser {
                 connection.setValue(boolValue);
 
                 conArray.add(connection);
-                if (conArray.size() >= 150) {
+                if (conArray.size() >= arraySizeMax) {
                     insertConnectionsInDb(conArray);
                     conArray.removeAll(conArray);
                 }
@@ -220,7 +221,7 @@ public class Parser {
         } finally {
             if (br != null) {
                 try {
-                    if (conArray.size() < 150) {
+                    if (conArray.size() < arraySizeMax) {
                         insertConnectionsInDb(conArray);
                         conArray.removeAll(conArray);
                     }
@@ -313,7 +314,7 @@ public class Parser {
 
                 monArray.add(mon);
 
-                if (monArray.size() >= 150) {
+                if (monArray.size() >= arraySizeMax) {
                     insertMonitoringInDb(monArray);
                     monArray.removeAll(monArray);
                 }
@@ -325,7 +326,7 @@ public class Parser {
         } finally {
             if (br != null) {
                 try {
-                    if (monArray.size() < 150) {
+                    if (monArray.size() < arraySizeMax) {
                         insertMonitoringInDb(monArray);
                         monArray.removeAll(monArray);
                     }
@@ -422,7 +423,7 @@ public class Parser {
                 position.setUnitId(longUnitId);
 
                 positions.add(position);
-                if (positions.size() >= 150) {
+                if (positions.size() >= arraySizeMax) {
                     insertPositionsInDb(positions);
                     positions.removeAll(positions);
                 }
@@ -434,7 +435,7 @@ public class Parser {
         } finally {
             if (br != null) {
                 try {
-                    if (positions.size() < 150) {
+                    if (positions.size() < arraySizeMax) {
                         insertPositionsInDb(positions);
                         positions.removeAll(positions);
                     }

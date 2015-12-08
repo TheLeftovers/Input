@@ -74,15 +74,16 @@ public class FileWatcher {
                             Path newPath = ((WatchEvent<Path>) watchEvent)
                                     .context();
                             // Output
-                            checkPath(newPath.toString());
                             System.out.println("New path created: " + newPath);
+                            checkPath(newPath.toString());
+                            
                         } else if (ENTRY_MODIFY == kind) {
                             // modified
                             Path newPath = ((WatchEvent<Path>) watchEvent)
                                     .context();
                             // Output
+                            System.out.println("New path created: " + newPath);
                             checkPath(newPath.toString());
-                            System.out.println("New path modified: " + newPath);
                         }
                     }
 
