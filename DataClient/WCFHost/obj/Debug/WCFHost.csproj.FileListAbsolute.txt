@@ -1,0 +1,12 @@
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\WCFHost.exe
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\WCF.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\NHibernate.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\Iesi.Collections.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\WCF.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\NHibernate.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\Iesi.Collections.xml
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\obj\Debug\WCFHost.csprojResolveAssemblyReference.cache
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\obj\Debug\WCFHost.exe
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\obj\Debug\WCFHost.pdb
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\WCFHost.exe.config
+d:\johan\documenten\visual studio 2015\Projects\DataClient\WCFHost\bin\Debug\WCFHost.pdb
