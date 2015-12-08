@@ -99,14 +99,15 @@ public class FileWatcher {
     }
 
     public static void checkPath(String pathToCheck) {
+        String standardPath = "C:/Uploads/";
         if (pathToCheck.equals("monitoring.csv") || pathToCheck.equals("Monitoring.csv")) {
-            readMonitoringCsv();
+            readMonitoringCsv(standardPath + pathToCheck);
         } else if (pathToCheck.equals("events.csv") || pathToCheck.equals("Events.csv")) {
-            readEventsCsv();
+            readEventsCsv(standardPath + pathToCheck);
         } else if (pathToCheck.equals("connections.csv") || pathToCheck.equals("Connections.csv")) {
-            readConnectionsCsv();
+            readConnectionsCsv(standardPath + pathToCheck);
         } else if (pathToCheck.equals("positions.csv") || pathToCheck.equals("Positions.csv")) {
-            readPositionsCsv();
+            readPositionsCsv(standardPath + pathToCheck);
         } else {
             System.out.println("Csv type incorrect/not available.");
         }

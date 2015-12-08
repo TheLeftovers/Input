@@ -44,7 +44,7 @@ public class Parser {
 
     public static void main(String[] args) {
         try {
-            conn = DriverManager.getConnection(url, "postgres", "password");
+            conn = DriverManager.getConnection(url, "postgres", "root");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,8 +79,7 @@ public class Parser {
         }
     }
 
-    public static void readEventsCsv(){
-        String csvFile = "..//csv//events.csv";
+    public static void readEventsCsv(String csvFile){
         ArrayList eventsArray = new ArrayList<Event>();
 
         try {
@@ -166,8 +165,8 @@ public class Parser {
         }
     }
 
-    public static void readConnectionsCsv() {
-        String csvFile = "..//csv//connections.csv";
+    public static void readConnectionsCsv(String csvFile) {
+        
         ArrayList conArray = new ArrayList<Connections>();
 
         try {
@@ -259,8 +258,8 @@ public class Parser {
         }
     }
 
-    public static void readMonitoringCsv() {
-        String csvFile = "..//csv//monitoring.csv";
+    public static void readMonitoringCsv(String csvFile) {
+        
         ArrayList monArray = new ArrayList<Monitoring>();
 
         try {
@@ -368,8 +367,8 @@ public class Parser {
         }
     }
 
-    public static void readPositionsCsv() {
-        String csvFile = "..//csv//positions.csv";
+    public static void readPositionsCsv(String csvFile) {
+        
         ArrayList positions = new ArrayList<Position>();
 
         try {
