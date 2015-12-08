@@ -21,6 +21,21 @@ public class Monitoring {
     Timestamp endTime;
     long sum;
 
+    public Monitoring(long unitId, String type, long min, long max, Timestamp beginTime, Timestamp endTime, long sum) {
+        this.unitId = unitId;
+        this.type = type;
+        this.min = min;
+        this.max = max;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
+        this.sum = sum;
+    }
+
+    public Monitoring() {
+    }
+    
+    
+
     public Timestamp getBeginTime() {
         return beginTime;
     }

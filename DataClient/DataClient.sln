@@ -11,6 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplic
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF", "WCF\WCF.csproj", "{BF056A4B-447C-4E3D-8092-DA8938B57735}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3F0610A6-2397-479E-85EF-F49C3FA5B6DB} = {3F0610A6-2397-479E-85EF-F49C3FA5B6DB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

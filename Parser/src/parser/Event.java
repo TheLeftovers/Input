@@ -19,6 +19,19 @@ public class Event {
     Date date;
     Time time;  
 
+    public Event(long unitId, String port, boolean value, Date date, Time time) {
+        this.unitId = unitId;
+        this.port = port;
+        this.value = value;
+        this.date = date;
+        this.time = time;
+    }
+
+    public Event() {
+    }
+
+    
+    
     public long getUnitId() {
         return unitId;
     }

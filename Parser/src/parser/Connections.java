@@ -19,6 +19,17 @@ public class Connections {
     long unitId;
     String port;
 
+    public Connections(Time time, Date date, boolean value, long unitId, String port) {
+        this.time = time;
+        this.date = date;
+        this.value = value;
+        this.unitId = unitId;
+        this.port = port;
+    }
+
+    public Connections() {
+    }
+
     public Time getTime() {
         return time;
     }

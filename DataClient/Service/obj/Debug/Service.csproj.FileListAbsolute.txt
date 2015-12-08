@@ -24,3 +24,33 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\Npgsql.xm
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.dll
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.pdb
 d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\nunit.framework.dll
+d:\johan\documenten\visual studio 2015\Projects\DataClient\Service\bin\nunit.framework.xml
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\csc.exe
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\vbc.exe
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\VBCSCompiler.exe
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Service.dll.config
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Service.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Service.pdb
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Iesi.Collections.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\NHibernate.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Npgsql.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\nunit.framework.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Iesi.Collections.xml
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\NHibernate.xml
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\Npgsql.xml
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\bin\nunit.framework.xml
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\obj\Debug\Service.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\DataClient\Service\obj\Debug\Service.pdb

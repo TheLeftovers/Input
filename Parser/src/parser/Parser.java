@@ -49,6 +49,7 @@ public class Parser {
         }
 
         Path path = Paths.get("../csv/");
+        
         while(true){
             watchDirectoryPath(path);
         }
@@ -336,11 +337,11 @@ public class Parser {
         }
     }
 
-    public static void insertPositionsInDb(ArrayList<Position> Positions) {
+    public static void insertPositionsInDb(ArrayList<Position> positions) {
         try {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO positions VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
-            for (Position position : Positions) {
+            for (Position position : positions) {
 
                 ps.setLong(1, position.getUnitId());
                 ps.setDouble(2, position.getRdx());
