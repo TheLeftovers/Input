@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
-using WebApplication.positionGetter;
+using WebApplication.GetterService;
 
 namespace WebApplication
 {
@@ -19,7 +19,8 @@ namespace WebApplication
                 AnonymousContent.Visible = true;
                 AuthorizedContent.Visible = false;
             }
-            getterServiceSoapClient proxy = new getterServiceSoapClient();
+
+            GetterClient proxy = new GetterClient();
 
             //New ArrayLists of data used in chart(XY)
             ArrayList unit = new ArrayList();
@@ -37,6 +38,7 @@ namespace WebApplication
                 unit.Add(proxy.GetPositionsList(max, OrderBy)[i].UnitId);
                 speed.Add(proxy.GetPositionsList(max, OrderBy)[i].Speed);
             }
+            proxy.Close();
 
             //Get Minimum and Maximum value in ArrayList 'speed'
             speed.Sort();
@@ -69,7 +71,7 @@ namespace WebApplication
             Chart1.Series["1"].Sort(PointSortOrder.Descending, "Y");
             Chart1.ChartAreas[0].RecalculateAxesScale();
 
-            proxy.Close();
+            
         }
     }
 }

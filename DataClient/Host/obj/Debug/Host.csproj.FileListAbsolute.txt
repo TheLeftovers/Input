@@ -1,0 +1,13 @@
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Host.exe.config
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Host.exe
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Host.pdb
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\MySql.Data.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\ServiceLibrary.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\NHibernate.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Iesi.Collections.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\ServiceLibrary.pdb
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\NHibernate.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Iesi.Collections.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.exe
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.pdb

@@ -56,6 +56,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
@@ -217,6 +218,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <None Include="Service References\GetterService\Getter.wsdl" />
+    <None Include="Service References\GetterService\item.disco" />
+    <None Include="Service References\GetterService\configuration91.svcinfo" />
+    <None Include="Service References\GetterService\configuration.svcinfo" />
+    <None Include="Service References\GetterService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="UploadFile.aspx" />
     <Content Include="Users.hbm.xml" />
     <Content Include="Vehicle.aspx" />
@@ -263,13 +272,6 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Service References\positionGetter\getterService.disco" />
-    <None Include="Service References\positionGetter\configuration91.svcinfo" />
-    <None Include="Service References\positionGetter\configuration.svcinfo" />
-    <None Include="Service References\positionGetter\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -280,17 +282,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Service References\positionGetter\getterService.wsdl" />
-    <Content Include="Service References\positionGetter\WebApplication.positionGetter.GetPositionsListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\positionGetter\WebApplication.positionGetter.Positions.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\positionGetter\WebApplication.positionGetter.Events.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\positionGetter\WebApplication.positionGetter.GetEventsListResponse.datasource">
+    <None Include="Service References\GetterService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetterService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetterService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\GetterService\WebApplication.GetterService.Positions.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
@@ -425,6 +426,11 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="MessageBox.cs" />
+    <Compile Include="Service References\GetterService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UploadFile.aspx.cs">
       <DependentUpon>UploadFile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -457,11 +463,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Service References\positionGetter\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -492,7 +493,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\positionGetter\" />
+    <WCFMetadataStorage Include="Service References\GetterService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

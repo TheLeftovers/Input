@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiceLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiceLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPositions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Positions" nillable="true" type="tns:Positions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPositions" nillable="true" type="tns:ArrayOfPositions" />
+  <xs:complexType name="Positions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Course" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Hdop" type="xs:int" />
+      <xs:element minOccurs="0" name="NumSatellites" type="xs:int" />
+      <xs:element minOccurs="0" name="Quality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RdX" type="xs:int" />
+      <xs:element minOccurs="0" name="RdY" type="xs:int" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Positions" nillable="true" type="tns:Positions" />
+</xs:schema>

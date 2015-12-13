@@ -14,6 +14,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <meta name="description" content="The description of my page" />
 </head>
 <body>
     <form runat="server">
@@ -86,7 +87,7 @@
                         <li><a runat="server" href="~/Account/Register">Registreer</a></li>
                     </div>
                     <div id="AuthorizedUser" runat="server">
-                        Ingelogd als <%: WebApplication.SiteMaster.UserName %>
+                        <b>Ingelogd als</b> <%: WebApplication.SiteMaster.UserName %>
                     </div>
                     </ul>
             </ul>

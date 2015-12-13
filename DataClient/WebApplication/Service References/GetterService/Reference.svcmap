@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="444b6a1f-7c71-458a-8def-4b8d56f37101" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8744/WCF/Getter/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="dcea2e0d-4569-4650-9a49-8c1424ee2d2c" SourceId="1" SourceUrl="http://localhost:8744/WCF/Getter/?disco" />
+    <MetadataFile FileName="Getter.wsdl" MetadataType="Wsdl" ID="d67ac100-12c3-4917-b78e-8540df9864dc" SourceId="1" SourceUrl="http://localhost:8744/WCF/Getter/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="d9651d62-ef46-4451-9a7a-639843b50ef5" SourceId="1" SourceUrl="http://localhost:8744/WCF/Getter/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="195f1a4a-cdab-4807-a406-ecca9f501bfb" SourceId="1" SourceUrl="http://localhost:8744/WCF/Getter/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="d76d223e-72ae-4836-b659-f02248728a33" SourceId="1" SourceUrl="http://localhost:8744/WCF/Getter/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

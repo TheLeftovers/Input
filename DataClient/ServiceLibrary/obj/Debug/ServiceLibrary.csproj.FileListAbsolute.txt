@@ -1,0 +1,12 @@
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\ServiceLibrary.dll.config
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\ServiceLibrary.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\ServiceLibrary.pdb
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\MySql.Data.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\NHibernate.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\Npgsql.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\NHibernate.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\Npgsql.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.pdb
