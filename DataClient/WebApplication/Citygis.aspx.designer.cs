@@ -10,6 +10,6 @@
 namespace WebApplication {
     
     
-    public partial class Vehicle {
+    public partial class Citygis {
     }
 }

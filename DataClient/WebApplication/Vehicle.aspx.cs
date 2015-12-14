@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
-using WebApplication.GetterService;
 
 namespace WebApplication
 {
@@ -19,32 +17,17 @@ namespace WebApplication
                 AnonymousContent.Visible = true;
                 AuthorizedContent.Visible = false;
             }
+           
+            //Get ArrayLists from Global.asax used for the Chart.
+            var speed = Global.speed;
+            var unit = Global.unit;
 
-            GetterClient proxy = new GetterClient();
-
-            //New ArrayLists of data used in chart(XY)
-            ArrayList unit = new ArrayList();
-            ArrayList speed = new ArrayList();
-
-            //Parameters getPositionsList
-            int max = 10;
-            string OrderBy = "Speed";
-
-            proxy.Open();
-
-            //Place values needed in ArrayList
-            for (int i = 0; i < max; i++)
-            {
-                unit.Add(proxy.GetPositionsList(max, OrderBy)[i].UnitId);
-                speed.Add(proxy.GetPositionsList(max, OrderBy)[i].Speed);
-            }
-            proxy.Close();
-
-            //Get Minimum and Maximum value in ArrayList 'speed'
+            //Sort elements in ArrayList
             speed.Sort();
             int Max = int.MinValue;
             int Min = int.MaxValue;
 
+            //Get Minimum and Maximum value of ArrayList to define axes of the Chart.
             foreach (int x in speed)
             {
                 if (Max < x)
@@ -53,7 +36,7 @@ namespace WebApplication
                 { Min = x; }
             }
 
-            //Setup Chart
+            //Setup Chart.
             Chart1.Series.Clear();
             Chart1.Series.Add(new System.Web.UI.DataVisualization.Charting.Series("1"));
             Chart1.Series["1"].ChartType = SeriesChartType.Column;
@@ -68,10 +51,9 @@ namespace WebApplication
             Chart1.ChartAreas[0].AxisY.Interval = 1;
             Chart1.ChartAreas[0].AxisY.Minimum = Min - 1;
             Chart1.ChartAreas[0].AxisY.Maximum = Max;
-            Chart1.Series["1"].Sort(PointSortOrder.Descending, "Y");
             Chart1.ChartAreas[0].RecalculateAxesScale();
+            Chart1.Series["1"].Sort(PointSortOrder.Descending, "Y");
+            }
 
-            
-        }
-    }
+     }
 }
