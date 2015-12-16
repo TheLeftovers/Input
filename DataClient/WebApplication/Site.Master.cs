@@ -72,7 +72,8 @@ namespace WebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(LoggedIn)
+
+            if (LoggedIn)
             {
                 AuthorizedUser.Visible = true;
                 AnonymousUser.Visible = false;
@@ -83,6 +84,7 @@ namespace WebApplication
             }
         }
 
+       
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

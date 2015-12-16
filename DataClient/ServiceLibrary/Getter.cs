@@ -16,8 +16,8 @@ namespace ServiceLibrary
         public List<Positions> GetPositionsList(int max, string order)
         {
             var cfg = new Configuration()
-               .SetProperty(NHibernate.Cfg.Environment.FormatSql, Boolean.FalseString).
-               SetProperty(NHibernate.Cfg.Environment.GenerateStatistics, Boolean.FalseString)
+               .SetProperty(NHibernate.Cfg.Environment.FormatSql, Boolean.FalseString)
+               .SetProperty(NHibernate.Cfg.Environment.GenerateStatistics, Boolean.FalseString)
                .SetProperty(NHibernate.Cfg.Environment.Hbm2ddlKeyWords, Hbm2DDLKeyWords.None.ToString())
                .SetProperty(NHibernate.Cfg.Environment.PrepareSql, Boolean.TrueString)
                .SetProperty(NHibernate.Cfg.Environment.PropertyBytecodeProvider, "lcg")

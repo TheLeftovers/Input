@@ -8,5 +8,6 @@ D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\De
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.xml
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\NHibernate.xml
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\bin\Debug\Npgsql.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.dll
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.pdb
