@@ -3,7 +3,10 @@
                 assembly="WebApplication"
                 namespace="WebApplication">
   <class name="WebApplication.Users" table="users">
-    <property name="Email" column="email"/>
-    <property name="Password" column="password"/>
+    <id name="Email" column="email" type="string">
+
+    </id>
+    <property name="Password" column="password" type="string"/>
   </class>
+
 </hibernate-mapping>

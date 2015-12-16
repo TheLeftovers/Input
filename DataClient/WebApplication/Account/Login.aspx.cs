@@ -39,17 +39,16 @@ namespace WebApplication.Account
 
             var cfg = new Configuration();
             List<Users> ulist = new List<Users>();
-
+            
             cfg.DataBaseIntegration(x =>
             {
                 x.ConnectionString = "Server=localhost;database=project56;user id=postgres;password=root";
                 x.Driver<NHibernate.Driver.NpgsqlDriver>();
                 x.Dialect<NHibernate.Dialect.PostgreSQLDialect>();
             });
-
-
+            
             cfg.AddAssembly(Assembly.GetExecutingAssembly());
-            cfg.AddAssembly(typeof(Users).Assembly);
+
             var sessionFactory = cfg.BuildSessionFactory();
 
             using (var session = sessionFactory.OpenSession())
