@@ -5,6 +5,8 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+
 
 namespace WebApplication
 {
@@ -18,8 +20,10 @@ namespace WebApplication
         protected void btnsave_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
+            string FileName = FileUpload1.FileName;
+            string extension = Path.GetExtension(FileName);
 
-            if (FileUpload1.HasFile)
+            if (FileUpload1.HasFile && extension.Equals(".csv", StringComparison.CurrentCultureIgnoreCase))
             {
                 try
                 {
