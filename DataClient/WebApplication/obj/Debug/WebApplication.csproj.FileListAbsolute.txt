@@ -251,3 +251,4 @@ D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\Mi
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.dll
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\obj\Debug\WebApplication.pdb
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\TempImages\chart4_Speed.jpeg

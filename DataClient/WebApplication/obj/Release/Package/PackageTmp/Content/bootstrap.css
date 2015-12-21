@@ -26,7 +26,8 @@ aside,
 details,
 figcaption,
 figure,
-footer,
+footer
+
 header,
 hgroup,
 main,
@@ -353,6 +354,7 @@ a:focus {
 
 img {
   vertical-align: middle;
+    text-align: center;
 }
 
 .img-responsive {
@@ -757,10 +759,10 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
+  padding-right: 0px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 0px;
 }
 
 .container:before,
@@ -4028,6 +4030,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+    text-align: left;
 }
 
 .navbar:before,
@@ -4191,6 +4194,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
 }
 
+
 .navbar-brand {
   float: left;
   padding: 15px 15px;
@@ -4243,6 +4247,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > a {
+  display: block;
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
@@ -4280,6 +4285,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
+    display: block;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -4520,6 +4526,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
+  display: block;
   color: #999999;
 }
 

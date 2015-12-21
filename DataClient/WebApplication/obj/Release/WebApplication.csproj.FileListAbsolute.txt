@@ -70,3 +70,16 @@ d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Np
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Iesi.Collections.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\NHibernate.xml
 d:\johan\documenten\visual studio 2015\Projects\DataClient\WebApplication\bin\Npgsql.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\MySql.Data.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Helpers.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Mvc.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Razor.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.WebPages.Deployment.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.WebPages.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.WebPages.Razor.dll
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Helpers.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Mvc.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.Razor.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.WebPages.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.WebPages.Deployment.xml
+D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\WebApplication\bin\System.Web.WebPages.Razor.xml

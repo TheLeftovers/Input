@@ -1,12 +1,16 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-left: 160px;
     padding-bottom: 20px;
+    font-family: 'Helvetica';
+    height: 100%;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
+    height: 100%;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -35,4 +39,88 @@ input[type="select"] {
     .body-content {
         padding: 0;
     }
+}
+
+.navigation{
+    background: #004C6E;
+    color: white;
+    height: 100%;
+    width: 140px;
+    left: 0;
+    float: left;
+    margin: 0px;
+    padding: 0 0 0 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.brand{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.nav-items{
+    list-style-type: none;
+    width: 120px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li a{
+    display: block;
+    font-size: 15px;
+    background: #004C6E;
+    color: white;
+    padding: 6px 0 6px 8px;
+}
+
+.nav-items li a:hover{
+    display: block;
+    font-size: 15px;
+    background: white;
+    color: #004C6E;
+    padding: 6px 0 6px 8px;
+}
+
+.login{
+    list-style-type: none;
+    width: 120px;
+    margin: 0 0;
+    position: absolute;
+    bottom: 2%;
+    padding: 0;
+}
+
+.login li a{
+    display: block;
+    background: #004C6E;
+    color: white;
+    font-size: 15px;
+    padding: 6px 0 6px 8px;
+}
+
+.login li a:hover{
+    display: block;
+    background: white;
+    color: #004C6E;
+    padding: 6px 0 6px 8px;
+    font-size: 15px;
+}
+
+.footer{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+}
+
+.hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.login #AuthorizedUser{
+    padding: 6px 0 6px 8px;
 }

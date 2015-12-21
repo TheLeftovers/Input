@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                 assembly="ServiceLibrary"
                 namespace="ServiceLibrary">
-  <class name="Positions">
+  <class name="Positions" batch-size="10">
     <id name="UnitId" column="unit_id">
       <generator class="native" />
     </id>

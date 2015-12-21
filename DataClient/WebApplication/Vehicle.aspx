@@ -5,16 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="AuthorizedContent" runat="server">
-        Top 10 hoogste snelheden per UnitID.
-        <br />
-        <asp:Chart ID="Chart1" runat="server" Height="350px" Width="537px" TextAntiAliasingQuality="Normal" RenderType="ImageTag" ImageStorageMode="UseImageLocation" Compression="50" AntiAliasing="Graphics" ViewStateContent="Default" ImageLocation="~/TempImages/ChartPicture_#SEQ(300,5)" BackImageAlignment="Center">
-            <Series>
-                <asp:Series Name="Series1"></asp:Series>
-            </Series>
-            <ChartAreas>
-                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
-            </ChartAreas>
-        </asp:Chart>
+        <asp:Image ID="Image1" runat="server" Visible="false" ImageUrl="" />
     </div>
     <div id="AnonymousContent" runat="server">You are not authorized to view this page. Please login.</div>
 
