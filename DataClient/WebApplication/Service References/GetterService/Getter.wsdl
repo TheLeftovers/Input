@@ -4,25 +4,44 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8744/WCF/Getter/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8744/WCF/Getter/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8744/WCF/Getter/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary" />
+      <xsd:import schemaLocation="http://localhost:8744/WCF/Getter/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IGetter_GetPositionsList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPositionsList" />
+  <wsdl:message name="IGetter_GetUnitList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnitList" />
   </wsdl:message>
-  <wsdl:message name="IGetter_GetPositionsList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPositionsListResponse" />
+  <wsdl:message name="IGetter_GetUnitList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnitListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetSpeedList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpeedList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetSpeedList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpeedListResponse" />
   </wsdl:message>
   <wsdl:portType name="IGetter">
-    <wsdl:operation name="GetPositionsList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetPositionsList" message="tns:IGetter_GetPositionsList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetPositionsListResponse" message="tns:IGetter_GetPositionsList_OutputMessage" />
+    <wsdl:operation name="GetUnitList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetUnitList" message="tns:IGetter_GetUnitList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetUnitListResponse" message="tns:IGetter_GetUnitList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpeedList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetSpeedList" message="tns:IGetter_GetSpeedList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetSpeedListResponse" message="tns:IGetter_GetSpeedList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGetter" type="tns:IGetter">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetPositionsList">
-      <soap:operation soapAction="http://tempuri.org/IGetter/GetPositionsList" style="document" />
+    <wsdl:operation name="GetUnitList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetUnitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpeedList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetSpeedList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

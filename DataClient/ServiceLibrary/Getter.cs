@@ -1,8 +1,12 @@
 ﻿using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Criterion;
+using Npgsql;
+using NpgsqlTypes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -13,40 +17,69 @@ namespace ServiceLibrary
 {
     public class Getter : IGetter
     {
-        public List<Positions> GetPositionsList(int max, string order)
+        public ArrayList GetUnitList()
         {
-            var cfg = new Configuration()
-               .SetProperty(NHibernate.Cfg.Environment.WrapResultSets, Boolean.TrueString);
+            ArrayList Position = new ArrayList();
 
-            List<Positions> Position = new List<Positions>();
+            // Specify connection options and open an connection
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
+                                    "Password=root;Database=project56;");
+            conn.Open();
+
+            // Define query
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT unit_id FROM positions ORDER BY speed DESC LIMIT 10000", conn);
 
 
-            cfg.DataBaseIntegration(x =>
+            // Execute query
+            using (NpgsqlDataReader dr = cmd.ExecuteReader())
             {
-                x.ConnectionString = "Server=localhost;database=project56;user id=postgres;password=root";
-                x.Driver<NHibernate.Driver.NpgsqlDriver>();
-                x.Dialect<NHibernate.Dialect.PostgreSQLDialect>();
-            });
-
-            cfg.AddAssembly(Assembly.GetExecutingAssembly());
-            var sessionFactory = cfg.BuildSessionFactory();
-
-
-            using (ISession session = sessionFactory.OpenSession())
-            using (var tx = session.BeginTransaction())
-            {
-
-                var positionlist = session.CreateCriteria<Positions>().SetMaxResults(max).SetFetchSize(100).AddOrder(Order.Desc(order)).List();
-
-                foreach (Positions position in positionlist)
+                // Get rows and place in ArrayList
+                while (dr.Read())
                 {
-                    Positions P = session.Get<Positions>(position.UnitId);
-                    Position.Add(P);
+                    for (int i = 0; i < dr.FieldCount; i++)
+                    {
+                        Position.Add(dr[i]);
+                    }
                 }
-
-                tx.Commit();
-                return Position;
             }
+
+
+            // Close connection
+            conn.Close();
+
+            return Position;
+        }
+
+        public ArrayList GetSpeedList()
+        {
+            ArrayList Position = new ArrayList();
+
+            // Specify connection options and open an connection
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
+                                    "Password=root;Database=project56;");
+            conn.Open();
+
+            // Define query
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT speed FROM positions ORDER BY speed DESC LIMIT 10000", conn);
+
+
+            // Execute query
+            using (NpgsqlDataReader dr = cmd.ExecuteReader())
+            {
+                // Get rows and place in ArrayList
+                while (dr.Read())
+                {
+                    for (int i = 0; i < dr.FieldCount; i++)
+                    {
+                        Position.Add(dr[i]);
+                    }
+                }
+            }
+
+            // Close connection
+            conn.Close();
+
+            return Position;
         }
     }
 }

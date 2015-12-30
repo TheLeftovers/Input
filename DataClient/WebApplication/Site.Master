@@ -77,17 +77,21 @@
         <div class="navigation">
             <div class="brand">CityGis</div>
             <ul class="nav-items">
-                <li><a runat="server" id="HomeLink" href="Default.aspx">Home</a></li>
-                <li><a runat="server" id="VehicleLink" href="Vehicle.aspx">Wagenpark</a></li>
-                <li><a runat="server" id="CityLink" href="#">CityGIS</a></li>
-                <li><a runat="server" id="CommLink" href="#">Commercieel</a></li>
+                <li><a runat="server" href="Default.aspx">Home</a></li>
+                <li><a runat="server" href="Vehicle.aspx">Wagenpark</a></li>
+                <li><a runat="server" href="Citygis.aspx">CityGIS</a></li>
+                <li><a runat="server" href="Commercial.aspx">Commercieel</a></li>
+                <li><a runat="server" href="UploadFile.aspx">Upload</a></li>
                     <ul class="login">
                         <div id="AnonymousUser" runat="server">
-                        <li><a runat="server" id="LoginLink" href="~/Account/Login">Log in</a></li>
-                        <li><a runat="server" id="RegisterLink" href="~/Account/Register">Registreer</a></li>
+                        <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                        <li><a runat="server" href="~/Account/Register">Registreer</a></li>
                     </div>
                     <div id="AuthorizedUser" runat="server">
                         <b>Ingelogd als</b> <%: WebApplication.SiteMaster.UserName %>
+                        <br />
+                        <li><a runat="server" href="#">Uitloggen</a></li>
+
                     </div>
                     </ul>
             </ul>

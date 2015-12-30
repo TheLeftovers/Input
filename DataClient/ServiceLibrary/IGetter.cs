@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -11,6 +12,9 @@ namespace ServiceLibrary
     public interface IGetter
     {
         [OperationContract]
-        List<Positions> GetPositionsList(int max, string order);
+        ArrayList GetUnitList();
+
+        [OperationContract]
+        ArrayList GetSpeedList();
     }
 }

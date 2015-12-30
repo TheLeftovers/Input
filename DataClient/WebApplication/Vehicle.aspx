@@ -5,8 +5,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="AuthorizedContent" runat="server">
-        <asp:Image ID="Image1" runat="server" Visible="false" ImageUrl="" />
+        <asp:Image ID="Image1" runat="server" Visible="false" />
     </div>
-    <div id="AnonymousContent" runat="server">You are not authorized to view this page. Please login.</div>
+    <div id="AnonymousContent" runat="server">
+        You are not authorized to view this page. Please login.</div>
 
 </asp:Content>

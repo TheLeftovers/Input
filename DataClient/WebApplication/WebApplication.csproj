@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <IncludeIisSettings>false</IncludeIisSettings>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -215,6 +216,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Citygis.aspx" />
+    <Content Include="Commercial.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -227,9 +230,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <EmbeddedResource Include="TempImages\chart4_Speed.jpeg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Include="TempImages\chart50_speed.jpeg" />
     <Content Include="UploadFile.aspx" />
     <Content Include="Users.hbm.xml" />
     <Content Include="Vehicle.aspx" />
@@ -295,9 +296,6 @@
     <None Include="Service References\GetterService\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\GetterService\WebApplication.GetterService.Positions.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -422,6 +420,20 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Citygis.aspx.cs">
+      <DependentUpon>Citygis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Citygis.aspx.designer.cs">
+      <DependentUpon>Citygis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Commercial.aspx.cs">
+      <DependentUpon>Commercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Commercial.aspx.designer.cs">
+      <DependentUpon>Commercial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -430,6 +442,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="MessageBox.cs" />
+    <Compile Include="Positions.cs" />
     <Compile Include="Service References\GetterService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

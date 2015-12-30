@@ -11,6 +11,9 @@ using NHibernate.Cfg;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Web.Security;
+using Npgsql;
+using System.Collections;
+using System.Diagnostics;
 
 namespace WebApplication.Account
 {
@@ -19,9 +22,14 @@ namespace WebApplication.Account
         
         public object Login1 { get; private set; }
         public bool IsValidaded { get; private set; }
+        ArrayList maillist = new ArrayList();
+        ArrayList passwordlist = new ArrayList();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
@@ -31,55 +39,47 @@ namespace WebApplication.Account
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+            stopwatch.Stop();
+            Debug.WriteLine("Tine elapsed: " + stopwatch.Elapsed.Seconds + " seconds");
+
         }
 
         protected void LogIn(object sender, EventArgs e)
         {
-
-
-            var cfg = new Configuration();
-            List<Users> ulist = new List<Users>();
             
-            cfg.DataBaseIntegration(x =>
+            // Specify connection options and open an connection
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
+                                    "Password=root;Database=project56;");
+            conn.Open();
+
+            // Define query
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM users", conn);
+
+            // Execute query
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+
+            //Get rows and place in ArrayList
+            while (dr.Read())
             {
-                x.ConnectionString = "Server=localhost;database=project56;user id=postgres;password=root";
-                x.Driver<NHibernate.Driver.NpgsqlDriver>();
-                x.Dialect<NHibernate.Dialect.PostgreSQLDialect>();
-            });
-            
-            cfg.AddAssembly(Assembly.GetExecutingAssembly());
-
-            var sessionFactory = cfg.BuildSessionFactory();
-
-            using (var session = sessionFactory.OpenSession())
-            using (var tx = session.BeginTransaction())
-            {
-
-                var maillist = session.CreateSQLQuery("SELECT email FROM users").List();
-                var passwordlist = session.CreateSQLQuery("SELECT password FROM users").List();
-
-
-                for (int i=0; i < maillist.Count; i++)
-                {
-                    Users u = new Users(maillist[i].ToString(), passwordlist[i].ToString());
-                    ulist.Add(u);
-                }
-                tx.Commit();
-
+                maillist.Add(dr[0]);
+                passwordlist.Add(dr[1]);
             }
+
+            // Close connection
+            conn.Close();
             
 
-            for (int i = 0; i < ulist.Count; i++)
+            for (int i = 0; i < maillist.Count; i++)
                 {
-                    if (ulist[i].Email.Equals(Email.Text))
+                    if (maillist[i].Equals(Email.Text))
                     {
-                        if (ulist[i].Password.Equals(Password.Text))
+                        if (passwordlist[i].Equals(Password.Text))
                         {
-                            System.Diagnostics.Debug.WriteLine("Logged in as" + ulist[i].Email);
+                            System.Diagnostics.Debug.WriteLine("Logged in as" + maillist[i].ToString());
                             MessageBox.Show(Page, "Logged in");
                             IsValidaded = true;
                             WebApplication.SiteMaster.LoggedIn = true;
-                            WebApplication.SiteMaster.UserName = ulist[i].Email;
+                            WebApplication.SiteMaster.UserName = maillist[i].ToString();
                         }
                         else
                         {
