@@ -19,6 +19,42 @@
   <wsdl:message name="IGetter_GetSpeedList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSpeedListResponse" />
   </wsdl:message>
+  <wsdl:message name="IGetter_GetMaxTempList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxTempList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMaxTempList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxTempListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMinTempList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinTempList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMinTempList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinTempListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMaxTimeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxTimeList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMaxTimeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxTimeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMinTimeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinTimeList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetMinTimeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinTimeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetHDOPList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHDOPList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetHDOPList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHDOPListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetNumSatellitesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumSatellitesList" />
+  </wsdl:message>
+  <wsdl:message name="IGetter_GetNumSatellitesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumSatellitesListResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGetter">
     <wsdl:operation name="GetUnitList">
       <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetUnitList" message="tns:IGetter_GetUnitList_InputMessage" />
@@ -27,6 +63,30 @@
     <wsdl:operation name="GetSpeedList">
       <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetSpeedList" message="tns:IGetter_GetSpeedList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetSpeedListResponse" message="tns:IGetter_GetSpeedList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxTempList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetMaxTempList" message="tns:IGetter_GetMaxTempList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetMaxTempListResponse" message="tns:IGetter_GetMaxTempList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinTempList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetMinTempList" message="tns:IGetter_GetMinTempList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetMinTempListResponse" message="tns:IGetter_GetMinTempList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxTimeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetMaxTimeList" message="tns:IGetter_GetMaxTimeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetMaxTimeListResponse" message="tns:IGetter_GetMaxTimeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinTimeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetMinTimeList" message="tns:IGetter_GetMinTimeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetMinTimeListResponse" message="tns:IGetter_GetMinTimeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHDOPList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetHDOPList" message="tns:IGetter_GetHDOPList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetHDOPListResponse" message="tns:IGetter_GetHDOPList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumSatellitesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetNumSatellitesList" message="tns:IGetter_GetNumSatellitesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetNumSatellitesListResponse" message="tns:IGetter_GetNumSatellitesList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGetter" type="tns:IGetter">
@@ -42,6 +102,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetSpeedList">
       <soap:operation soapAction="http://tempuri.org/IGetter/GetSpeedList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxTempList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetMaxTempList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinTempList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetMinTempList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxTimeList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetMaxTimeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinTimeList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetMinTimeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHDOPList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetHDOPList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumSatellitesList">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetNumSatellitesList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

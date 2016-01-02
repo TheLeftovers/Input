@@ -16,5 +16,23 @@ namespace ServiceLibrary
 
         [OperationContract]
         ArrayList GetSpeedList();
+
+        [OperationContract]
+        ArrayList GetMaxTempList();
+
+        [OperationContract]
+        ArrayList GetMinTempList();
+
+        [OperationContract]
+        ArrayList GetMaxTimeList();
+
+        [OperationContract]
+        ArrayList GetMinTimeList();
+
+        [OperationContract]
+        ArrayList GetHDOPList();
+
+        [OperationContract]
+        ArrayList GetNumSatellitesList();
     }
 }

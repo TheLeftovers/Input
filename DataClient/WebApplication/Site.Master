@@ -73,9 +73,10 @@
                     </asp:LoginView>
                 </div>
             </div>
-        </div>-->
+        </div>
+        -->
         <div class="navigation">
-            <div class="brand">CityGis</div>
+            <div class="brand">CityGIS</div>
             <ul class="nav-items">
                 <li><a runat="server" href="Default.aspx">Home</a></li>
                 <li><a runat="server" href="Vehicle.aspx">Wagenpark</a></li>

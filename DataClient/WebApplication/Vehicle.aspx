@@ -6,6 +6,9 @@
 
     <div id="AuthorizedContent" runat="server">
         <asp:Image ID="Image1" runat="server" Visible="false" />
+        <br />
+        <asp:Image ID="Image2" runat="server" Visible="false" />
+
     </div>
     <div id="AnonymousContent" runat="server">
         You are not authorized to view this page. Please login.</div>

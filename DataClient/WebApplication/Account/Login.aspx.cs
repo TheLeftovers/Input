@@ -27,21 +27,15 @@ namespace WebApplication.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-            OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+            //OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
-            stopwatch.Stop();
-            Debug.WriteLine("Tine elapsed: " + stopwatch.Elapsed.Seconds + " seconds");
-
         }
 
         protected void LogIn(object sender, EventArgs e)
@@ -57,6 +51,8 @@ namespace WebApplication.Account
 
             // Execute query
             NpgsqlDataReader dr = cmd.ExecuteReader();
+
+            
 
             //Get rows and place in ArrayList
             while (dr.Read())
@@ -80,6 +76,7 @@ namespace WebApplication.Account
                             IsValidaded = true;
                             WebApplication.SiteMaster.LoggedIn = true;
                             WebApplication.SiteMaster.UserName = maillist[i].ToString();
+                       
                         }
                         else
                         {

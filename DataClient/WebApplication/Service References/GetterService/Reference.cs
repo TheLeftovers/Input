@@ -28,6 +28,48 @@ namespace WebApplication.GetterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetSpeedList", ReplyAction="http://tempuri.org/IGetter/GetSpeedListResponse")]
         System.Threading.Tasks.Task<object[]> GetSpeedListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTempList", ReplyAction="http://tempuri.org/IGetter/GetMaxTempListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetMaxTempList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTempList", ReplyAction="http://tempuri.org/IGetter/GetMaxTempListResponse")]
+        System.Threading.Tasks.Task<object[]> GetMaxTempListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTempList", ReplyAction="http://tempuri.org/IGetter/GetMinTempListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetMinTempList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTempList", ReplyAction="http://tempuri.org/IGetter/GetMinTempListResponse")]
+        System.Threading.Tasks.Task<object[]> GetMinTempListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTimeList", ReplyAction="http://tempuri.org/IGetter/GetMaxTimeListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetMaxTimeList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTimeList", ReplyAction="http://tempuri.org/IGetter/GetMaxTimeListResponse")]
+        System.Threading.Tasks.Task<object[]> GetMaxTimeListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTimeList", ReplyAction="http://tempuri.org/IGetter/GetMinTimeListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetMinTimeList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTimeList", ReplyAction="http://tempuri.org/IGetter/GetMinTimeListResponse")]
+        System.Threading.Tasks.Task<object[]> GetMinTimeListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPList", ReplyAction="http://tempuri.org/IGetter/GetHDOPListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetHDOPList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPList", ReplyAction="http://tempuri.org/IGetter/GetHDOPListResponse")]
+        System.Threading.Tasks.Task<object[]> GetHDOPListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesList", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetNumSatellitesList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesList", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListResponse")]
+        System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,6 +113,54 @@ namespace WebApplication.GetterService {
         
         public System.Threading.Tasks.Task<object[]> GetSpeedListAsync() {
             return base.Channel.GetSpeedListAsync();
+        }
+        
+        public object[] GetMaxTempList() {
+            return base.Channel.GetMaxTempList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetMaxTempListAsync() {
+            return base.Channel.GetMaxTempListAsync();
+        }
+        
+        public object[] GetMinTempList() {
+            return base.Channel.GetMinTempList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetMinTempListAsync() {
+            return base.Channel.GetMinTempListAsync();
+        }
+        
+        public object[] GetMaxTimeList() {
+            return base.Channel.GetMaxTimeList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetMaxTimeListAsync() {
+            return base.Channel.GetMaxTimeListAsync();
+        }
+        
+        public object[] GetMinTimeList() {
+            return base.Channel.GetMinTimeList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetMinTimeListAsync() {
+            return base.Channel.GetMinTimeListAsync();
+        }
+        
+        public object[] GetHDOPList() {
+            return base.Channel.GetHDOPList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetHDOPListAsync() {
+            return base.Channel.GetHDOPListAsync();
+        }
+        
+        public object[] GetNumSatellitesList() {
+            return base.Channel.GetNumSatellitesList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync() {
+            return base.Channel.GetNumSatellitesListAsync();
         }
     }
 }

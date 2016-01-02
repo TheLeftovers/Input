@@ -230,7 +230,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="TempImages\chart50_speed.jpeg" />
+    <Content Include="Content\yeti.bootstrap.css" />
+    <Content Include="Content\yeti.bootstrap.min.css" />
+    <Content Include="img\logo.jpg" />
     <Content Include="UploadFile.aspx" />
     <Content Include="Users.hbm.xml" />
     <Content Include="Vehicle.aspx" />
@@ -505,6 +507,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="TempImages\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
