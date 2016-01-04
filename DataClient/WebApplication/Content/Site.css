@@ -55,7 +55,7 @@ input[type="select"] {
 
 .nav-items{
     list-style-type: none;
-    width: 120px;
+    width: 140px;
     margin: 0;
     padding: 0;
 }
@@ -109,5 +109,9 @@ input[type="select"] {
 
 .login #AuthorizedUser{
     padding: 6px 0 6px 8px;
+}
+
+#LogOut{
+    color: white;
 }
 

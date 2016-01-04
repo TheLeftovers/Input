@@ -234,6 +234,7 @@
     <Content Include="Content\yeti.bootstrap.min.css" />
     <Content Include="img\logo.jpg" />
     <Content Include="UploadFile.aspx" />
+    <Content Include="UserManagement.aspx" />
     <Content Include="Users.hbm.xml" />
     <Content Include="Vehicle.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -458,9 +459,12 @@
       <DependentUpon>UploadFile.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserManagement.aspx.designer.cs" />
+    <Compile Include="UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs" />
     <Compile Include="Vehicle.aspx.cs">
       <DependentUpon>Vehicle.aspx</DependentUpon>

@@ -17,9 +17,10 @@ namespace WebApplication
         ArrayList maillist = new ArrayList();
         ArrayList passwordlist = new ArrayList();
         ArrayList ranklist = new ArrayList();
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (SiteMaster.Rank == "2" && SiteMaster.LoggedIn)
             {
                 // Specify connection options and open an connection
@@ -46,7 +47,7 @@ namespace WebApplication
                 // Close connection
                 conn.Close();
 
-             
+
                 HtmlTableRow row = new HtmlTableRow();
                 HtmlTableCell cell = new HtmlTableCell();
 

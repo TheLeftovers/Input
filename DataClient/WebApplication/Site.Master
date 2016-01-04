@@ -92,9 +92,11 @@
                         <li><a runat="server" href="~/Account/Register">Registreer</a></li>
                     </div>
                     <div id="AuthorizedUser" runat="server">
-                        <b>Ingelogd als</b> <%: WebApplication.SiteMaster.UserName %>
+                        <b>Ingelogd: </b> <%: WebApplication.SiteMaster.UserName %>
                         <br />
-                        <b>Rank</b> <%: WebApplication.SiteMaster.Rank %>
+                        <b>Rank: </b> <br /><%: WebApplication.SiteMaster.Rank %>
+                        <br />
+                        <br />
                         <asp:LinkButton runat="server" ID="LogOut" OnClick="LogOut_Click"><b>Uitloggen</b></asp:LinkButton>
                         <br />
                     </div>

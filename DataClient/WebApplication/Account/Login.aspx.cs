@@ -24,6 +24,8 @@ namespace WebApplication.Account
         public bool IsValidaded { get; private set; }
         ArrayList maillist = new ArrayList();
         ArrayList passwordlist = new ArrayList();
+        ArrayList ranklist = new ArrayList();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,6 +61,7 @@ namespace WebApplication.Account
             {
                 maillist.Add(dr[0]);
                 passwordlist.Add(dr[1]);
+                ranklist.Add(dr[2]);
             }
 
             // Close connection
@@ -76,7 +79,7 @@ namespace WebApplication.Account
                             IsValidaded = true;
                             WebApplication.SiteMaster.LoggedIn = true;
                             WebApplication.SiteMaster.UserName = maillist[i].ToString();
-                       
+                        WebApplication.SiteMaster.Rank = ranklist[i].ToString();
                         }
                         else
                         {
