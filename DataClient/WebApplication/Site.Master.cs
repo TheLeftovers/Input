@@ -18,6 +18,8 @@ namespace WebApplication
 
         public static bool LoggedIn { get; internal set; }
         public static string UserName { get; internal set; }
+        public static string Rank { get; internal set; }
+
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -82,12 +84,28 @@ namespace WebApplication
                 AuthorizedUser.Visible = false;
                 AnonymousUser.Visible = true;
             }
+
+            if (Rank == "2" && LoggedIn)
+            {
+                UserManagement.Visible = true;
+            }
+            else
+            {
+                UserManagement.Visible = false;
+            }
         }
 
        
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        }
+
+        protected void LogOut_Click(object sender, EventArgs e)
+        {
+            LoggedIn = false;
+            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+
         }
     }
 

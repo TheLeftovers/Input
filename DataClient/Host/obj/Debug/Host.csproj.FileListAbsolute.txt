@@ -9,3 +9,14 @@ D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Npgsql
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.exe
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Host.exe.config
+C:\Github\Input\DataClient\Host\obj\Debug\Host.exe
+C:\Github\Input\DataClient\Host\obj\Debug\Host.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Host.exe
+C:\Github\Input\DataClient\Host\bin\Debug\Host.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\MySql.Data.dll
+C:\Github\Input\DataClient\Host\bin\Debug\ServiceLibrary.dll
+C:\Github\Input\DataClient\Host\bin\Debug\Npgsql.dll
+C:\Github\Input\DataClient\Host\bin\Debug\ServiceLibrary.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Npgsql.xml
+C:\Github\Input\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache

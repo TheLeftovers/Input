@@ -83,6 +83,9 @@
                 <li><a runat="server" href="Citygis.aspx">CityGIS</a></li>
                 <li><a runat="server" href="Commercial.aspx">Commercieel</a></li>
                 <li><a runat="server" href="UploadFile.aspx">Upload</a></li>
+                <div id="Administrator" runat="server">
+                    <li><a runat="server" id="UserManagement" href="UserManagement.aspx">Gebruikersbeheer</a></li>
+                </div>
                     <ul class="login">
                         <div id="AnonymousUser" runat="server">
                         <li><a runat="server" href="~/Account/Login">Log in</a></li>
@@ -91,8 +94,9 @@
                     <div id="AuthorizedUser" runat="server">
                         <b>Ingelogd als</b> <%: WebApplication.SiteMaster.UserName %>
                         <br />
-                        <li><a runat="server" href="#">Uitloggen</a></li>
-
+                        <b>Rank</b> <%: WebApplication.SiteMaster.Rank %>
+                        <asp:LinkButton runat="server" ID="LogOut" OnClick="LogOut_Click"><b>Uitloggen</b></asp:LinkButton>
+                        <br />
                     </div>
                     </ul>
             </ul>

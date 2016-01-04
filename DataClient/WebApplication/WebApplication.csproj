@@ -457,6 +457,10 @@
     <Compile Include="UploadFile.aspx.designer.cs">
       <DependentUpon>UploadFile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserManagement.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement.aspx.designer.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Vehicle.aspx.cs">
       <DependentUpon>Vehicle.aspx</DependentUpon>
