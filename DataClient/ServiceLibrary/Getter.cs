@@ -224,7 +224,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT hdop FROM positions LIMIT 1000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 1000", conn);
 
 
             // Execute query
@@ -233,10 +233,13 @@ namespace ServiceLibrary
                 // Get rows and place in ArrayList
                 while (dr.Read())
                 {
+                    hdop.Add(dr[0]);
+                    /*
                     for (int i = 0; i < dr.FieldCount; i++)
                     {
                         hdop.Add(dr[i]);
                     }
+                    */
                 }
             }
 
@@ -257,7 +260,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT num_satellites FROM positions LIMIT 1000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 1000", conn);
 
 
             // Execute query
@@ -266,10 +269,13 @@ namespace ServiceLibrary
                 // Get rows and place in ArrayList
                 while (dr.Read())
                 {
+                    sat.Add(dr[1]);
+                    /*
                     for (int i = 0; i < dr.FieldCount; i++)
                     {
                         sat.Add(dr[i]);
                     }
+                    */
                 }
             }
 
