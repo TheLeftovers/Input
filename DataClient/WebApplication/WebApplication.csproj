@@ -233,7 +233,7 @@
     <Content Include="Content\yeti.bootstrap.css" />
     <Content Include="Content\yeti.bootstrap.min.css" />
     <Content Include="img\logo.jpg" />
-    <Content Include="UploadFile.aspx" />
+    <Content Include="Upload.aspx" />
     <Content Include="UserManagement.aspx" />
     <Content Include="Users.hbm.xml" />
     <Content Include="Vehicle.aspx" />
@@ -451,12 +451,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="UploadFile.aspx.cs">
-      <DependentUpon>UploadFile.aspx</DependentUpon>
+    <Compile Include="Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UploadFile.aspx.designer.cs">
-      <DependentUpon>UploadFile.aspx</DependentUpon>
+    <Compile Include="Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManagement.aspx.cs">
       <DependentUpon>UserManagement.aspx</DependentUpon>
