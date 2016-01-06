@@ -42,12 +42,12 @@ namespace WebApplication
 
 
             //If image of chart with same parameters already exists, make asp image visible and this image with specific parameters.
-            if (System.IO.File.Exists($"C:/GitHub/Input/DataClient/WebApplication/TempImages/chart{max}_{order}.jpeg") == true)
+            if (System.IO.File.Exists($"C:\\GitHub\\Input\\DataClient\\WebApplication\\TempImages\\chart{max}_{order}.jpeg") == true)
             {
-                Image1.ImageUrl = $"~/TempImages/chart{max}_{order}.jpeg";
+                Image1.ImageUrl = $"~\\TempImages\\chart{max}_{order}.jpeg";
                 Image1.Visible = true;
 
-                Image2.ImageUrl = $"~/TempImages/chart{max}_{order2}.jpeg";
+                Image2.ImageUrl = $"~\\TempImages\\chart{max}_{order2}.jpeg";
                 Image2.Visible = true;
             }
 
@@ -97,8 +97,8 @@ namespace WebApplication
                 Chart Chart1 = new Chart();
                 Chart1.ChartAreas.Add(new ChartArea("0"));
 
-                Chart1.Height = 400;
-                Chart1.Width = 1000;
+                Chart1.Height = 350;
+                Chart1.Width = 400;
                 //Chart1.Compression = 50;
                 Chart1.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
                 Chart1.RenderType = RenderType.ImageTag;
@@ -136,7 +136,7 @@ namespace WebApplication
                 Chart1.ChartAreas["0"].AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#383838");
                 Chart1.ChartAreas["0"].AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
                 Chart1.ChartAreas["0"].AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
-                Chart1.ChartAreas["0"].BackColor = System.Drawing.ColorTranslator.FromHtml("#FFF");
+                Chart1.ChartAreas["0"].BackColor = System.Drawing.ColorTranslator.FromHtml("#888888");
                 Chart1.ChartAreas["0"].AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
                 Chart1.ChartAreas["0"].AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
                 Chart1.ChartAreas["0"].ShadowColor = System.Drawing.Color.Gray;
@@ -155,8 +155,8 @@ namespace WebApplication
                 Chart Chart2 = new Chart();
                 Chart2.ChartAreas.Add(new ChartArea("1"));
 
-                Chart2.Height = 400;
-                Chart2.Width = 1000;
+                Chart2.Height = 350;
+                Chart2.Width = 400;
                 //Chart1.Compression = 50;
                 Chart2.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
                 Chart2.RenderType = RenderType.ImageTag;
@@ -196,8 +196,8 @@ namespace WebApplication
                 AuthorizedContent.Controls.Add(Chart2);
 
                 //Save created chart in following folder and name.
-                Chart1.SaveImage($"C:/GitHub/Input/DataClient/WebApplication/TempImages/chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
-                Chart2.SaveImage($"C:/GitHub/Input/DataClient/WebApplication/TempImages/chart{max}_{order2}.jpeg", ChartImageFormat.Jpeg);
+                Chart1.SaveImage($"C:\\GitHub\\Input\\DataClient\\WebApplication\\TempImages\\chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
+                Chart2.SaveImage($"C:\\GitHub\\Input\\DataClient\\WebApplication\\TempImages\\chart{max}_{order2}.jpeg", ChartImageFormat.Jpeg);
 
 
                 //Refresh page for new chart to be visible.
