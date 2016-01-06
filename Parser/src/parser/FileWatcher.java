@@ -69,22 +69,15 @@ public class FileWatcher {
                         kind = watchEvent.kind();
                         if (OVERFLOW == kind) {
                             continue; // loop
-                        } else if (ENTRY_CREATE == kind) {
+                        } else if (ENTRY_CREATE == kind || ENTRY_MODIFY == kind) {
                             // A new Path was created
                             Path newPath = ((WatchEvent<Path>) watchEvent)
                                     .context();
                             // Output
-                            System.out.println("New path created: " + newPath);
+                            System.out.println("New path created/modified: " + newPath);
                             checkPath(newPath.toString());
                             
-                        } else if (ENTRY_MODIFY == kind) {
-                            // modified
-                            Path newPath = ((WatchEvent<Path>) watchEvent)
-                                    .context();
-                            // Output
-                            System.out.println("New path created: " + newPath);
-                            checkPath(newPath.toString());
-                        }
+                        } 
                     }
 
                     if (!key.reset()) {

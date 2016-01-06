@@ -51,9 +51,7 @@ public class Parser {
 
         Path path = Paths.get("C:/Uploads/");
         
-        while(true){
-            watchDirectoryPath(path);
-        }
+        watchDirectoryPath(path);
     }
     
     public static void insertEventInDb(ArrayList<Event> eventsArray) {
