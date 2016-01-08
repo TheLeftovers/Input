@@ -75,7 +75,7 @@ namespace WebApplication.Account
                         if (passwordlist[i].Equals(Password.Text))
                         {
                             System.Diagnostics.Debug.WriteLine("Logged in as" + maillist[i].ToString());
-                            MessageBox.Show(Page, "Logged in");
+                            MessageBox.Show(Page, "Ingelogd");
                             IsValidaded = true;
                             WebApplication.SiteMaster.LoggedIn = true;
                             WebApplication.SiteMaster.UserName = maillist[i].ToString();
@@ -83,12 +83,12 @@ namespace WebApplication.Account
                         }
                         else
                         {
-                            MessageBox.Show(Page, "Invalid password");
+                            MessageBox.Show(Page, "Ongeldig wachtwoord!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show(Page, "This email is not registrated");
+                        MessageBox.Show(Page, "Dit emailadres is niet geregistreerd!");
                     }
                 }
            
@@ -121,7 +121,7 @@ namespace WebApplication.Account
                         break;
                     case SignInStatus.Failure:
                     default:
-                        FailureText.Text = "Invalid login attempt";
+                        FailureText.Text = "Login mislukt!";
                         ErrorMessage.Visible = true;
                         break;
                 }
