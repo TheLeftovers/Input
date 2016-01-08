@@ -9,7 +9,7 @@
         <div class="col-md-8">
             <section id="loginForm">
                 <div class="form-horizontal">
-                    <h4>Use a local account to log in.</h4>
+                    <h4>Gebruik een account om in te loggen.</h4>
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">

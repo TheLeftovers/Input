@@ -1,17 +1,5 @@
-﻿using NHibernate;
-using NHibernate.Cfg;
-using NHibernate.Criterion;
-using Npgsql;
-using NpgsqlTypes;
-using System;
+﻿using Npgsql;
 using System.Collections;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ServiceLibrary
 {

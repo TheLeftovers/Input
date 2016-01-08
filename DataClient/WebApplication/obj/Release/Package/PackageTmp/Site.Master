@@ -38,7 +38,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <!--
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -51,9 +51,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Vehicle">Wagenpark</a></li>
-                        <li><a runat="server" href="~/Contact">Commercieel</a></li>
+                        <li><a runat="server" href="Default.aspx">Home</a></li>
+                        <li><a runat="server" href="Vehicle.aspx">Wagenpark</a></li>
+                        <li><a runat="server" href="Citygis.aspx">CityGIS</a></li>
+                        <li><a runat="server" href="Commercial.aspx">Commercieel</a></li>
+                        <li><a runat="server" href="UploadFile.aspx">Upload</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -74,7 +76,7 @@
                 </div>
             </div>
         </div>
-        -->
+        <!--
         <div class="navigation">
             <div class="brand">CityGIS</div>
             <ul class="nav-items">
@@ -83,21 +85,27 @@
                 <li><a runat="server" href="Citygis.aspx">CityGIS</a></li>
                 <li><a runat="server" href="Commercial.aspx">Commercieel</a></li>
                 <li><a runat="server" href="UploadFile.aspx">Upload</a></li>
+                <div id="Administrator" runat="server">
+                    <li><a runat="server" id="UserManagement" href="UserManagement.aspx">Gebruikersbeheer</a></li>
+                </div>
                     <ul class="login">
                         <div id="AnonymousUser" runat="server">
                         <li><a runat="server" href="~/Account/Login">Log in</a></li>
                         <li><a runat="server" href="~/Account/Register">Registreer</a></li>
                     </div>
                     <div id="AuthorizedUser" runat="server">
-                        <b>Ingelogd als</b> <%: WebApplication.SiteMaster.UserName %>
+                        <b>Ingelogd: </b> <%: WebApplication.SiteMaster.UserName %>
                         <br />
-                        <li><a runat="server" href="#">Uitloggen</a></li>
-
+                        <b>Rank: </b> <br /><%: WebApplication.SiteMaster.Rank %>
+                        <br />
+                        <br />
+                        <asp:LinkButton runat="server" ID="LogOut" OnClick="LogOut_Click"><b>Uitloggen</b></asp:LinkButton>
+                        <br />
                     </div>
                     </ul>
             </ul>
 
-        </div>
+        </div>-->
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

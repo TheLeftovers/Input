@@ -1,19 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.Owin;
+using Npgsql;
+using System;
+using System.Collections;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using WebApplication.Models;
-using System.Data.SqlClient;
-using System.Data;
-using NHibernate.Cfg;
-using System.Reflection;
-using System.Collections.Generic;
-using System.Web.Security;
-using Npgsql;
-using System.Collections;
-using System.Diagnostics;
 
 namespace WebApplication.Account
 {

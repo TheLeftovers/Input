@@ -1,7 +1,7 @@
 ﻿/* Wrapping element */
 body{
     padding-left: 175px;
-    padding-top: 30px;
+    padding-top: 70px !important;
     padding-bottom: 20px;
     height: 100%;
 }
@@ -55,7 +55,7 @@ input[type="select"] {
 
 .nav-items{
     list-style-type: none;
-    width: 120px;
+    width: 140px;
     margin: 0;
     padding: 0;
 }
@@ -103,11 +103,22 @@ input[type="select"] {
 
 .footer{
     position: fixed;
-    left: 50%;
+    width: 100%;
+    height: 30px;
+    line-height: 2;
+    background: #008cba;
+    color: white;
+    left: 0;
+    text-align: center;
+    margin: 0 0 0 0;
     bottom: 0;
 }
 
 .login #AuthorizedUser{
     padding: 6px 0 6px 8px;
+}
+
+#LogOut{
+    color: white;
 }
 
