@@ -1,8 +1,10 @@
 ﻿using Npgsql;
 using System.Collections;
+using System.ServiceModel.Activation;
 
 namespace ServiceLibrary
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class Getter : IGetter
     {
         public ArrayList GetUnitList()
