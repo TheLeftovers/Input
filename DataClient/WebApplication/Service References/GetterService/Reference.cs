@@ -29,33 +29,19 @@ namespace WebApplication.GetterService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetSpeedList", ReplyAction="http://tempuri.org/IGetter/GetSpeedListResponse")]
         System.Threading.Tasks.Task<object[]> GetSpeedListAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTempList", ReplyAction="http://tempuri.org/IGetter/GetMaxTempListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitListbyRepair", ReplyAction="http://tempuri.org/IGetter/GetUnitListbyRepairResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMaxTempList();
+        object[] GetUnitListbyRepair();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTempList", ReplyAction="http://tempuri.org/IGetter/GetMaxTempListResponse")]
-        System.Threading.Tasks.Task<object[]> GetMaxTempListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitListbyRepair", ReplyAction="http://tempuri.org/IGetter/GetUnitListbyRepairResponse")]
+        System.Threading.Tasks.Task<object[]> GetUnitListbyRepairAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTempList", ReplyAction="http://tempuri.org/IGetter/GetMinTempListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetCountListbyRepair", ReplyAction="http://tempuri.org/IGetter/GetCountListbyRepairResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMinTempList();
+        object[] GetCountListbyRepair();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTempList", ReplyAction="http://tempuri.org/IGetter/GetMinTempListResponse")]
-        System.Threading.Tasks.Task<object[]> GetMinTempListAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTimeList", ReplyAction="http://tempuri.org/IGetter/GetMaxTimeListResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMaxTimeList();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxTimeList", ReplyAction="http://tempuri.org/IGetter/GetMaxTimeListResponse")]
-        System.Threading.Tasks.Task<object[]> GetMaxTimeListAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTimeList", ReplyAction="http://tempuri.org/IGetter/GetMinTimeListResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMinTimeList();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMinTimeList", ReplyAction="http://tempuri.org/IGetter/GetMinTimeListResponse")]
-        System.Threading.Tasks.Task<object[]> GetMinTimeListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetCountListbyRepair", ReplyAction="http://tempuri.org/IGetter/GetCountListbyRepairResponse")]
+        System.Threading.Tasks.Task<object[]> GetCountListbyRepairAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPList", ReplyAction="http://tempuri.org/IGetter/GetHDOPListResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -70,6 +56,20 @@ namespace WebApplication.GetterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesList", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListResponse")]
         System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeList", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetBeginTimeList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeList", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListResponse")]
+        System.Threading.Tasks.Task<object[]> GetBeginTimeListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxList", ReplyAction="http://tempuri.org/IGetter/GetMaxListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetMaxList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxList", ReplyAction="http://tempuri.org/IGetter/GetMaxListResponse")]
+        System.Threading.Tasks.Task<object[]> GetMaxListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -115,36 +115,20 @@ namespace WebApplication.GetterService {
             return base.Channel.GetSpeedListAsync();
         }
         
-        public object[] GetMaxTempList() {
-            return base.Channel.GetMaxTempList();
+        public object[] GetUnitListbyRepair() {
+            return base.Channel.GetUnitListbyRepair();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetMaxTempListAsync() {
-            return base.Channel.GetMaxTempListAsync();
+        public System.Threading.Tasks.Task<object[]> GetUnitListbyRepairAsync() {
+            return base.Channel.GetUnitListbyRepairAsync();
         }
         
-        public object[] GetMinTempList() {
-            return base.Channel.GetMinTempList();
+        public object[] GetCountListbyRepair() {
+            return base.Channel.GetCountListbyRepair();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetMinTempListAsync() {
-            return base.Channel.GetMinTempListAsync();
-        }
-        
-        public object[] GetMaxTimeList() {
-            return base.Channel.GetMaxTimeList();
-        }
-        
-        public System.Threading.Tasks.Task<object[]> GetMaxTimeListAsync() {
-            return base.Channel.GetMaxTimeListAsync();
-        }
-        
-        public object[] GetMinTimeList() {
-            return base.Channel.GetMinTimeList();
-        }
-        
-        public System.Threading.Tasks.Task<object[]> GetMinTimeListAsync() {
-            return base.Channel.GetMinTimeListAsync();
+        public System.Threading.Tasks.Task<object[]> GetCountListbyRepairAsync() {
+            return base.Channel.GetCountListbyRepairAsync();
         }
         
         public object[] GetHDOPList() {
@@ -161,6 +145,22 @@ namespace WebApplication.GetterService {
         
         public System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync() {
             return base.Channel.GetNumSatellitesListAsync();
+        }
+        
+        public object[] GetBeginTimeList() {
+            return base.Channel.GetBeginTimeList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetBeginTimeListAsync() {
+            return base.Channel.GetBeginTimeListAsync();
+        }
+        
+        public object[] GetMaxList() {
+            return base.Channel.GetMaxList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetMaxListAsync() {
+            return base.Channel.GetMaxListAsync();
         }
     }
 }

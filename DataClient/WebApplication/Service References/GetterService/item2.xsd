@@ -25,51 +25,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMaxTempList">
+  <xs:element name="GetUnitListbyRepair">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMaxTempListResponse">
+  <xs:element name="GetUnitListbyRepairResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMaxTempListResult" nillable="true" type="q3:ArrayOfanyType" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUnitListbyRepairResult" nillable="true" type="q3:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMinTempList">
+  <xs:element name="GetCountListbyRepair">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMinTempListResponse">
+  <xs:element name="GetCountListbyRepairResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMinTempListResult" nillable="true" type="q4:ArrayOfanyType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetMaxTimeList">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetMaxTimeListResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMaxTimeListResult" nillable="true" type="q5:ArrayOfanyType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetMinTimeList">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetMinTimeListResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMinTimeListResult" nillable="true" type="q6:ArrayOfanyType" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCountListbyRepairResult" nillable="true" type="q4:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +57,7 @@
   <xs:element name="GetHDOPListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetHDOPListResult" nillable="true" type="q7:ArrayOfanyType" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetHDOPListResult" nillable="true" type="q5:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +69,31 @@
   <xs:element name="GetNumSatellitesListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNumSatellitesListResult" nillable="true" type="q8:ArrayOfanyType" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNumSatellitesListResult" nillable="true" type="q6:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeginTimeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeginTimeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetBeginTimeListResult" nillable="true" type="q7:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMaxListResult" nillable="true" type="q8:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

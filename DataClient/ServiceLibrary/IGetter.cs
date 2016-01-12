@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ServiceLibrary
 {
@@ -13,21 +8,28 @@ namespace ServiceLibrary
     public interface IGetter
     {
         [OperationContract]
-        ArrayList GetUnitList();
+        ArrayList GetUnitList();                //Positions
 
         [OperationContract]
-        ArrayList GetSpeedList();
+        ArrayList GetSpeedList();               //Positions
 
         [OperationContract]
-        ArrayList GetUnitListbyRepair();
+        ArrayList GetUnitListbyRepair();        //Events
 
         [OperationContract]
-        ArrayList GetCountListbyRepair();
+        ArrayList GetCountListbyRepair();       //Events
 
         [OperationContract]
-        ArrayList GetHDOPList();
+        ArrayList GetHDOPList();                //Positions
 
         [OperationContract]
-        ArrayList GetNumSatellitesList();
+        ArrayList GetNumSatellitesList();       //Positions   
+
+        [OperationContract]
+        ArrayList GetBeginTimeList();           //Monitoring
+
+        [OperationContract]
+        ArrayList GetMaxList();                 //Monitoring
+
     }
 }

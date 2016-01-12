@@ -295,7 +295,6 @@ C:\Github\Input\DataClient\WebApplication\bin\Microsoft.ScriptManager.WebForms.d
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Web.Infrastructure.dll
 C:\Github\Input\DataClient\WebApplication\bin\MySql.Data.dll
 C:\Github\Input\DataClient\WebApplication\bin\Newtonsoft.Json.dll
-C:\Github\Input\DataClient\WebApplication\bin\NHibernate.dll
 C:\Github\Input\DataClient\WebApplication\bin\Npgsql.dll
 C:\Github\Input\DataClient\WebApplication\bin\Owin.dll
 C:\Github\Input\DataClient\WebApplication\bin\System.Web.Helpers.dll
@@ -309,7 +308,6 @@ C:\Github\Input\DataClient\WebApplication\bin\System.Web.WebPages.Razor.dll
 C:\Github\Input\DataClient\WebApplication\bin\WebGrease.dll
 C:\Github\Input\DataClient\WebApplication\bin\Iesi.Collections.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Github\Input\DataClient\WebApplication\bin\NHibernate.xml
 C:\Github\Input\DataClient\WebApplication\bin\Npgsql.xml
 C:\Github\Input\DataClient\WebApplication\bin\System.Web.Helpers.xml
 C:\Github\Input\DataClient\WebApplication\bin\System.Web.Mvc.xml
@@ -420,3 +418,18 @@ C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Mi
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\obj\Debug\WebApplication.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\obj\Debug\WebApplication.pdb
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\csc.exe.config
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\csc.rsp
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\csi.exe
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\csi.rsp
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.AppContext.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.Console.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\vbc.exe.config
+C:\Github\Input\DataClient\WebApplication\bin\roslyn\vbc.rsp

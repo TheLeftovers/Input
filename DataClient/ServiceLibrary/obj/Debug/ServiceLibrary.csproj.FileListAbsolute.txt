@@ -16,11 +16,11 @@ C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\ServiceLibrary.dll
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\ServiceLibrary.pdb
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.dll
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\MySql.Data.dll
-C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\NHibernate.dll
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Npgsql.dll
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.xml
-C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\NHibernate.xml
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Npgsql.xml
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.dll
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.pdb
+C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Antlr3.Runtime.dll
+C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Antlr3.Runtime.pdb

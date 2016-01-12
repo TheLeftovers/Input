@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Diagnostics;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
 using WebApplication.GetterService;
@@ -37,8 +35,8 @@ namespace WebApplication
 
 
             //If image of chart with same parameters already exists, make asp image visible and this image with specific parameters.
-            if (System.IO.File.Exists($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order}.jpeg") == true
-                && System.IO.File.Exists($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order2}.jpeg") == true)
+            if (System.IO.File.Exists($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order}.jpeg") == true
+                && System.IO.File.Exists($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order2}.jpeg") == true)
             {
                 Image1.ImageUrl = $"~\\img\\chart{max}_{order}.jpeg";
                 Image1.Visible = true;
@@ -152,12 +150,15 @@ namespace WebApplication
 
                 //Add Chart to div in Vehicle.aspx
                 AuthorizedContent.Controls.Add(Chart1);
+                AuthorizedContent.Controls.Add(new LiteralControl("<h4>Top 50 hoogste snelheden in km/u per wagen.</h4>"));
                 AuthorizedContent.Controls.Add(new LiteralControl("<br />"));
                 AuthorizedContent.Controls.Add(Chart2);
+                AuthorizedContent.Controls.Add(new LiteralControl("<h4>HDOP per aantal verbonden satellieten.</h4>"));
+
 
                 //Save created chart in following folder and name.
-                Chart1.SaveImage($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
-                Chart2.SaveImage($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order2}.jpeg", ChartImageFormat.Jpeg);
+                Chart1.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
+                Chart2.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order2}.jpeg", ChartImageFormat.Jpeg);
 
 
                 //Refresh page for new chart to be visible.

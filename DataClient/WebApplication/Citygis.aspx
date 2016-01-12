@@ -14,8 +14,11 @@
             <asp:TableHeaderRow>
                 <asp:TableHeaderCell>Unit ID</asp:TableHeaderCell>
             </asp:TableHeaderRow>
-
         </asp:Table>
+
+        <br /><br />
+
+        <asp:Image ID="Image1" runat="server" Visible="False" />
         
     </div>
     <div id="AnonymousContent" runat="server">
