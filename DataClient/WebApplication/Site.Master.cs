@@ -32,12 +32,14 @@ namespace WebApplication
 
             if (LoggedIn)
             {
-                AuthorizedUser.Visible = true;
-                AnonymousUser.Visible = false;
-            } else
+                AnonymousTemplate.Visible = false;
+                LoggedInTemplate.Visible = true;
+             }
+            else
             {
-                AuthorizedUser.Visible = false;
-                AnonymousUser.Visible = true;
+                AnonymousTemplate.Visible = true;
+                LoggedInTemplate.Visible = false;
+
             }
 
             if (Rank == "2" && LoggedIn)

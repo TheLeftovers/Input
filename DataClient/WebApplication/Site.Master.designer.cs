@@ -13,13 +13,22 @@ namespace WebApplication {
     public partial class SiteMaster {
         
         /// <summary>
-        /// Administrator control.
+        /// AnonymousTemplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Administrator;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnonymousTemplate;
+        
+        /// <summary>
+        /// LoggedInTemplate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LoggedInTemplate;
         
         /// <summary>
         /// UserManagement control.
@@ -29,24 +38,6 @@ namespace WebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor UserManagement;
-        
-        /// <summary>
-        /// AnonymousUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnonymousUser;
-        
-        /// <summary>
-        /// AuthorizedUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AuthorizedUser;
         
         /// <summary>
         /// LogOut control.

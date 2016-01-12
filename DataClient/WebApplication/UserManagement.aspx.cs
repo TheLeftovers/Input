@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Web.UI.HtmlControls;
 
 namespace WebApplication
@@ -13,7 +14,7 @@ namespace WebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (SiteMaster.Rank == "2" && SiteMaster.LoggedIn)
             {
                 // Specify connection options and open an connection
@@ -33,73 +34,40 @@ namespace WebApplication
                 while (dr.Read())
                 {
                     maillist.Add(dr[0]);
-                    passwordlist.Add(dr[1]);
                     ranklist.Add(dr[2]);
                 }
 
                 // Close connection
                 conn.Close();
 
-
-                HtmlTableRow row = new HtmlTableRow();
-                HtmlTableCell cell = new HtmlTableCell();
-
-                row = new HtmlTableRow();
-                cell = new HtmlTableCell();
-
-                cell.InnerText = "Email";
-                row.Cells.Add(cell);
-
-                cell = new HtmlTableCell();
-                cell.InnerText = "Wachtwoord";
-                row.Cells.Add(cell);
-
-                cell = new HtmlTableCell();
-                cell.InnerText = "Rank";
-                row.Cells.Add(cell);
-
-                tableContent.Rows.Add(row);
-
-                for (int i = 0; i < maillist.Count; i++)
+                for(int i=0;i<maillist.Count;i++)
                 {
-                    row = new HtmlTableRow();
-                    cell = new HtmlTableCell();
-                    row.Height = "40";
-                    cell.InnerText = maillist[i].ToString();
-                    row.Cells.Add(cell);
-
-                    cell = new HtmlTableCell();
-                    cell.InnerText = passwordlist[i].ToString();
-                    row.Cells.Add(cell);
-
-                    cell = new HtmlTableCell();
-                    int secondoption;
-                    int thirdoption;
-                    if (ranklist[i].ToString() == "0")
-                    {
-                        secondoption = 1;
-                        thirdoption = 2;
-                    }
-                    else if (ranklist[i].ToString() == "1")
-                    {
-                        secondoption = 0;
-                        thirdoption = 2;
-                    }
-                    else
-                    {
-                        secondoption = 0;
-                        thirdoption = 1;
-                    }
-
-                    cell.InnerHtml = "<select id= " + i + "><option value = " + ranklist[i].ToString() + ">" + ranklist[i].ToString() + "</option><option value =" + secondoption + ">" + secondoption + "</option><option value =" + thirdoption + ">" + thirdoption + "</option></select>";
-
-                    row.Cells.Add(cell);
-
-                    tableContent.Rows.Add(row);
+                    maildrop.Items.Add(maillist[i].ToString());
                 }
+
+              
 
             }
 
         }
+
+        protected void UpdateUser(object sender, EventArgs e)
+        {
+            // Specify connection options and open an connection
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
+                                    "Password=root;Database=project56;");
+
+            //Insert Email and Password from TextBoxes
+            conn.Open();
+
+            NpgsqlCommand cmd1 = new NpgsqlCommand("UPDATE users SET rank = :rank WHERE email = :email", conn);
+            cmd1.Parameters.Add(new NpgsqlParameter("email", maildrop.SelectedItem.Text));
+            cmd1.Parameters.Add(new NpgsqlParameter("rank", rankdrop.SelectedItem.Text));
+
+            cmd1.ExecuteNonQuery();
+
+            conn.Close();
+        }
+
     }
 }

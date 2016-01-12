@@ -81,7 +81,8 @@ namespace WebApplication.Account
                         MessageBox.Show(Page, "Dit emailadres is niet geregistreerd!");
                     }
                 }
-           
+
+ 
 
             if (IsValidaded)
             {
