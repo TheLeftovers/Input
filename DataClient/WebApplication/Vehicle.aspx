@@ -4,9 +4,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <p class="text-danger">
-        <asp:Literal runat="server" ID="ErrorMessage" />
-    </p>
+        <br />
+
 
     <div id="AuthorizedContent" runat="server">
         <asp:Image ID="Image1" runat="server" Visible="false" />

@@ -1,5 +1,7 @@
 ﻿using Npgsql;
+using System;
 using System.Collections;
+using System.Data;
 using System.ServiceModel.Activation;
 
 namespace ServiceLibrary
@@ -13,12 +15,12 @@ namespace ServiceLibrary
 
             // Specify connection options and open an connection
             NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
-                                    "Password=root;Database=project56;");
+                                    "Password=root;Database=project56;Buffer Size=100000;");
             conn.Open();
 
+ 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT unit_id FROM positions ORDER BY speed DESC LIMIT 10000", conn);
-
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT unit_id FROM positions ORDER BY speed DESC LIMIT 50", conn);
 
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
@@ -32,7 +34,7 @@ namespace ServiceLibrary
                     }
                 }
             }
-
+            
 
             // Close connection
             conn.Close();
@@ -46,11 +48,11 @@ namespace ServiceLibrary
 
             // Specify connection options and open an connection
             NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
-                                    "Password=root;Database=project56;");
+                                    "Password=root;Database=project56;Buffer Size=100000;");
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT speed FROM positions ORDER BY speed DESC LIMIT 10000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT speed FROM positions ORDER BY speed DESC LIMIT 50", conn);
 
 
             // Execute query
@@ -72,9 +74,10 @@ namespace ServiceLibrary
             return Position;
         }
 
-        public ArrayList GetMaxTempList()
+
+        public ArrayList GetUnitListbyRepair()
         {
-            ArrayList temp = new ArrayList();
+            ArrayList Unit = new ArrayList();
 
             // Specify connection options and open an connection
             NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
@@ -82,7 +85,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT max FROM monitoring WHERE unit_id = 14100064 AND type = 'Hardware/ProcessorTemperature' ORDER BY max DESC LIMIT 1000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT unit_id FROM events WHERE port = 'Ignition' GROUP BY unit_id  HAVING COUNT(*) >= 60", conn);
 
 
             // Execute query
@@ -93,7 +96,7 @@ namespace ServiceLibrary
                 {
                     for (int i = 0; i < dr.FieldCount; i++)
                     {
-                        temp.Add(dr[i]);
+                        Unit.Add(dr[i]);
                     }
                 }
             }
@@ -102,12 +105,13 @@ namespace ServiceLibrary
             // Close connection
             conn.Close();
 
-            return temp;
+            return Unit;
         }
 
-        public ArrayList GetMinTempList()
+        public ArrayList GetCountListbyRepair()
+
         {
-            ArrayList temp = new ArrayList();
+            ArrayList Count = new ArrayList();
 
             // Specify connection options and open an connection
             NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
@@ -115,7 +119,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT min FROM monitoring WHERE unit_id = 14100064 AND type = 'Hardware/ProcessorTemperature' AND min != 0 ORDER BY min ASC LIMIT 1000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM events WHERE port = 'Ignition' GROUP BY unit_id  HAVING COUNT(*) >= 60", conn);
 
 
             // Execute query
@@ -126,7 +130,7 @@ namespace ServiceLibrary
                 {
                     for (int i = 0; i < dr.FieldCount; i++)
                     {
-                        temp.Add(dr[i]);
+                        Count.Add(dr[i]);
                     }
                 }
             }
@@ -135,73 +139,7 @@ namespace ServiceLibrary
             // Close connection
             conn.Close();
 
-            return temp;
-        }
-
-        public ArrayList GetMaxTimeList()
-        {
-            ArrayList Time = new ArrayList();
-
-            // Specify connection options and open an connection
-            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
-                                    "Password=root;Database=project56;");
-            conn.Open();
-
-            // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT begin_time FROM monitoring WHERE unit_id = 14100064 AND type = 'Hardware/ProcessorTemperature' AND date = '' ORDER BY max DESC LIMIT 1000", conn);
-
-
-            // Execute query
-            using (NpgsqlDataReader dr = cmd.ExecuteReader())
-            {
-                // Get rows and place in ArrayList
-                while (dr.Read())
-                {
-                    for (int i = 0; i < dr.FieldCount; i++)
-                    {
-                        Time.Add(dr[i]);
-                    }
-                }
-            }
-
-
-            // Close connection
-            conn.Close();
-
-            return Time;
-        }
-
-        public ArrayList GetMinTimeList()
-        {
-            ArrayList Time = new ArrayList();
-
-            // Specify connection options and open an connection
-            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
-                                    "Password=root;Database=project56;");
-            conn.Open();
-
-            // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT begin_time FROM monitoring WHERE unit_id = 14100064 AND type = 'Hardware/ProcessorTemperature' AND min != 0 ORDER BY min ASC LIMIT 1000", conn);
-
-
-            // Execute query
-            using (NpgsqlDataReader dr = cmd.ExecuteReader())
-            {
-                // Get rows and place in ArrayList
-                while (dr.Read())
-                {
-                    for (int i = 0; i < dr.FieldCount; i++)
-                    {
-                        Time.Add(dr[i]);
-                    }
-                }
-            }
-
-
-            // Close connection
-            conn.Close();
-
-            return Time;
+            return Count;
         }
 
         public ArrayList GetHDOPList()
@@ -214,7 +152,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 1000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 200", conn);
 
 
             // Execute query
@@ -250,7 +188,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 1000", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 200", conn);
 
 
             // Execute query

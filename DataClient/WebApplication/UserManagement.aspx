@@ -1,7 +1,9 @@
-﻿<%@ Page Title="User Management" Async="true" MasterPageFile="~/Site.Master" EnableSessionState="False" EnableViewState="False" Trace="false" ViewStateMode="Disabled" Language="C#"  AutoEventWireup="True" CodeBehind="~/UserManagement.aspx.cs" Inherits="WebApplication.UserManagement" %>
+﻿<%@ Page Title="Beheer" Async="true" MasterPageFile="~/Site.Master" EnableSessionState="False" EnableViewState="False" Trace="false" ViewStateMode="Disabled" Language="C#"  AutoEventWireup="True" CodeBehind="~/UserManagement.aspx.cs" Inherits="WebApplication.UserManagement" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h2><%: Title %>.</h2>
+    <br />
 
     Emails
     <asp:DropDownList ID="maildrop" runat="server" Width="200px">

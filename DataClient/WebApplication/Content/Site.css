@@ -53,6 +53,10 @@ input[type="select"] {
     padding-bottom: 15px;
 }
 
+#logo {
+    margin-top: -15px;
+}
+
 .nav-items{
     list-style-type: none;
     width: 140px;

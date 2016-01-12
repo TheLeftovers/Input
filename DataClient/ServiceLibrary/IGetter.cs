@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -18,16 +19,10 @@ namespace ServiceLibrary
         ArrayList GetSpeedList();
 
         [OperationContract]
-        ArrayList GetMaxTempList();
+        ArrayList GetUnitListbyRepair();
 
         [OperationContract]
-        ArrayList GetMinTempList();
-
-        [OperationContract]
-        ArrayList GetMaxTimeList();
-
-        [OperationContract]
-        ArrayList GetMinTimeList();
+        ArrayList GetCountListbyRepair();
 
         [OperationContract]
         ArrayList GetHDOPList();

@@ -26,13 +26,7 @@ namespace WebApplication
 
         public void CreateChart()
         {
-
-            //New ArrayLists of data used in chart(XY) in Vehicle.aspx.cs
-            ArrayList unit = new ArrayList();
-            ArrayList speed = new ArrayList();
-            ArrayList hdop = new ArrayList();
-            ArrayList sats = new ArrayList();
-
+           
             //Create proxy
             GetterClient proxy = new GetterClient();
 
@@ -43,8 +37,8 @@ namespace WebApplication
 
 
             //If image of chart with same parameters already exists, make asp image visible and this image with specific parameters.
-            if (System.IO.File.Exists($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order}.jpeg") == true
-                && System.IO.File.Exists($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order2}.jpeg") == true)
+            if (System.IO.File.Exists($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order}.jpeg") == true
+                && System.IO.File.Exists($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order2}.jpeg") == true)
             {
                 Image1.ImageUrl = $"~\\img\\chart{max}_{order}.jpeg";
                 Image1.Visible = true;
@@ -55,47 +49,7 @@ namespace WebApplication
 
             else
             {
-                //Open connection
-                proxy.Open();
-
-                //Place values needed in ArrayList
-                for (int i = 0; i < max; i++)
-                {
-                    unit.Add(proxy.GetUnitList()[i]);
-                    speed.Add(proxy.GetSpeedList()[i]);
-                    hdop.Add(proxy.GetHDOPList()[i]);
-                    sats.Add(proxy.GetNumSatellitesList()[i]);
-                }
-
-
-                //Close connection
-                proxy.Close();
-
-
-                //Sort elements in ArrayList
-                int Max = int.MinValue;
-                int Min = int.MaxValue;
-                int Max2 = int.MinValue;
-                int Min2 = int.MaxValue;
-
-                //Get Minimum and Maximum value of ArrayList to define axes of the Chart.
-                foreach (int x in speed)
-                {
-                    if (Max < x)
-                    { Max = x; }
-                    if (Min > x)
-                    { Min = x; }
-                }
-
-                //Get Minimum and Maximum value of ArrayList to define axes of the Chart.
-                foreach (int x in hdop)
-                {
-                    if (Max2 < x)
-                    { Max2 = x; }
-                    if (Min2 > x)
-                    { Min2 = x; }
-                }
-
+                
                 //Setup Chart 1.
                 Chart Chart1 = new Chart();
                 Chart1.ChartAreas.Add(new ChartArea("0"));
@@ -113,7 +67,6 @@ namespace WebApplication
                 Chart1.Series.Clear();
                 Chart1.Series.Add(new Series("1"));
                 Chart1.Series["1"].ChartType = SeriesChartType.Column;
-                Chart1.Series["1"].Points.DataBindXY(unit, speed);
                 Chart1.Series["1"].SmartLabelStyle.Enabled = true;
                 Chart1.Series["1"].IsXValueIndexed = true;
                 Chart1.Series["1"].LabelForeColor = System.Drawing.ColorTranslator.FromHtml("#383838");
@@ -127,8 +80,8 @@ namespace WebApplication
                 Chart1.ChartAreas["0"].AxisY.Title = "Snelheid(KM/U)";
                 Chart1.ChartAreas["0"].AxisY.Interval = 5;
                 Chart1.ChartAreas["0"].AxisX.Interval = 5;
-                Chart1.ChartAreas["0"].AxisY.Minimum = Min - 1;
-                Chart1.ChartAreas["0"].AxisY.Maximum = Max;
+                Chart1.ChartAreas["0"].AxisY.Maximum = 166;
+                Chart1.ChartAreas["0"].AxisY.Minimum = 156 - 1;
                 Chart1.ChartAreas["0"].RecalculateAxesScale();
 
                 //Colors
@@ -170,13 +123,18 @@ namespace WebApplication
                 Chart2.Series.Clear();
                 Chart2.Series.Add(new Series("2"));
                 Chart2.Series["2"].ChartType = SeriesChartType.Line;
-                Chart2.Series["2"].Points.DataBindXY(hdop, sats);
                 Chart2.Series["2"].SmartLabelStyle.Enabled = true;
                 Chart2.Series["2"].IsXValueIndexed = false;
                 Chart2.Series["2"].LabelForeColor = System.Drawing.ColorTranslator.FromHtml("#383838");
                 Chart2.Series["2"].Sort(PointSortOrder.Descending, "Y");
                 Chart2.Series["2"].Sort(PointSortOrder.Ascending, "X");
                 Chart2.Series["2"].CustomProperties = "PointWidth=0.6";
+
+                //Open connection
+                proxy.Open();
+                Chart1.Series["1"].Points.DataBindXY(proxy.GetUnitList(), proxy.GetSpeedList());
+                Chart2.Series["2"].Points.DataBindXY(proxy.GetHDOPList(), proxy.GetNumSatellitesList());
+                proxy.Close();
 
                 //ChartArea settings
                 Chart2.ChartAreas["1"].AxisX.MajorGrid.Enabled = false;
@@ -185,13 +143,12 @@ namespace WebApplication
                 Chart2.ChartAreas["1"].AxisY.Title = "Number of Satellites";
                 Chart2.ChartAreas["1"].AxisX.Title = "HDOP";
                 Chart2.ChartAreas["1"].AxisX.Interval = 10;
-                Chart2.ChartAreas["1"].AxisX.Minimum = Min2;
-                Chart2.ChartAreas["1"].AxisX.Maximum = Max2;
+               // Chart2.ChartAreas["1"].AxisX.Minimum = Min2;
+               // Chart2.ChartAreas["1"].AxisX.Maximum = Max2;
                 Chart2.ChartAreas["1"].AxisY.Interval = 1;
                 Chart2.ChartAreas["1"].AxisY.Minimum = 0;
                 Chart2.ChartAreas["1"].AxisY.Maximum = 14;
                 Chart2.ChartAreas["1"].RecalculateAxesScale();
-
 
                 //Add Chart to div in Vehicle.aspx
                 AuthorizedContent.Controls.Add(Chart1);
@@ -199,8 +156,8 @@ namespace WebApplication
                 AuthorizedContent.Controls.Add(Chart2);
 
                 //Save created chart in following folder and name.
-                Chart1.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
-                Chart2.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order2}.jpeg", ChartImageFormat.Jpeg);
+                Chart1.SaveImage($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
+                Chart2.SaveImage($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{max}_{order2}.jpeg", ChartImageFormat.Jpeg);
 
 
                 //Refresh page for new chart to be visible.
