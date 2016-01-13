@@ -132,11 +132,10 @@ namespace WebApplication
 
                 //Add Chart to div in Vehicle.aspx
                 AuthorizedContent.Controls.Add(Chart1);
-                AuthorizedContent.Controls.Add(new LiteralControl("<h4>Temperatuur in graden Celsius over tijd.</h4>"));
                 AuthorizedContent.Controls.Add(new LiteralControl("<br />"));
 
                 //Save created chart in following folder and name.
-                Chart1.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{order}.jpeg", ChartImageFormat.Jpeg);
+                 Chart1.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{order}.jpeg", ChartImageFormat.Jpeg);
                 //Chart1.SaveImage($"C:\\Github\\Input\\DataClient\\WebApplication\\img\\chart{order}.jpeg", ChartImageFormat.Jpeg);
 
                 //Refresh page for new chart to be visible.

@@ -9,19 +9,6 @@ D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\bin\Debug\Npgsql
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.exe
 D:\Johan\Documenten\Visual Studio 2015\Projects\DataClient\Host\obj\Debug\Host.pdb
-C:\Github\Input\DataClient\Host\bin\Debug\Host.exe.config
-C:\Github\Input\DataClient\Host\obj\Debug\Host.exe
-C:\Github\Input\DataClient\Host\obj\Debug\Host.pdb
-C:\Github\Input\DataClient\Host\bin\Debug\Host.exe
-C:\Github\Input\DataClient\Host\bin\Debug\Host.pdb
-C:\Github\Input\DataClient\Host\bin\Debug\MySql.Data.dll
-C:\Github\Input\DataClient\Host\bin\Debug\ServiceLibrary.dll
-C:\Github\Input\DataClient\Host\bin\Debug\Npgsql.dll
-C:\Github\Input\DataClient\Host\bin\Debug\ServiceLibrary.pdb
-C:\Github\Input\DataClient\Host\bin\Debug\Npgsql.xml
-C:\Github\Input\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
-C:\Github\Input\DataClient\Host\bin\Debug\Antlr3.Runtime.dll
-C:\Github\Input\DataClient\Host\bin\Debug\Antlr3.Runtime.pdb
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\bin\Debug\Host.exe.config
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\bin\Debug\Host.exe
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\bin\Debug\Host.pdb
@@ -34,3 +21,16 @@ C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\bin\Debug\Npgsql
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\obj\Debug\Host.exe
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\Host\obj\Debug\Host.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Host.exe.config
+C:\Github\Input\DataClient\Host\bin\Debug\Host.exe
+C:\Github\Input\DataClient\Host\bin\Debug\Host.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Antlr3.Runtime.dll
+C:\Github\Input\DataClient\Host\bin\Debug\MySql.Data.dll
+C:\Github\Input\DataClient\Host\bin\Debug\Npgsql.dll
+C:\Github\Input\DataClient\Host\bin\Debug\ServiceLibrary.dll
+C:\Github\Input\DataClient\Host\bin\Debug\ServiceLibrary.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Antlr3.Runtime.pdb
+C:\Github\Input\DataClient\Host\bin\Debug\Npgsql.xml
+C:\Github\Input\DataClient\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+C:\Github\Input\DataClient\Host\obj\Debug\Host.exe
+C:\Github\Input\DataClient\Host\obj\Debug\Host.pdb

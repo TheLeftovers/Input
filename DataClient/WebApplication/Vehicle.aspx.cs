@@ -1,12 +1,9 @@
 ﻿using Spire.Pdf;
-using Spire.Pdf.Barcode;
 using Spire.Pdf.Graphics;
-using Spire.Pdf.Grid;
 using System;
 using System.Drawing;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
-using System.Web.UI.WebControls;
 using WebApplication.GetterService;
 
 namespace WebApplication
