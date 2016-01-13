@@ -70,6 +70,13 @@ namespace WebApplication.GetterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxList", ReplyAction="http://tempuri.org/IGetter/GetMaxListResponse")]
         System.Threading.Tasks.Task<object[]> GetMaxListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetLatLon", ReplyAction="http://tempuri.org/IGetter/GetLatLonResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetLatLon();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetLatLon", ReplyAction="http://tempuri.org/IGetter/GetLatLonResponse")]
+        System.Threading.Tasks.Task<object[]> GetLatLonAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -161,6 +168,14 @@ namespace WebApplication.GetterService {
         
         public System.Threading.Tasks.Task<object[]> GetMaxListAsync() {
             return base.Channel.GetMaxListAsync();
+        }
+        
+        public object[] GetLatLon() {
+            return base.Channel.GetLatLon();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetLatLonAsync() {
+            return base.Channel.GetLatLonAsync();
         }
     }
 }

@@ -31,5 +31,7 @@ namespace ServiceLibrary
         [OperationContract]
         ArrayList GetMaxList();                 //Monitoring
 
+        [OperationContract]
+        ArrayList GetLatLon();                 //Positions
     }
 }

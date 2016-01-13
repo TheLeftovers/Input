@@ -40,6 +40,39 @@ namespace ServiceLibrary
             return Position;
         }
 
+        public ArrayList GetLatLon()
+        {
+            ArrayList Position = new ArrayList();
+
+            // Specify connection options and open an connection
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;" +
+                                    "Password=password;Database=project56;Buffer Size=100000;");
+            conn.Open();
+
+
+            // Define query
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT rd_x, rd_y FROM positions LIMIT 50000", conn);
+
+            // Execute query
+            using (NpgsqlDataReader dr = cmd.ExecuteReader())
+            {
+                // Get rows and place in ArrayList
+                while (dr.Read())
+                {
+                    for (int i = 0; i < dr.FieldCount; i++)
+                    {
+                        Position.Add(dr[i]);
+                    }
+                }
+            }
+
+
+            // Close connection
+            conn.Close();
+
+            return Position;
+        }
+
         public ArrayList GetSpeedList()
         {
             ArrayList Position = new ArrayList();
