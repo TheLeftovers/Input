@@ -11,6 +11,12 @@
         <asp:Image ID="Image1" runat="server" Visible="false" />
         <br />
         <asp:Image ID="Image2" runat="server" Visible="false" />
+        <br />
+        <br />
+        <center>
+            <a href="~\\img\\Wagenpark_Rapport.pdf" target="_blank" runat="server">Download Rapport</a>
+        </center>
+        
 
     </div>
     <div id="AnonymousContent" runat="server">

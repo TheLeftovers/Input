@@ -1,6 +1,12 @@
-﻿using System;
+﻿using Spire.Pdf;
+using Spire.Pdf.Barcode;
+using Spire.Pdf.Graphics;
+using Spire.Pdf.Grid;
+using System;
+using System.Drawing;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
+using System.Web.UI.WebControls;
 using WebApplication.GetterService;
 
 namespace WebApplication
@@ -14,6 +20,7 @@ namespace WebApplication
                 AnonymousContent.Visible = false;
                 AuthorizedContent.Visible = true;
                 CreateChart();
+                Download();
             }
             else
             {
@@ -53,8 +60,8 @@ namespace WebApplication
                 Chart1.ChartAreas.Add(new ChartArea("0"));
 
                 Chart1.Height = 350;
-                Chart1.Width = 400;
-                //Chart1.Compression = 50;
+                Chart1.Width = 800;
+                Chart1.Compression = 30;
                 Chart1.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
                 Chart1.RenderType = RenderType.ImageTag;
                 Chart1.AntiAliasing = AntiAliasingStyles.All;
@@ -110,8 +117,8 @@ namespace WebApplication
                 Chart2.ChartAreas.Add(new ChartArea("1"));
 
                 Chart2.Height = 350;
-                Chart2.Width = 400;
-                //Chart1.Compression = 50;
+                Chart2.Width = 800;
+                Chart1.Compression = 30;
                 Chart2.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
                 Chart2.RenderType = RenderType.ImageTag;
                 Chart2.AntiAliasing = AntiAliasingStyles.All;
@@ -147,14 +154,12 @@ namespace WebApplication
                 Chart2.ChartAreas["1"].AxisY.Minimum = 0;
                 Chart2.ChartAreas["1"].AxisY.Maximum = 14;
                 Chart2.ChartAreas["1"].RecalculateAxesScale();
-
+               
                 //Add Chart to div in Vehicle.aspx
                 AuthorizedContent.Controls.Add(Chart1);
-                AuthorizedContent.Controls.Add(new LiteralControl("<h4>Top 50 hoogste snelheden in km/u per wagen.</h4>"));
                 AuthorizedContent.Controls.Add(new LiteralControl("<br />"));
                 AuthorizedContent.Controls.Add(Chart2);
-                AuthorizedContent.Controls.Add(new LiteralControl("<h4>HDOP per aantal verbonden satellieten.</h4>"));
-
+                AuthorizedContent.Controls.Add(new LiteralControl("<br />"));
 
                 //Save created chart in following folder and name.
                 Chart1.SaveImage($"C:\\inetpub\\wwwroot\\CityGIS\\img\\chart{max}_{order}.jpeg", ChartImageFormat.Jpeg);
@@ -163,9 +168,48 @@ namespace WebApplication
 
                 //Refresh page for new chart to be visible.
                 Response.Redirect(Request.RawUrl);
-
-
             }
+        }
+
+        protected void Download()
+        {
+            //Create a pdf document.
+
+            PdfDocument doc = new PdfDocument();
+
+            PdfPageSettings setting = new PdfPageSettings();
+            setting.Size = PdfPageSize.A4;
+
+            // Create one page
+
+            PdfPageBase page = doc.Pages.Add();
+
+            //Draw the text
+            PdfImage img1 = PdfImage.FromFile("C:\\inetpub\\wwwroot\\CityGIS\\img\\chart50_speed.jpeg");
+            PdfImage img2 = PdfImage.FromFile("C:\\inetpub\\wwwroot\\CityGIS\\img\\chart50_hdop.jpeg");
+
+            PointF position = new PointF(0, 0);
+            PointF positionText = new PointF(0, 280);
+            PointF positionText2 = new PointF(0, 650);
+            PointF position2 = new PointF(0, 400);
+            PdfFont font = new PdfFont(PdfFontFamily.Helvetica, 10);
+            PdfBrush brush = PdfBrushes.Black;
+
+
+            page.Canvas.DrawImage(img1, position);
+            page.Canvas.DrawString("Top 50 hoogste snelheden per wagen.", font, brush , positionText);
+            page.Canvas.DrawImage(img2, position2);
+            page.Canvas.DrawString("Waarde HDOP per aantal verbonden satellieten.", font, brush, positionText2);
+
+
+            //Save pdf file.
+            try
+            {
+                doc.SaveToFile("C:\\inetpub\\wwwroot\\CityGIS\\img\\Wagenpark_Rapport.pdf");
+
+                doc.Close();
+            }
+            catch (Exception e) { MessageBox.Show(Page, "Dit bestand bestaat al!"); }
         }
     }
 }
