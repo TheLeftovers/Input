@@ -374,7 +374,6 @@ C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Mi
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Newtonsoft.Json.dll
-C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\NHibernate.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Npgsql.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Owin.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\System.Web.Helpers.dll
@@ -388,7 +387,6 @@ C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Sy
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\WebGrease.dll
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Iesi.Collections.xml
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\NHibernate.xml
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\Npgsql.xml
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\System.Web.Helpers.xml
 C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\System.Web.Mvc.xml
@@ -433,3 +431,18 @@ C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.IO.FileSystem.dll
 C:\Github\Input\DataClient\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Github\Input\DataClient\WebApplication\bin\roslyn\vbc.exe.config
 C:\Github\Input\DataClient\WebApplication\bin\roslyn\vbc.rsp
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\csc.exe.config
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\csc.rsp
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\csi.exe
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\csi.rsp
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\System.AppContext.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\System.Console.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\vbc.exe.config
+C:\Users\Roy van den Heuvel\Desktop\Input\Input\DataClient\WebApplication\bin\roslyn\vbc.rsp
