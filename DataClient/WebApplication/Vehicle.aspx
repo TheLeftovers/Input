@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headerPlaceHolder" runat="server">
     <!-- amCharts javascript code -->
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/light.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
@@ -219,6 +220,96 @@
 
     </script>
 
+    <script type="text/javascript">
+            var satelliteArray = <%=vehicle_aspx.Serialize(this.SatelliteArrayList) %>; 
+            var chart;
+            var legend;
+            var satellite = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+            for( var i = 0; i < satelliteArray.length; i++ ) {
+                satellite[satelliteArray[i]] = satellite[satelliteArray[i]] + 1;
+            };
+            
+            var chartData = [
+                {
+                    "country": "3 satelieten",
+                    "litres": satellite[3]
+                },
+                {
+                    "country": "4 of 5 satelieten",
+                    "litres": satellite[4]+satellite[5]
+                },
+                {
+                    "country": "6 of 7 satelieten",
+                    "litres": satellite[6]+satellite[7]
+                },
+                {
+                    "country": "8 of 9 satelieten",
+                    "litres": satellite[8]+satellite[9]
+                },
+                {
+                    "country": "10 of meer satelieten",
+                    "litres": satellite[10]+satellite[11] + satellite[12]+ satellite[13]+ satellite[14]+ satellite[15]+ satellite[16]+ satellite[17]
+                }
+            ];
+
+            AmCharts.ready(function () {
+                // PIE CHART
+                chart = new AmCharts.AmPieChart();
+                chart.dataProvider = chartData;
+                chart.titleField = "country";
+                chart.valueField = "litres";
+                chart.gradientRatio = [0, 0, 0 ,-0.2, -0.4];
+                chart.gradientType = "radial";
+
+                // LEGEND
+                legend = new AmCharts.AmLegend();
+                legend.align = "center";
+                legend.markerType = "circle";
+                chart.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+                chart.addLegend(legend);
+
+                // WRITE
+                chart.write("chartdiv3");
+            });
+           
+
+            // changes label position (labelRadius)
+            function setLabelPosition() {
+                if (document.getElementById("rb1").checked) {
+                    chart.labelRadius = 30;
+                    chart.labelText = "[[title]]: [[value]]";
+                } else {
+                    chart.labelRadius = -30;
+                    chart.labelText = "[[percents]]%";
+                }
+                chart.validateNow();
+            }
+
+
+            // makes chart 2D/3D
+            function set3D() {
+                if (document.getElementById("rb3").checked) {
+                    chart.depth3D = 10;
+                    chart.angle = 10;
+                } else {
+                    chart.depth3D = 0;
+                    chart.angle = 0;
+                }
+                chart.validateNow();
+            }
+
+            // changes switch of the legend (x or v)
+            function setSwitch() {
+                if (document.getElementById("rb5").checked) {
+                    legend.switchType = "x";
+                } else {
+                    legend.switchType = "v";
+                }
+                legend.validateNow();
+            }
+            
+        </script>
+
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -229,6 +320,22 @@
         <input type="button" value="Exporteer naar PDF" onclick="exportCharts();" />
         <div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
         <div id="chartdiv2" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
+        <div id="chartdiv3" style="width: 100%; height: 400px;"></div>
+        <table align="center" cellspacing="20">
+            <tr>
+                <td>
+                    <input type="radio" checked="true" name="group" id="rb1" onclick="setLabelPosition()">labels outside
+                    <input type="radio" name="group" id="rb2" onclick="setLabelPosition()">labels inside</td>
+                <td>
+                    <input type="radio" name="group2" id="rb3" onclick="set3D()">3D
+                    <input type="radio" checked="true" name="group2" id="rb4" onclick="set3D()">2D</td>
+                <td>Legend switch type:
+                    <input type="radio" checked="true" name="group3" id="rb5"
+                    onclick="setSwitch()">x
+                    <input type="radio" name="group3" id="rb6" onclick="setSwitch()">v</td>
+            </tr>
+        </table>
+        
 
     </div>
 
