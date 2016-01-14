@@ -1,6 +1,6 @@
 ﻿/* Wrapping element */
 body{
-    padding-left: 175px;
+    padding-left: 0;
     padding-top: 70px !important;
     padding-bottom: 20px;
     height: 100%;
@@ -51,6 +51,10 @@ input[type="select"] {
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 15px;
+}
+
+#logo {
+    margin-top: -15px;
 }
 
 .nav-items{

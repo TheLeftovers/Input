@@ -402,7 +402,6 @@ C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.Twitter.dl
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Web.Infrastructure.dll
-C:\Github\Input\DataClient\WebApplication\bin\MySql.Data.dll
 C:\Github\Input\DataClient\WebApplication\bin\Newtonsoft.Json.dll
 C:\Github\Input\DataClient\WebApplication\bin\Npgsql.dll
 C:\Github\Input\DataClient\WebApplication\bin\Owin.dll
@@ -448,6 +447,6 @@ C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.Google.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.dll
 C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.pdb
-C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache

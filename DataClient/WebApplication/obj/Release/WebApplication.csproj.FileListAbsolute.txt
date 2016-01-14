@@ -180,3 +180,8 @@ C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.Google.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Github\Input\DataClient\WebApplication\bin\Spire.License.dll
+C:\Github\Input\DataClient\WebApplication\bin\Spire.Pdf.dll
+C:\Github\Input\DataClient\WebApplication\bin\Microsoft.mshtml.dll
+C:\Github\Input\DataClient\WebApplication\bin\Spire.License.xml
+C:\Github\Input\DataClient\WebApplication\bin\Spire.Pdf.xml

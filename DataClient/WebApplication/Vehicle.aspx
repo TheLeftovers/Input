@@ -6,10 +6,6 @@
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/light.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
-    <script src="http://www.amcharts.com/lib/3/plugins/exporting/amexport.js" type="text/javascript"></script>
-    <script src="http://www.amcharts.com/lib/3/plugins/exporting/canvg.js" type="text/javascript"></script>
-    <script src="http://www.amcharts.com/lib/3/plugins/exporting/rgbcolor.js" type="text/javascript"></script>
-    <script src="http://www.amcharts.com/lib/3/plugins/exporting/filesaver.js" type="text/javascript"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/plugins/export/export.js"></script>
 
 
