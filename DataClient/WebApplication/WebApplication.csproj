@@ -222,7 +222,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Charting.aspx" />
     <Content Include="Citygis.aspx" />
     <Content Include="Commercial.aspx" />
     <Content Include="Contact.aspx" />
@@ -685,13 +684,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Charting.aspx.cs">
-      <DependentUpon>Charting.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Charting.aspx.designer.cs">
-      <DependentUpon>Charting.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Citygis.aspx.cs">
       <DependentUpon>Citygis.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
