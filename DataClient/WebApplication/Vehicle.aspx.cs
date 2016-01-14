@@ -14,18 +14,29 @@ namespace WebApplication
         public object[] UnitArrayList;
         public object[] SpeedArrayList;
 
+        public object[] HDOPArrayList;
+        public object[] SatelliteArrayList;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetterService.GetterClient proxy = new GetterService.GetterClient();
+            GetterClient proxy = new GetterClient();
 
             proxy.Open();
             UnitArrayList = proxy.GetUnitList();
             SpeedArrayList = proxy.GetSpeedList();
 
+            HDOPArrayList = proxy.GetHDOPList();
+            SatelliteArrayList = proxy.GetNumSatellitesList();
+
             proxy.Close();
+
             Serialize(UnitArrayList);
             Serialize(SpeedArrayList);
+            Serialize(HDOPArrayList);
+            Serialize(SatelliteArrayList);
+
+
 
             if (WebApplication.SiteMaster.LoggedIn)
             {
