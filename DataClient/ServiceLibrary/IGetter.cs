@@ -8,6 +8,9 @@ namespace ServiceLibrary
     public interface IGetter
     {
         [OperationContract]
+        ArrayList GetQueryList(string query);
+
+        [OperationContract]
         ArrayList GetUnitList();                //Positions
 
         [OperationContract]
