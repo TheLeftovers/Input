@@ -239,6 +239,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="img\cg.jpg" />
     <Content Include="Maps.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -257,7 +258,6 @@
     </None>
     <Content Include="Content\yeti.bootstrap.css" />
     <Content Include="Content\yeti.bootstrap.min.css" />
-    <Content Include="img\logo.jpg" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />

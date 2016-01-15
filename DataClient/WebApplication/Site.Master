@@ -57,7 +57,7 @@
                         <li><a runat="server" href="Default.aspx">Home</a></li>
                         <li><a runat="server" href="Vehicle.aspx">Wagenpark</a></li>
                         <li><a runat="server" href="Citygis.aspx">CityGIS</a></li>
-                        <li><a runat="server" href="Commercial.aspx">Commercieel</a></li>
+                        <!--<li><a runat="server" href="Commercial.aspx">Commercieel</a></li>-->
                         <li><a runat="server" href="Upload.aspx">Upload</a></li>
                     </ul>
                         <div id="AnonymousTemplate" runat="server">

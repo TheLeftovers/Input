@@ -450,3 +450,4 @@ C:\Github\Input\DataClient\WebApplication\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.dll
 C:\Github\Input\DataClient\WebApplication\obj\Debug\WebApplication.pdb
+C:\Github\Input\DataClient\WebApplication\bin\MySql.Data.dll

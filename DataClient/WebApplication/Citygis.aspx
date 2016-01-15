@@ -21,6 +21,6 @@
         <asp:Image ID="Image1" runat="server" Visible="False" />
         
     </div>
-    <div id="AnonymousContent" runat="server">
-        You are not authorized to view this page. Please login.</div>
+        <div id="AnonymousContent" runat="server">U bent niet geautoriseerd om de inhoud van deze pagina te zien.</div>
+
 </asp:Content>

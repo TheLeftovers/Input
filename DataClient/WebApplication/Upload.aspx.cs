@@ -13,7 +13,16 @@ namespace WebApplication
 
         private void Page_Load(object sender, System.EventArgs e)
         {
-            
+            if (WebApplication.SiteMaster.LoggedIn)
+            {
+                AnonymousContent.Visible = false;
+                AuthorizedContent.Visible = true;
+            }
+            else
+            {
+                AnonymousContent.Visible = true;
+                AuthorizedContent.Visible = false;
+            }
         }
 
         #region Web Form Designer generated code
