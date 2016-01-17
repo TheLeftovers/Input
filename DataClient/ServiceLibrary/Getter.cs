@@ -12,6 +12,23 @@ namespace ServiceLibrary
                                     "Password=root;Database=project56;Buffer Size=100000;");
 
 
+        public ArrayList GetTestList()
+        {
+            ArrayList test = new ArrayList();
+            test.Add("1");
+            test.Add("2");
+            test.Add("3");
+            test.Add("4");
+            test.Add("5");
+            test.Add("6");
+            test.Add("7");
+            test.Add("8");
+            test.Add("9");
+            test.Add("10");
+
+            return test;
+        }
+
         public ArrayList GetQueryList(string query)
         {
             ArrayList Position = new ArrayList();
@@ -255,7 +272,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Gps/GpsTemperature' AND EXTRACT(year FROM begin_time) = '2015' AND EXTRACT(month FROM begin_time) ='03' AND EXTRACT(day FROM begin_time) ='10'  ORDER BY begin_time ASC", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Gps/GpsTemperature' ORDER BY begin_time, max ", conn);
 
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
@@ -263,12 +280,9 @@ namespace ServiceLibrary
                 // Get rows and place in ArrayList
                 while (dr.Read())
                 {
-                    for (int i = 0; i < dr.FieldCount; i++)
-                    {
-                        beginTime.Add(dr[i]);
+                    beginTime.Add(dr[0]);
                     }
                 }
-            }
 
             // Close connection
             conn.Close();
@@ -284,7 +298,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Gps/GpsTemperature' AND EXTRACT(year FROM begin_time) = '2015' AND EXTRACT(month FROM begin_time) ='03' AND EXTRACT(day FROM begin_time) ='10'  ORDER BY begin_time ASC", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Gps/GpsTemperature' ORDER BY begin_time, max ", conn);
 
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())

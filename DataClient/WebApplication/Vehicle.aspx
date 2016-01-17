@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Wagenpark" MasterPageFile="~/Site.Master" EnableSessionState="False" EnableViewState="False" Trace="false" ViewStateMode="Disabled" Language="C#" AutoEventWireup="True" CodeBehind="~/Vehicle.aspx.cs" Inherits="WebApplication.Vehicle" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headerPlaceHolder" runat="server">
+<asp:Content ID="Head" ContentPlaceHolderID="headerPlaceHolder" runat="server">
     <!-- amCharts javascript code -->
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
@@ -8,7 +8,6 @@
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/light.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/plugins/export/export.js"></script>
-
 
     <script type="text/javascript">
 
@@ -19,15 +18,12 @@
 
             var unit = [];
             var speed = [];
-
             var chartData = [];
 
-            
             for (var i = 0; i < unitArray.length; i++) {
                 unit.push(unitArray[i]);
                 speed.push(speedArray[i]);
             }
-
 
             for( var i = 0; i < unitArray.length; i++ ) {
                 chartData.push( {
@@ -43,7 +39,6 @@
         /// BEGIN OF CHART1 //////
         AmCharts.makeChart("chartdiv1",     //DIV
             {
-               
                 "type": "serial",
                 "categoryField": "Unit",    //X-axis waardes
                 "startDuration": 1,

@@ -17,11 +17,11 @@ public class Monitoring {
     String type;
     long min;
     long max;
-    Timestamp beginTime;
+    String  beginTime;
     Timestamp endTime;
     long sum;
 
-    public Monitoring(long unitId, String type, long min, long max, Timestamp beginTime, Timestamp endTime, long sum) {
+    public Monitoring(long unitId, String type, long min, long max, String beginTime, Timestamp endTime, long sum) {
         this.unitId = unitId;
         this.type = type;
         this.min = min;
@@ -36,11 +36,11 @@ public class Monitoring {
     
     
 
-    public Timestamp getBeginTime() {
+    public String getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(Timestamp beginTime) {
+    public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
 

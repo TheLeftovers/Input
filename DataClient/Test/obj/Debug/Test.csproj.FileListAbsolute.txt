@@ -1,0 +1,11 @@
+C:\Github\Input\DataClient\Test\bin\Debug\Test.dll
+C:\Github\Input\DataClient\Test\bin\Debug\Test.pdb
+C:\Github\Input\DataClient\Test\bin\Debug\nunit.framework.dll
+C:\Github\Input\DataClient\Test\bin\Debug\ServiceLibrary.dll
+C:\Github\Input\DataClient\Test\bin\Debug\Npgsql.dll
+C:\Github\Input\DataClient\Test\bin\Debug\ServiceLibrary.pdb
+C:\Github\Input\DataClient\Test\bin\Debug\nunit.framework.xml
+C:\Github\Input\DataClient\Test\bin\Debug\Npgsql.xml
+C:\Github\Input\DataClient\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Github\Input\DataClient\Test\obj\Debug\Test.dll
+C:\Github\Input\DataClient\Test\obj\Debug\Test.pdb

@@ -15,6 +15,13 @@ namespace WebApplication.GetterService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GetterService.IGetter")]
     public interface IGetter {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetTestList", ReplyAction="http://tempuri.org/IGetter/GetTestListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetTestList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetTestList", ReplyAction="http://tempuri.org/IGetter/GetTestListResponse")]
+        System.Threading.Tasks.Task<object[]> GetTestListAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetQueryList", ReplyAction="http://tempuri.org/IGetter/GetQueryListResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] GetQueryList(string query);
@@ -111,6 +118,14 @@ namespace WebApplication.GetterService {
         
         public GetterClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public object[] GetTestList() {
+            return base.Channel.GetTestList();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetTestListAsync() {
+            return base.Channel.GetTestListAsync();
         }
         
         public object[] GetQueryList(string query) {

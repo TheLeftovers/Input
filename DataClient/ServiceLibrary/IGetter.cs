@@ -7,6 +7,11 @@ namespace ServiceLibrary
     [ServiceContract]
     public interface IGetter
     {
+
+        [OperationContract]
+        ArrayList GetTestList();            //Test method
+
+
         [OperationContract]
         ArrayList GetQueryList(string query);
 

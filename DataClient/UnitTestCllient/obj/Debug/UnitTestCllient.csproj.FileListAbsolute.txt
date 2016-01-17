@@ -1,0 +1,13 @@
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\UnitTestCllient.exe.config
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\UnitTestCllient.exe
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\UnitTestCllient.pdb
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Github\Input\DataClient\UnitTestCllient\obj\Debug\UnitTestCllient.csprojResolveAssemblyReference.cache
+C:\Github\Input\DataClient\UnitTestCllient\obj\Debug\UnitTestCllient.exe
+C:\Github\Input\DataClient\UnitTestCllient\obj\Debug\UnitTestCllient.pdb
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\ServiceLibrary.dll
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\Npgsql.dll
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\ServiceLibrary.pdb
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\Npgsql.xml
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\nunit.framework.dll
+C:\Github\Input\DataClient\UnitTestCllient\bin\Debug\nunit.framework.xml

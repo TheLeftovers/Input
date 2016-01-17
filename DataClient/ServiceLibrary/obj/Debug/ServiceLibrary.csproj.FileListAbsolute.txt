@@ -32,6 +32,5 @@ C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Npgsql.dll
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Antlr3.Runtime.pdb
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.xml
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Npgsql.xml
-C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.dll
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.pdb

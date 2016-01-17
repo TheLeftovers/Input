@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "Host\Host.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLibrary", "ServiceLibrary\ServiceLibrary.csproj", "{88FF497D-A841-46B2-8741-213921A1B767}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{88FF497D-A841-46B2-8741-213921A1B767}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88FF497D-A841-46B2-8741-213921A1B767}.Release|x64.ActiveCfg = Release|Any CPU
 		{88FF497D-A841-46B2-8741-213921A1B767}.Release|x64.Build.0 = Release|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Debug|x64.Build.0 = Debug|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Release|x64.ActiveCfg = Release|Any CPU
+		{0D3F0E86-33BA-412D-AA1A-344B979DBB4E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
