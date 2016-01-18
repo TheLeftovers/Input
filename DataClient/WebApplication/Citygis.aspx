@@ -161,7 +161,14 @@
 						    "text": "Temperatuur GPS module over tijd"
 						}
 				    ],
-				    "dataProvider": getDataForChart1()
+				    "dataProvider": getDataForChart1(),
+				    "export": {
+				        "enabled": true,
+				        "libs": {
+				            "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
+				        },
+				        "menu": []
+				    }
 				    
 				    
 				    
@@ -188,7 +195,7 @@
                             chart.export.toPDF( {
                                 content: images
                             }, function( data ) {
-                                this.download( data, "application/pdf", "amCharts.pdf" );
+                                this.download( data, "application/pdf", "CityGIS_Rapport.pdf" );
                             } );
                         }
                     } );

@@ -204,7 +204,7 @@
                             chart.export.toPDF( {
                                 content: images
                             }, function( data ) {
-                                this.download( data, "application/pdf", "amCharts.pdf" );
+                                this.download( data, "application/pdf", "Wagenpark_Rapport.pdf" );
                             } );
                         }
                     } );
