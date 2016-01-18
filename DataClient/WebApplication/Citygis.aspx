@@ -7,6 +7,7 @@
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/plugins/export/export.js"></script>
 
     <script type="text/javascript">
 
@@ -54,7 +55,14 @@
 						    "category": "Connectie verbroken",
 						    "values": connFalse
 						}
-                ]      
+                ],
+                "export": {
+            "enabled": true,
+            "libs": {
+                "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
+            },
+                    "menu": []
+        }
         
             });
         ///END Of Chart1    ////
@@ -161,6 +169,32 @@
 				}
 			);
         /// END OF CHART 2 ///
+
+        function exportCharts() {
+            // iterate through all of the charts and prepare their images for export
+            var images = [];
+            var pending = AmCharts.charts.length;
+            for ( var i = 0; i < AmCharts.charts.length; i++ ) {
+                var chart = AmCharts.charts[ i ];
+                chart.export.capture( {}, function() {
+                    this.toJPG( {}, function( data ) {
+                        images.push( {
+                            "image": data,
+                            "fit": [ 523.28, 769.89 ]
+                        } );
+                        pending--;
+                        if ( pending === 0 ) {
+                            // all done - construct PDF
+                            chart.export.toPDF( {
+                                content: images
+                            }, function( data ) {
+                                this.download( data, "application/pdf", "amCharts.pdf" );
+                            } );
+                        }
+                    } );
+                } );
+            }
+        }
     </script>
 </asp:Content>
 
@@ -170,7 +204,8 @@
     <br />
 
     <div id="AuthorizedContent" runat="server">
-
+        <input type="button" value="Exporteer naar PDF" onclick="exportCharts();" />
+        <br />
         <h4>Te Reparen Wagens</h4>
 
         <asp:Table ID="Table1" runat="server" CellPadding="0" CellSpacing="0" Font-Size="13px">
@@ -180,9 +215,8 @@
         </asp:Table>
 
         <br />
-        <asp:Image ID="Image1" runat="server" Visible="False" />
         <br />
-        <br />
+       
         <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
         <br />
         <div id="chartdiv2" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
