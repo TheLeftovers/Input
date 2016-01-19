@@ -23,8 +23,8 @@ namespace WebApplication
             GetterClient proxy = new GetterClient();
 
             proxy.Open();
-            UnitArrayList = proxy.GetQueryList("SELECT unit_id FROM positions ORDER BY speed DESC LIMIT 300");
-            SpeedArrayList = proxy.GetQueryList("SELECT speed FROM positions ORDER BY speed DESC LIMIT 300");
+            UnitArrayList = proxy.GetUnitListForTopSpeed();
+            SpeedArrayList = proxy.GetSpeedListForTopSpeed();
 
             HDOPArrayList = proxy.GetHDOPList();
             SatelliteArrayList = proxy.GetNumSatellitesList();

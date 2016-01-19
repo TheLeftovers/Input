@@ -27,27 +27,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetUnitList">
+  <xs:element name="GetUnitListForTopSpeed">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetUnitListResponse">
+  <xs:element name="GetUnitListForTopSpeedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUnitListResult" nillable="true" type="q3:ArrayOfanyType" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUnitListForTopSpeedResult" nillable="true" type="q3:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSpeedList">
+  <xs:element name="GetSpeedListForTopSpeed">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSpeedListResponse">
+  <xs:element name="GetSpeedListForTopSpeedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSpeedListResult" nillable="true" type="q4:ArrayOfanyType" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSpeedListForTopSpeedResult" nillable="true" type="q4:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -99,27 +99,51 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetBeginTimeList">
+  <xs:element name="GetBeginTimeListForGPSTemp">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetBeginTimeListResponse">
+  <xs:element name="GetBeginTimeListForGPSTempResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetBeginTimeListResult" nillable="true" type="q9:ArrayOfanyType" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetBeginTimeListForGPSTempResult" nillable="true" type="q9:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMaxList">
+  <xs:element name="GetMaxListForGPSTemp">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMaxListResponse">
+  <xs:element name="GetMaxListForGPSTempResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMaxListResult" nillable="true" type="q10:ArrayOfanyType" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMaxListForGPSTempResult" nillable="true" type="q10:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeginTimeListForCPUTemp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeginTimeListForCPUTempResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetBeginTimeListForCPUTempResult" nillable="true" type="q11:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxListForCPUTemp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxListForCPUTempResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMaxListForCPUTempResult" nillable="true" type="q12:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -131,7 +155,7 @@
   <xs:element name="GetLatLonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetLatLonResult" nillable="true" type="q11:ArrayOfanyType" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetLatLonResult" nillable="true" type="q13:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

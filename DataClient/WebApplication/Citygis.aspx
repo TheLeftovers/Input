@@ -27,7 +27,7 @@
             {
                 "type": "pie",              //TYPE
                 "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-                "innerRadius": 7,
+                "innerRadius": 0,
                 "labelRadius": 25,
                 "baseColor": "#0192D3",     //COLOR
                 "pullOutEffect": "elastic",
@@ -65,7 +65,7 @@
     </script>
     <script type="text/javascript">
         /// BEGIN OF getData()  ///
-        function getDataForChart1(){
+        function getDataForChart2(){
             var dateArray = <%=citygis_aspx.Serialize(this.DateArrayList) %>;      //ArrayList with data
             var tempArray = <%=citygis_aspx.Serialize(this.TempArrayList) %>;    //ArrayList with data
 
@@ -157,7 +157,109 @@
 						    "text": "Temperatuur GPS module over tijd"
 						}
 				    ],
-				    "dataProvider": getDataForChart1(),
+				    "dataProvider": getDataForChart2(),
+				    "export": {
+				        "enabled": true
+				    }
+				}
+			);
+        /// END OF CHART 2 ///
+    </script>
+    <script type="text/javascript">
+        /// BEGIN OF getData()  ///
+        function getDataForChart3(){
+            var dateArray = <%=citygis_aspx.Serialize(this.CPUDateArrayList) %>;      //ArrayList with data
+            var tempArray = <%=citygis_aspx.Serialize(this.CPUTempArrayList) %>;    //ArrayList with data
+
+            var date = [];
+            var temp = [];
+            var chartData = [];
+
+            for (var i = 0; i < dateArray.length; i++) {
+                date.push(dateArray[i]);
+                temp.push(tempArray[i]);
+            }
+
+            for( var i = 0; i < dateArray.length; i++ ) {
+                chartData.push( {
+                    "column-1": temp[i],
+                    "date": date[i]
+                } )};
+
+            return chartData;
+        }
+        /// END OF getData()    ///
+
+
+        ///BEGIN OF CHART 3 ////
+        AmCharts.makeChart("chartdiv3",     ////DIV
+				{
+				    "type": "serial",
+				    "categoryField": "date",
+				    "dataDateFormat": "YYYY-MM-DD HH:NN:SS",
+				    "categoryAxis": {
+				        "title": "Tijd",
+				        "parseDates": true,
+				        "minPeriod": "ss",
+				        "dateFormats": [ {
+				            "period": "fff",
+				            "format": "JJ:NN:SS"
+				        }, {
+				            "period": "ss",
+				            "format": "JJ:NN:SS"
+				        }, {
+				            "period": "mm",
+				            "format": "JJ:NN"
+				        }, {
+				            "period": "hh",
+				            "format": "JJ:NN"
+				        }, {
+				            "period": "DD",
+				            "format": "MMM DD JJ:NN"
+				        }, {
+				            "period": "WW",
+				            "format": "MMM DD"
+				        }, {
+				            "period": "MM",
+				            "format": "MMM"
+				        }, {
+				            "period": "YYYY",
+				            "format": "YYYY"
+				        } ],
+				    },
+				    "chartCursor": {
+				        "enabled": true,
+				        "categoryBalloonDateFormat": "JJ:NN:SS"
+				    },
+				    "chartScrollbar": {
+				        "enabled": true
+				    },
+				    "trendLines": [],
+				    "graphs": [
+						{
+						    "bullet": "round",
+						    "id": "AmGraph-1",
+						    "title": "graph 1",
+						    "valueField": "column-1"
+						}
+				    ],
+				    "guides": [],
+				    "valueAxes": [
+						{
+						    "id": "ValueAxis-1",
+						    "title": "Temperatuur (Celsius)"
+						}
+				    ],
+				    "allLabels": [],
+				    "balloon": {},
+				    "titles": [
+						{
+						    "id": "Title-1",
+						    "size": 15,
+						    "text": "Temperatuur CPU over tijd"
+						}
+				    ],
+				    "dataProvider": getDataForChart3(),
 				    "export": {
 				        "enabled": true
 				    }
@@ -189,6 +291,8 @@
         <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
         <br />
         <div id="chartdiv2" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
+         <br />
+        <div id="chartdiv3" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
 
 
 

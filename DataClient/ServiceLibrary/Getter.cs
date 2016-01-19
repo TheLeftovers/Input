@@ -59,7 +59,7 @@ namespace ServiceLibrary
         }
 
 
-        public ArrayList GetUnitList()
+        public ArrayList GetUnitListForTopSpeed()
         {
             ArrayList Position = new ArrayList();
 
@@ -118,7 +118,7 @@ namespace ServiceLibrary
             return Position;
         }
 
-        public ArrayList GetSpeedList()
+        public ArrayList GetSpeedListForTopSpeed()
         {
             ArrayList Position = new ArrayList();
 
@@ -264,7 +264,7 @@ namespace ServiceLibrary
             return sat;
         }
 
-        public ArrayList GetBeginTimeList()
+        public ArrayList GetBeginTimeListForGPSTemp()
         {
             ArrayList beginTime = new ArrayList();
 
@@ -272,7 +272,7 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Gps/GpsTemperature' ORDER BY begin_time, max ", conn);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Gps/GpsTemperature' ORDER BY begin_time,  max", conn);
 
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
@@ -290,7 +290,7 @@ namespace ServiceLibrary
             return beginTime;
         }
 
-        public ArrayList GetMaxList()
+        public ArrayList GetMaxListForGPSTemp()
         {
             ArrayList Max = new ArrayList();
 
@@ -316,6 +316,58 @@ namespace ServiceLibrary
             return Max;
         }
 
-        
+        public ArrayList GetBeginTimeListForCPUTemp()
+        {
+            ArrayList beginTime = new ArrayList();
+
+            //Open connection
+            conn.Open();
+
+            // Define query
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Hardware/ProcessorTemperature' ORDER BY begin_time, max ASC", conn);
+
+            // Execute query
+            using (NpgsqlDataReader dr = cmd.ExecuteReader())
+            {
+                // Get rows and place in ArrayList
+                while (dr.Read())
+                {
+                    beginTime.Add(dr[0]);
+                }
+            }
+
+            // Close connection
+            conn.Close();
+
+            return beginTime;
+        }
+
+        public ArrayList GetMaxListForCPUTemp()
+        {
+            ArrayList Max = new ArrayList();
+
+            //Open connection
+            conn.Open();
+
+            // Define query
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT begin_time, max FROM monitoring WHERE (begin_time BETWEEN '2015-03-10 07:00' AND '2015-03-10 08:00') AND type='Hardware/ProcessorTemperature' ORDER BY begin_time, max ASC", conn);
+
+            // Execute query
+            using (NpgsqlDataReader dr = cmd.ExecuteReader())
+            {
+                // Get rows and place in ArrayList
+                while (dr.Read())
+                {
+                    Max.Add(dr[1]);
+                }
+            }
+
+            // Close connection
+            conn.Close();
+
+            return Max;
+        }
+
+
     }
 }

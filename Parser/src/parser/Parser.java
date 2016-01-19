@@ -242,7 +242,7 @@ public class Parser {
                 ps.setLong(4, mon.getMax());
                 ps.setLong(5, mon.getSum());
                 ps.setString(6, mon.getBeginTime());
-                ps.setTimestamp(7, mon.getEndTime());
+                ps.setString(7, mon.getEndTime());
 
                 ps.addBatch();
             }
@@ -276,6 +276,7 @@ public class Parser {
                 String StringBegin = String.valueOf(beginTimeA);
 
                 String endTimeA = csvLineArray[2];
+                String StringEnd = String.valueOf(endTimeA);
 
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
                 java.util.Date beginTime = null;
@@ -302,7 +303,7 @@ public class Parser {
 
                 Monitoring mon = new Monitoring();
                 mon.setBeginTime(StringBegin);
-                mon.setEndTime(sqlEndTime);
+                mon.setEndTime(StringEnd);
                 mon.setMax(longMax);
                 mon.setMin(longMin);
                 mon.setSum(longSum);

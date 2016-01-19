@@ -34,3 +34,4 @@ C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Iesi.Collections.xml
 C:\Github\Input\DataClient\ServiceLibrary\bin\Debug\Npgsql.xml
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.dll
 C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.pdb
+C:\Github\Input\DataClient\ServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache

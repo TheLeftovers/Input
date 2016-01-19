@@ -18,10 +18,10 @@ public class Monitoring {
     long min;
     long max;
     String  beginTime;
-    Timestamp endTime;
+    String endTime;
     long sum;
 
-    public Monitoring(long unitId, String type, long min, long max, String beginTime, Timestamp endTime, long sum) {
+    public Monitoring(long unitId, String type, long min, long max, String beginTime, String endTime, long sum) {
         this.unitId = unitId;
         this.type = type;
         this.min = min;
@@ -44,11 +44,11 @@ public class Monitoring {
         this.beginTime = beginTime;
     }
 
-    public Timestamp getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Timestamp endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

@@ -29,19 +29,19 @@ namespace WebApplication.GetterService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetQueryList", ReplyAction="http://tempuri.org/IGetter/GetQueryListResponse")]
         System.Threading.Tasks.Task<object[]> GetQueryListAsync(string query);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitList", ReplyAction="http://tempuri.org/IGetter/GetUnitListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitListForTopSpeed", ReplyAction="http://tempuri.org/IGetter/GetUnitListForTopSpeedResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetUnitList();
+        object[] GetUnitListForTopSpeed();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitList", ReplyAction="http://tempuri.org/IGetter/GetUnitListResponse")]
-        System.Threading.Tasks.Task<object[]> GetUnitListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitListForTopSpeed", ReplyAction="http://tempuri.org/IGetter/GetUnitListForTopSpeedResponse")]
+        System.Threading.Tasks.Task<object[]> GetUnitListForTopSpeedAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetSpeedList", ReplyAction="http://tempuri.org/IGetter/GetSpeedListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetSpeedListForTopSpeed", ReplyAction="http://tempuri.org/IGetter/GetSpeedListForTopSpeedResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetSpeedList();
+        object[] GetSpeedListForTopSpeed();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetSpeedList", ReplyAction="http://tempuri.org/IGetter/GetSpeedListResponse")]
-        System.Threading.Tasks.Task<object[]> GetSpeedListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetSpeedListForTopSpeed", ReplyAction="http://tempuri.org/IGetter/GetSpeedListForTopSpeedResponse")]
+        System.Threading.Tasks.Task<object[]> GetSpeedListForTopSpeedAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetUnitListbyRepair", ReplyAction="http://tempuri.org/IGetter/GetUnitListbyRepairResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -71,19 +71,33 @@ namespace WebApplication.GetterService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesList", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListResponse")]
         System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeList", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForGPSTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetBeginTimeList();
+        object[] GetBeginTimeListForGPSTemp();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeList", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListResponse")]
-        System.Threading.Tasks.Task<object[]> GetBeginTimeListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForGPSTempResponse")]
+        System.Threading.Tasks.Task<object[]> GetBeginTimeListForGPSTempAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxList", ReplyAction="http://tempuri.org/IGetter/GetMaxListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForGPSTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMaxList();
+        object[] GetMaxListForGPSTemp();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxList", ReplyAction="http://tempuri.org/IGetter/GetMaxListResponse")]
-        System.Threading.Tasks.Task<object[]> GetMaxListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForGPSTempResponse")]
+        System.Threading.Tasks.Task<object[]> GetMaxListForGPSTempAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForCPUTempResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetBeginTimeListForCPUTemp();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForCPUTempResponse")]
+        System.Threading.Tasks.Task<object[]> GetBeginTimeListForCPUTempAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForCPUTempResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetMaxListForCPUTemp();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForCPUTempResponse")]
+        System.Threading.Tasks.Task<object[]> GetMaxListForCPUTempAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetLatLon", ReplyAction="http://tempuri.org/IGetter/GetLatLonResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -136,20 +150,20 @@ namespace WebApplication.GetterService {
             return base.Channel.GetQueryListAsync(query);
         }
         
-        public object[] GetUnitList() {
-            return base.Channel.GetUnitList();
+        public object[] GetUnitListForTopSpeed() {
+            return base.Channel.GetUnitListForTopSpeed();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetUnitListAsync() {
-            return base.Channel.GetUnitListAsync();
+        public System.Threading.Tasks.Task<object[]> GetUnitListForTopSpeedAsync() {
+            return base.Channel.GetUnitListForTopSpeedAsync();
         }
         
-        public object[] GetSpeedList() {
-            return base.Channel.GetSpeedList();
+        public object[] GetSpeedListForTopSpeed() {
+            return base.Channel.GetSpeedListForTopSpeed();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetSpeedListAsync() {
-            return base.Channel.GetSpeedListAsync();
+        public System.Threading.Tasks.Task<object[]> GetSpeedListForTopSpeedAsync() {
+            return base.Channel.GetSpeedListForTopSpeedAsync();
         }
         
         public object[] GetUnitListbyRepair() {
@@ -184,20 +198,36 @@ namespace WebApplication.GetterService {
             return base.Channel.GetNumSatellitesListAsync();
         }
         
-        public object[] GetBeginTimeList() {
-            return base.Channel.GetBeginTimeList();
+        public object[] GetBeginTimeListForGPSTemp() {
+            return base.Channel.GetBeginTimeListForGPSTemp();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetBeginTimeListAsync() {
-            return base.Channel.GetBeginTimeListAsync();
+        public System.Threading.Tasks.Task<object[]> GetBeginTimeListForGPSTempAsync() {
+            return base.Channel.GetBeginTimeListForGPSTempAsync();
         }
         
-        public object[] GetMaxList() {
-            return base.Channel.GetMaxList();
+        public object[] GetMaxListForGPSTemp() {
+            return base.Channel.GetMaxListForGPSTemp();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetMaxListAsync() {
-            return base.Channel.GetMaxListAsync();
+        public System.Threading.Tasks.Task<object[]> GetMaxListForGPSTempAsync() {
+            return base.Channel.GetMaxListForGPSTempAsync();
+        }
+        
+        public object[] GetBeginTimeListForCPUTemp() {
+            return base.Channel.GetBeginTimeListForCPUTemp();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetBeginTimeListForCPUTempAsync() {
+            return base.Channel.GetBeginTimeListForCPUTempAsync();
+        }
+        
+        public object[] GetMaxListForCPUTemp() {
+            return base.Channel.GetMaxListForCPUTemp();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetMaxListForCPUTempAsync() {
+            return base.Channel.GetMaxListForCPUTempAsync();
         }
         
         public object[] GetLatLon() {

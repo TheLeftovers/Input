@@ -16,10 +16,10 @@ namespace ServiceLibrary
         ArrayList GetQueryList(string query);
 
         [OperationContract]
-        ArrayList GetUnitList();                //Positions
+        ArrayList GetUnitListForTopSpeed();                //Positions
 
         [OperationContract]
-        ArrayList GetSpeedList();               //Positions
+        ArrayList GetSpeedListForTopSpeed();               //Positions
 
         [OperationContract]
         ArrayList GetUnitListbyRepair();        //Events
@@ -34,10 +34,16 @@ namespace ServiceLibrary
         ArrayList GetNumSatellitesList();       //Positions   
 
         [OperationContract]
-        ArrayList GetBeginTimeList();           //Monitoring
+        ArrayList GetBeginTimeListForGPSTemp();     //Monitoring
 
         [OperationContract]
-        ArrayList GetMaxList();                 //Monitoring
+        ArrayList GetMaxListForGPSTemp();           //Monitoring
+
+        [OperationContract]
+        ArrayList GetBeginTimeListForCPUTemp();     //Monitoring
+
+        [OperationContract]
+        ArrayList GetMaxListForCPUTemp();           //Monitoring
 
         [OperationContract]
         ArrayList GetLatLon();                 //Positions

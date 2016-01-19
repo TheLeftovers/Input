@@ -18,6 +18,8 @@ namespace WebApplication
         public object[] ConnBoolFalseArrayList;
         public object[] DateArrayList;
         public object[] TempArrayList;
+        public object[] CPUDateArrayList;
+        public object[] CPUTempArrayList;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -34,8 +36,10 @@ namespace WebApplication
 
                 ConnBoolTrueArrayList = proxy.GetQueryList("SELECT COUNT(value) FROM connections WHERE value = 'True'");
                 ConnBoolFalseArrayList = proxy.GetQueryList("SELECT COUNT(value) FROM connections WHERE value = 'False'");
-                DateArrayList = proxy.GetBeginTimeList();
-                TempArrayList = proxy.GetMaxList();
+                DateArrayList = proxy.GetBeginTimeListForGPSTemp();
+                TempArrayList = proxy.GetMaxListForGPSTemp();
+                CPUDateArrayList = proxy.GetBeginTimeListForCPUTemp();
+                CPUTempArrayList = proxy.GetMaxListForCPUTemp();
 
 
                 proxy.Close();
@@ -44,6 +48,8 @@ namespace WebApplication
                 Serialize(ConnBoolFalseArrayList);
                 Serialize(DateArrayList);
                 Serialize(TempArrayList);
+                Serialize(CPUDateArrayList);
+                Serialize(CPUTempArrayList);
             }
             else
             {
