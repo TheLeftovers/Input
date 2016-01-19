@@ -154,7 +154,7 @@
 						{
 						    "id": "Title-1",
 						    "size": 15,
-						    "text": "Temperatuur GPS module over tijd"
+						    "text": "Temperatuur GPS module over tijd (10-03-2015)"
 						}
 				    ],
 				    "dataProvider": getDataForChart2(),
@@ -256,7 +256,7 @@
 						{
 						    "id": "Title-1",
 						    "size": 15,
-						    "text": "Temperatuur CPU over tijd"
+						    "text": "Temperatuur CPU over tijd (10-03-2015)"
 						}
 				    ],
 				    "dataProvider": getDataForChart3(),

@@ -1,16 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Maps.aspx.cs" Inherits="WebApplication.Maps" %>
+﻿<%@ Page Title="Heatmap" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Maps.aspx.cs" Inherits="WebApplication.Maps" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="headerPlaceHolder" ID="Head" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
     <script>
         var map, heatmap;
 
       function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 51.2, lng: 4.4 },
-            zoom: 12
+            center: { lat: 51.9166667, lng: 4.5 },
+            zoom: 8
         });
 
         heatmap = new google.maps.visualization.HeatmapLayer({
@@ -43,13 +41,16 @@
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDazsHBOfJMAznmcc98G9F5f4rkpvrEmMI&signed_in=true&libraries=visualization&callback=initMap" async defer></script>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <div id="map" style="width:900px;height:700px;"></div>
+</asp:Content>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h2><%: Title %>.</h2>
+    <br />
+
+    <div id="AuthorizedContent" runat="server">
+        <center>
+        <div id="map" style="width:550px;height:550px;"></div>
+        </center>
     </div>
-    </form>
-</body>
-</html>
+        <div id="AnonymousContent" runat="server">U bent niet geautoriseerd om de inhoud van deze pagina te zien.</div>
+
+</asp:Content>
