@@ -7,7 +7,8 @@
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/light.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
-    <script type="text/javascript" src="http://www.amcharts.com/lib/3/plugins/export/export.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.js" type="text/javascript"></script>
+    <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
 
@@ -86,19 +87,12 @@
                 ],						
                 "dataProvider": getDataForChart1(), //Data
                 "export": {
-                    "enabled": true,
-                    "libs": {
-                        "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
-                    },
-                    "menu": []
+                    "enabled": true
                 }
+                
             }
         );
         ////    END OF CHART 1  ////
-
-    </script>
-
-    <script type="text/javascript">
 
         ////    BEGIN OF getDataForChart2   ////
         function getDataForChart2(){
@@ -177,43 +171,13 @@
                 ],						
                 "dataProvider": getDataForChart2(),  //Data
                 "export": {
-                    "enabled": true,
-                    "libs": {
-                        "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
-                    },
-                    "menu": []
+                    "enabled": true
                 }
             }
         );
-
-        function exportCharts() {
-            // iterate through all of the charts and prepare their images for export
-            var images = [];
-            var pending = AmCharts.charts.length;
-            for ( var i = 0; i < AmCharts.charts.length; i++ ) {
-                var chart = AmCharts.charts[ i ];
-                chart.export.capture( {}, function() {
-                    this.toJPG( {}, function( data ) {
-                        images.push( {
-                            "image": data,
-                            "fit": [ 523.28, 769.89 ]
-                        } );
-                        pending--;
-                        if ( pending === 0 ) {
-                            // all done - construct PDF
-                            chart.export.toPDF( {
-                                content: images
-                            }, function( data ) {
-                                this.download( data, "application/pdf", "Wagenpark_Rapport.pdf" );
-                            } );
-                        }
-                    } );
-                } );
-            }
-        }
+     
         ////    END OF CHART 2  ////
-
-    </script>
+        </script>
 
     <script type="text/javascript">
         var satelliteArray = <%=vehicle_aspx.Serialize(this.SatelliteArrayList) %>; 
@@ -301,8 +265,8 @@
                 legend.switchType = "v";
             }
             legend.validateNow();
-        }
-            
+        };
+
     </script>
 
 </asp:Content>
@@ -312,7 +276,6 @@
     <br />
 
     <div id="AuthorizedContent" runat="server">
-        <input type="button" value="Exporteer naar PDF" onclick="exportCharts();" />
         <div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
         <div id="chartdiv2" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
         <div id="chartdiv3" style="width: 100%; height: 400px;"></div>

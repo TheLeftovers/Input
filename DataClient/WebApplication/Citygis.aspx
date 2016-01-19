@@ -7,8 +7,8 @@
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
     <script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
-    <script type="text/javascript" src="http://www.amcharts.com/lib/3/plugins/export/export.js"></script>
-
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.js" type="text/javascript"></script>
+    <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
 
         /// BEGIN OF CHART1 //////
@@ -57,12 +57,8 @@
 						}
                 ],
                 "export": {
-            "enabled": true,
-            "libs": {
-                "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
-            },
-                    "menu": []
-        }
+                    "enabled": true,
+                }
         
             });
         ///END Of Chart1    ////
@@ -163,45 +159,13 @@
 				    ],
 				    "dataProvider": getDataForChart1(),
 				    "export": {
-				        "enabled": true,
-				        "libs": {
-				            "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
-				        },
-				        "menu": []
+				        "enabled": true
 				    }
-				    
-				    
-				    
-        
 				}
 			);
         /// END OF CHART 2 ///
 
-        function exportCharts() {
-            // iterate through all of the charts and prepare their images for export
-            var images = [];
-            var pending = AmCharts.charts.length;
-            for ( var i = 0; i < AmCharts.charts.length; i++ ) {
-                var chart = AmCharts.charts[ i ];
-                chart.export.capture( {}, function() {
-                    this.toJPG( {}, function( data ) {
-                        images.push( {
-                            "image": data,
-                            "fit": [ 523.28, 769.89 ]
-                        } );
-                        pending--;
-                        if ( pending === 0 ) {
-                            // all done - construct PDF
-                            chart.export.toPDF( {
-                                content: images
-                            }, function( data ) {
-                                this.download( data, "application/pdf", "CityGIS_Rapport.pdf" );
-                            } );
-                        }
-                    } );
-                } );
-            }
-        }
+       
     </script>
 </asp:Content>
 
@@ -211,8 +175,6 @@
     <br />
 
     <div id="AuthorizedContent" runat="server">
-        <input type="button" value="Exporteer naar PDF" onclick="exportCharts();" />
-        <br />
         <h4>Te Reparen Wagens</h4>
 
         <asp:Table ID="Table1" runat="server" CellPadding="0" CellSpacing="0" Font-Size="13px">

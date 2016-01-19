@@ -131,3 +131,6 @@ input[type="select"] {
     margin-top: 40px;
 }
 
+#chartdiv, #chartdiv1, #chartdiv2{
+    font-size: 11px;
+}
