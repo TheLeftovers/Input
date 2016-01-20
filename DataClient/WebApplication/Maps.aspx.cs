@@ -33,7 +33,7 @@ namespace WebApplication
                 conn.Open();
 
                 // Define query
-                NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT unit_id, date FROM positions ORDER BY unit_id, date ASC", conn);
+                NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT unit_id, DATE(date) AS ddate FROM positions ORDER BY unit_id, ddate ASC", conn);
 
 
                 // Execute query
