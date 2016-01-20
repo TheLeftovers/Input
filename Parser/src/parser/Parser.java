@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package parser;
 
 import java.io.BufferedReader;
@@ -24,18 +19,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Array;
 import static parser.FileWatcher.watchDirectoryPath;
+import java.nio.file.Files;
 
 /**
- *
  * @author Roy van den Heuvel
  */
 public class Parser {
 
-    /**
-     * @param args the command line arguments
-     */
     static BufferedReader br = null;
     static String line;
     static String csvSplitBy = ";";
@@ -45,9 +36,9 @@ public class Parser {
 
     public static void main(String[] args) {
         try {
-            conn = DriverManager.getConnection(url, "postgres", "root");
+            conn = DriverManager.getConnection(url, "postgres", "password");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Connectiion with database could not be established, check the username and password and url.");
         }
 
         Path path = Paths.get("C:/Uploads/");
@@ -72,14 +63,14 @@ public class Parser {
             ps.executeBatch();
             ps.close();
         } catch (BatchUpdateException e) {
-            e.getNextException().printStackTrace();
+            System.out.println("Something went wroong when updating the batch.");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong during the execution of the batch.");
         }
     }
 
     public static void readEventsCsv(String csvFile){
-        ArrayList eventsArray = new ArrayList<Event>();
+        ArrayList eventsArray = new ArrayList<>();
 
         try {
 
@@ -103,7 +94,7 @@ public class Parser {
                     dateAsDate = format.parse(date);
                     sqlDate = new java.sql.Date(dateAsDate.getTime());
                 } catch (ParseException ex) {
-                    Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println("Something went wrong when changing String to Date.");
                 }
                 String time = dateTimeArray[1];
                 Time timeDate = Time.valueOf(time);
@@ -123,9 +114,9 @@ public class Parser {
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File could not be found.");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong with the I/O stream.");
         } finally {
             if (br != null) {
                 try {
@@ -134,8 +125,9 @@ public class Parser {
                         eventsArray.removeAll(eventsArray);
                     }
                     br.close();
+                    deleteFile(csvFile);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("Something went wrong when finishing up a csv file.");
                 }
             }
         }
@@ -158,15 +150,16 @@ public class Parser {
             ps.executeBatch();
             ps.close();
         } catch (BatchUpdateException e) {
-            e.getNextException().printStackTrace();
+            System.out.println("Something went wrong when updating the batch.");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong when executing the batch.");
         }
     }
 
     public static void readConnectionsCsv(String csvFile) {
         
-        ArrayList conArray = new ArrayList<Connections>();
+        ArrayList conArray = new ArrayList<>();
+        
 
         try {
 
@@ -185,8 +178,7 @@ public class Parser {
                     dateAsDate = format.parse(date);
                     sqlDate = new java.sql.Date(dateAsDate.getTime());
                 } catch (ParseException ex) {
-                    Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
-
+                    System.out.println("Something went wrong when converting String to Date.");
                 }
                 String time = dateTimeArray[1];
                 String unitId = csvLineArray[1];
@@ -213,9 +205,9 @@ public class Parser {
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File could not be found.");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong with the I/O stream.");
         } finally {
             if (br != null) {
                 try {
@@ -224,8 +216,9 @@ public class Parser {
                         conArray.removeAll(conArray);
                     }
                     br.close();
+                    deleteFile(csvFile);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("Something went wrong when finishing up a csv file.");
                 }
             }
         }
@@ -251,15 +244,15 @@ public class Parser {
             ps.close();
 
         } catch (BatchUpdateException e) {
-            e.getNextException().printStackTrace();
+            System.out.println("Something went wrong while updating the batch.");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong when executing the batch.");
         }
     }
 
     public static void readMonitoringCsv(String csvFile) {
         
-        ArrayList monArray = new ArrayList<Monitoring>();
+        ArrayList monArray = new ArrayList<>();
 
         try {
 
@@ -287,7 +280,7 @@ public class Parser {
                     endTime = format.parse(endTimeA);
                     sqlEndTime = new java.sql.Timestamp(endTime.getTime());
                 } catch (ParseException ex) {
-                    Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println("Something went wrong while converting String to Time.");
                 }
 
                 String type = csvLineArray[3];
@@ -318,9 +311,9 @@ public class Parser {
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File could not be found.");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong with the I/O stream.");
         } finally {
             if (br != null) {
                 try {
@@ -329,8 +322,9 @@ public class Parser {
                         monArray.removeAll(monArray);
                     }
                     br.close();
+                    deleteFile(csvFile);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("An exception was thrown shortly before finishing up a csv file.");
                 }
             }
         }
@@ -360,15 +354,15 @@ public class Parser {
             ps.close();
 
         } catch (BatchUpdateException e) {
-            e.getNextException().printStackTrace();
+            System.out.println("Something went wrong when updating the batch.");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong when executing the batch.");
         }
     }
 
     public static void readPositionsCsv(String csvFile) {
         
-        ArrayList positions = new ArrayList<Position>();
+        ArrayList positions = new ArrayList<>();
 
         try {
 
@@ -431,9 +425,9 @@ public class Parser {
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File not found.");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong with the I/O stream.");
         } finally {
             if (br != null) {
                 try {
@@ -442,8 +436,9 @@ public class Parser {
                         positions.removeAll(positions);
                     }
                     br.close();
+                    deleteFile(csvFile);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("An exception was thrown shortly before finishing up a csv file.");
                 }
             }
         }
@@ -489,23 +484,27 @@ public class Parser {
             (0.00022 * Math.pow(dY, 2)) + 
             (-0.00022 * Math.pow(dX, 2)) + 
             (0.00026 * Math.pow(dX, 5));
-                // The city "Amsterfoort" is used as reference "WGS84" coordinate.
+                
             double referenceWgs84X = 52.15517;
             double referenceWgs84Y = 5.387206;
 
             double latitude = referenceWgs84X + (sumN / 3600);
             double longitude = referenceWgs84Y + (sumE / 3600);
 
-            // Input
-            // x = 122202
-            // y = 487250
-            //
-            // Result
-            // "52.372143838117, 4.90559760435224"
             double[] result = new double[2];
             result[0] = latitude;
             result[1] = longitude;
             
             return result;
+    }
+    
+    public static void deleteFile(String fileToDelete){
+        Path pathToFileToDelete = Paths.get(fileToDelete);
+        try {
+            Files.deleteIfExists(pathToFileToDelete);
+            System.out.println("File successfully deleted.");
+        } catch (IOException ex) {
+            System.out.println("File could not be deleted.");
+        }
     }
 }
