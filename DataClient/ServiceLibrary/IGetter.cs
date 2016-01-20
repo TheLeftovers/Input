@@ -46,6 +46,6 @@ namespace ServiceLibrary
         ArrayList GetMaxListForCPUTemp();           //Monitoring
 
         [OperationContract]
-        ArrayList GetLatLon();                 //Positions
+        ArrayList GetLatLon(long unit, string date, string from, string till);                 //Positions
     }
 }

@@ -149,7 +149,12 @@
   </xs:element>
   <xs:element name="GetLatLon">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unit" type="xs:long" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="till" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetLatLonResponse">

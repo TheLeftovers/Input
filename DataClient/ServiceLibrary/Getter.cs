@@ -89,7 +89,7 @@ namespace ServiceLibrary
             return Position;
         }
 
-        public ArrayList GetLatLon()
+        public ArrayList GetLatLon(long unit, string date, string from, string till)
         {
             ArrayList Position = new ArrayList();
 
@@ -97,18 +97,19 @@ namespace ServiceLibrary
             conn.Open();
 
             // Define query
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT rd_x, rd_y FROM positions LIMIT 50000", conn);
-
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT rd_x, rd_y FROM positions WHERE unit_id = '" + unit + "' AND date ='" + date + "' AND time BETWEEN '" + from + "' AND '" + till + "' ", conn);
+            int cnt = 0;
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
             {
                 // Get rows and place in ArrayList
-                while (dr.Read())
+                while (dr.Read() && cnt < 20000)
                 {
                     for (int i = 0; i < dr.FieldCount; i++)
                     {
                         Position.Add(dr[i]);
                     }
+                    cnt++;
                 }
             }
 

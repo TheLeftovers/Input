@@ -101,10 +101,10 @@ namespace WebApplication.GetterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetLatLon", ReplyAction="http://tempuri.org/IGetter/GetLatLonResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetLatLon();
+        object[] GetLatLon(long unit, string date, string from, string till);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetLatLon", ReplyAction="http://tempuri.org/IGetter/GetLatLonResponse")]
-        System.Threading.Tasks.Task<object[]> GetLatLonAsync();
+        System.Threading.Tasks.Task<object[]> GetLatLonAsync(long unit, string date, string from, string till);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -230,12 +230,12 @@ namespace WebApplication.GetterService {
             return base.Channel.GetMaxListForCPUTempAsync();
         }
         
-        public object[] GetLatLon() {
-            return base.Channel.GetLatLon();
+        public object[] GetLatLon(long unit, string date, string from, string till) {
+            return base.Channel.GetLatLon(unit, date, from, till);
         }
         
-        public System.Threading.Tasks.Task<object[]> GetLatLonAsync() {
-            return base.Channel.GetLatLonAsync();
+        public System.Threading.Tasks.Task<object[]> GetLatLonAsync(long unit, string date, string from, string till) {
+            return base.Channel.GetLatLonAsync(unit, date, from, till);
         }
     }
 }
