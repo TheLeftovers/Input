@@ -1,6 +1,5 @@
-﻿<%@ Page Title="CityGIS Hard- en Software" Async="true" MasterPageFile="~/Site.Master" EnableSessionState="False" EnableViewState="False" Trace="false" ViewStateMode="Disabled" Language="C#" AutoEventWireup="True" CodeBehind="~/Citygis.aspx.cs" Inherits="WebApplication.Citygis" %>
+﻿<%@ Page Title="CityGIS Hard- en Software" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="True" CodeBehind="~/Citygis.aspx.cs" Inherits="WebApplication.Citygis" %>
 
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ContentPlaceHolderID="headerPlaceHolder" ID="Head" runat="server">
     <!-- amCharts javascript sources -->
@@ -154,7 +153,7 @@
 						{
 						    "id": "Title-1",
 						    "size": 15,
-						    "text": "Temperatuur GPS module over tijd (10-03-2015)"
+						    "text": "Temperatuur GPS module over tijd"
 						}
 				    ],
 				    "dataProvider": getDataForChart2(),
@@ -256,7 +255,7 @@
 						{
 						    "id": "Title-1",
 						    "size": 15,
-						    "text": "Temperatuur CPU over tijd (10-03-2015)"
+						    "text": "Temperatuur CPU over tijd"
 						}
 				    ],
 				    "dataProvider": getDataForChart3(),
@@ -277,22 +276,66 @@
     <br />
 
     <div id="AuthorizedContent" runat="server">
+        <!----   CHART 1    ------>
         <h4>Te Reparen Wagens</h4>
-
         <asp:Table ID="Table1" runat="server" CellPadding="0" CellSpacing="0" Font-Size="13px">
             <asp:TableHeaderRow>
                 <asp:TableHeaderCell>Unit ID</asp:TableHeaderCell>
             </asp:TableHeaderRow>
         </asp:Table>
+        <!----   CHART 1    ------>
 
         <br />
         <br />
-       
+
+        <!----   CHART 2    ------>
         <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
+        
         <br />
+
+        <!----   CHART 3    ------>
+        <asp:Table ID="Table2" runat="server">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>Datum</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Begintijd</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Eindtijd</asp:TableHeaderCell>
+                <asp:TableHeaderCell></asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:DropDownList ID="DropDownDate" runat="server"></asp:DropDownList></asp:TableCell>
+                <asp:TableCell><asp:DropDownList ID="DropDownBegin" runat="server"></asp:DropDownList></asp:TableCell>
+                <asp:TableCell><asp:DropDownList ID="DropDownEnd" runat="server"></asp:DropDownList></asp:TableCell>
+                <asp:TableCell><asp:Button ID="chart3Button" runat="server" Text="Create Chart" OnClick="chart3Button_Click" /></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+
+        <br />
+        
         <div id="chartdiv2" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
+        <!----   CHART 3    ------>
+
          <br />
+
+        <!----   CHART 4    ------>
+        <asp:Table ID="Table3" runat="server">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>Datum</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Begintijd</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Eindtijd</asp:TableHeaderCell>
+                <asp:TableHeaderCell></asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:DropDownList ID="DropDownDate2" runat="server"></asp:DropDownList></asp:TableCell>
+                <asp:TableCell><asp:DropDownList ID="DropDownBegin2" runat="server"></asp:DropDownList></asp:TableCell>
+                <asp:TableCell><asp:DropDownList ID="DropDownEnd2" runat="server"></asp:DropDownList></asp:TableCell>
+                <asp:TableCell><asp:Button ID="Chart4Button" runat="server" Text="Create Chart" OnClick="chart4Button_Click" /></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+
+        <br />
+
         <div id="chartdiv3" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
+        <!----   CHART 4    ------>
 
 
 
