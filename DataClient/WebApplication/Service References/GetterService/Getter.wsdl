@@ -43,17 +43,17 @@
   <wsdl:message name="IGetter_GetCountListbyRepair_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCountListbyRepairResponse" />
   </wsdl:message>
-  <wsdl:message name="IGetter_GetHDOPList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetHDOPList" />
+  <wsdl:message name="IGetter_GetHDOPListForQuality_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHDOPListForQuality" />
   </wsdl:message>
-  <wsdl:message name="IGetter_GetHDOPList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetHDOPListResponse" />
+  <wsdl:message name="IGetter_GetHDOPListForQuality_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHDOPListForQualityResponse" />
   </wsdl:message>
-  <wsdl:message name="IGetter_GetNumSatellitesList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNumSatellitesList" />
+  <wsdl:message name="IGetter_GetNumSatellitesListForQuality_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumSatellitesListForQuality" />
   </wsdl:message>
-  <wsdl:message name="IGetter_GetNumSatellitesList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNumSatellitesListResponse" />
+  <wsdl:message name="IGetter_GetNumSatellitesListForQuality_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumSatellitesListForQualityResponse" />
   </wsdl:message>
   <wsdl:message name="IGetter_GetBeginTimeListForGPSTemp_InputMessage">
     <wsdl:part name="parameters" element="tns:GetBeginTimeListForGPSTemp" />
@@ -110,13 +110,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetCountListbyRepair" message="tns:IGetter_GetCountListbyRepair_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetCountListbyRepairResponse" message="tns:IGetter_GetCountListbyRepair_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetHDOPList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetHDOPList" message="tns:IGetter_GetHDOPList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetHDOPListResponse" message="tns:IGetter_GetHDOPList_OutputMessage" />
+    <wsdl:operation name="GetHDOPListForQuality">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetHDOPListForQuality" message="tns:IGetter_GetHDOPListForQuality_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetHDOPListForQualityResponse" message="tns:IGetter_GetHDOPListForQuality_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetNumSatellitesList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetNumSatellitesList" message="tns:IGetter_GetNumSatellitesList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetNumSatellitesListResponse" message="tns:IGetter_GetNumSatellitesList_OutputMessage" />
+    <wsdl:operation name="GetNumSatellitesListForQuality">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetNumSatellitesListForQuality" message="tns:IGetter_GetNumSatellitesListForQuality_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetter/GetNumSatellitesListForQualityResponse" message="tns:IGetter_GetNumSatellitesListForQuality_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBeginTimeListForGPSTemp">
       <wsdl:input wsaw:Action="http://tempuri.org/IGetter/GetBeginTimeListForGPSTemp" message="tns:IGetter_GetBeginTimeListForGPSTemp_InputMessage" />
@@ -195,8 +195,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetHDOPList">
-      <soap:operation soapAction="http://tempuri.org/IGetter/GetHDOPList" style="document" />
+    <wsdl:operation name="GetHDOPListForQuality">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetHDOPListForQuality" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -204,8 +204,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNumSatellitesList">
-      <soap:operation soapAction="http://tempuri.org/IGetter/GetNumSatellitesList" style="document" />
+    <wsdl:operation name="GetNumSatellitesListForQuality">
+      <soap:operation soapAction="http://tempuri.org/IGetter/GetNumSatellitesListForQuality" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

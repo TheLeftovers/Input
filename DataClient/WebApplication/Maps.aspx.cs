@@ -1,13 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebApplication
 {
@@ -50,6 +44,7 @@ namespace WebApplication
                 // Close connection
                 conn.Close();
 
+                //Add unit id's and dates to dropdowns
                 for (int i = 0; i < unitlist.Count; i++)
                 {
                     DropDownUnit.Items.Add(unitlist[i].ToString());
@@ -62,9 +57,7 @@ namespace WebApplication
                 AuthorizedContent.Visible = false;
             }
 
-            
-            
-
+            //Add items to dropdown(hours)
             DropDownBegin.Items.Add("00:00");
             DropDownBegin.Items.Add("01:00");
             DropDownBegin.Items.Add("02:00");
@@ -122,6 +115,8 @@ namespace WebApplication
             GetterService.GetterClient proxy = new GetterService.GetterClient();
 
             proxy.Open();
+
+            //Get positions of selected unit id belonging to a certain begindate, time and enddate,time
             LatLonArrayList = proxy.GetLatLon(long.Parse(DropDownUnit.SelectedItem.Text), DropDownDate.SelectedItem.Text, DropDownBegin.SelectedItem.Text, DropDownEnd.SelectedItem.Text);
 
             proxy.Close();

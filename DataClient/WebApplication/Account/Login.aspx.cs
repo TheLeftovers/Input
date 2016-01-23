@@ -20,9 +20,6 @@ namespace WebApplication.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "Register";
-            // Enable this once you have account confirmation enabled for password reset functionality
-            //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-            //OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
@@ -44,8 +41,6 @@ namespace WebApplication.Account
             // Execute query
             NpgsqlDataReader dr = cmd.ExecuteReader();
 
-            
-
             //Get rows and place in ArrayList
             while (dr.Read())
             {
@@ -57,19 +52,18 @@ namespace WebApplication.Account
             // Close connection
             conn.Close();
             
-
+            //Check if email exists and if it exists check the belonging password is the same.
             for (int i = 0; i < maillist.Count; i++)
                 {
                     if (maillist[i].Equals(Email.Text))
                     {
                         if (passwordlist[i].Equals(Password.Text))
                         {
-                            System.Diagnostics.Debug.WriteLine("Logged in as" + maillist[i].ToString());
                             MessageBox.Show(Page, "Ingelogd");
                             IsValidaded = true;
-                            WebApplication.SiteMaster.LoggedIn = true;
-                            WebApplication.SiteMaster.UserName = maillist[i].ToString();
-                        WebApplication.SiteMaster.Rank = ranklist[i].ToString();
+                            WebApplication.SiteMaster.LoggedIn = true;                      //Set login to true
+                            WebApplication.SiteMaster.UserName = maillist[i].ToString();    //Email user
+                            WebApplication.SiteMaster.Rank = ranklist[i].ToString();        //Rank user
                         }
                         else
                         {

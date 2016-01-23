@@ -57,19 +57,19 @@ namespace WebApplication.GetterService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetCountListbyRepair", ReplyAction="http://tempuri.org/IGetter/GetCountListbyRepairResponse")]
         System.Threading.Tasks.Task<object[]> GetCountListbyRepairAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPList", ReplyAction="http://tempuri.org/IGetter/GetHDOPListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPListForQuality", ReplyAction="http://tempuri.org/IGetter/GetHDOPListForQualityResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetHDOPList();
+        object[] GetHDOPListForQuality();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPList", ReplyAction="http://tempuri.org/IGetter/GetHDOPListResponse")]
-        System.Threading.Tasks.Task<object[]> GetHDOPListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetHDOPListForQuality", ReplyAction="http://tempuri.org/IGetter/GetHDOPListForQualityResponse")]
+        System.Threading.Tasks.Task<object[]> GetHDOPListForQualityAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesList", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesListForQuality", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListForQualityResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetNumSatellitesList();
+        object[] GetNumSatellitesListForQuality();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesList", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListResponse")]
-        System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetNumSatellitesListForQuality", ReplyAction="http://tempuri.org/IGetter/GetNumSatellitesListForQualityResponse")]
+        System.Threading.Tasks.Task<object[]> GetNumSatellitesListForQualityAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForGPSTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -182,20 +182,20 @@ namespace WebApplication.GetterService {
             return base.Channel.GetCountListbyRepairAsync();
         }
         
-        public object[] GetHDOPList() {
-            return base.Channel.GetHDOPList();
+        public object[] GetHDOPListForQuality() {
+            return base.Channel.GetHDOPListForQuality();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetHDOPListAsync() {
-            return base.Channel.GetHDOPListAsync();
+        public System.Threading.Tasks.Task<object[]> GetHDOPListForQualityAsync() {
+            return base.Channel.GetHDOPListForQualityAsync();
         }
         
-        public object[] GetNumSatellitesList() {
-            return base.Channel.GetNumSatellitesList();
+        public object[] GetNumSatellitesListForQuality() {
+            return base.Channel.GetNumSatellitesListForQuality();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetNumSatellitesListAsync() {
-            return base.Channel.GetNumSatellitesListAsync();
+        public System.Threading.Tasks.Task<object[]> GetNumSatellitesListForQualityAsync() {
+            return base.Channel.GetNumSatellitesListForQualityAsync();
         }
         
         public object[] GetBeginTimeListForGPSTemp(string begintime, string endtime) {

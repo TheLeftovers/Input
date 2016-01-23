@@ -92,13 +92,14 @@ namespace ServiceLibrary
         public ArrayList GetLatLon(long unit, string date, string from, string till)
         {
             ArrayList Position = new ArrayList();
+            int cnt = 0;
 
             //Open connection
             conn.Open();
 
             // Define query
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT rd_x, rd_y FROM positions WHERE unit_id = '" + unit + "' AND date ='" + date + "' AND time BETWEEN '" + from + "' AND '" + till + "' ", conn);
-            int cnt = 0;
+
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
             {
@@ -159,7 +160,6 @@ namespace ServiceLibrary
             // Define query
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT unit_id FROM events WHERE port = 'Ignition' GROUP BY unit_id  HAVING COUNT(*) >= 60", conn);
 
-
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
             {
@@ -173,7 +173,6 @@ namespace ServiceLibrary
                 }
             }
 
-
             // Close connection
             conn.Close();
 
@@ -181,7 +180,6 @@ namespace ServiceLibrary
         }
 
         public ArrayList GetCountListbyRepair()
-
         {
             ArrayList Count = new ArrayList();
 
@@ -190,7 +188,6 @@ namespace ServiceLibrary
 
             // Define query
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM events WHERE port = 'Ignition' GROUP BY unit_id  HAVING COUNT(*) >= 60", conn);
-
 
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())
@@ -205,14 +202,13 @@ namespace ServiceLibrary
                 }
             }
 
-
             // Close connection
             conn.Close();
 
             return Count;
         }
 
-        public ArrayList GetHDOPList()
+        public ArrayList GetHDOPListForQuality()
         {
             ArrayList hdop = new ArrayList();
 
@@ -238,7 +234,7 @@ namespace ServiceLibrary
             return hdop;
         }
 
-        public ArrayList GetNumSatellitesList()
+        public ArrayList GetNumSatellitesListForQuality()
         {
             ArrayList sat = new ArrayList();
 
@@ -247,7 +243,6 @@ namespace ServiceLibrary
 
             // Define query
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT hdop, num_satellites FROM positions ORDER BY hdop DESC LIMIT 200", conn);
-
 
             // Execute query
             using (NpgsqlDataReader dr = cmd.ExecuteReader())

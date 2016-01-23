@@ -42,13 +42,9 @@ namespace WebApplication
 
                 for(int i=0;i<maillist.Count;i++)
                 {
-                    maildrop.Items.Add(maillist[i].ToString());
+                    maildrop.Items.Add(maillist[i].ToString()); //Add all emails to dropdown
                 }
-
-              
-
             }
-
         }
 
         protected void UpdateUser(object sender, EventArgs e)

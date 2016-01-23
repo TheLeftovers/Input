@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using System.ServiceModel;
 
 namespace ServiceLibrary
@@ -9,29 +8,28 @@ namespace ServiceLibrary
     {
 
         [OperationContract]
-        ArrayList GetTestList();            //Test method
-
+        ArrayList GetTestList();                                                    //Unit Test method
 
         [OperationContract]
         ArrayList GetQueryList(string query);
 
         [OperationContract]
-        ArrayList GetUnitListForTopSpeed();                //Positions
+        ArrayList GetUnitListForTopSpeed();                                         //Positions
 
         [OperationContract]
-        ArrayList GetSpeedListForTopSpeed();               //Positions
+        ArrayList GetSpeedListForTopSpeed();                                        //Positions
 
         [OperationContract]
-        ArrayList GetUnitListbyRepair();        //Events
+        ArrayList GetUnitListbyRepair();                                            //Events
 
         [OperationContract]
-        ArrayList GetCountListbyRepair();       //Events
+        ArrayList GetCountListbyRepair();                                           //Events
 
         [OperationContract]
-        ArrayList GetHDOPList();                //Positions
+        ArrayList GetHDOPListForQuality();                                          //Positions
 
         [OperationContract]
-        ArrayList GetNumSatellitesList();       //Positions   
+        ArrayList GetNumSatellitesListForQuality();                                 //Positions   
 
         [OperationContract]
         ArrayList GetBeginTimeListForGPSTemp(string begintime, string endtime);     //Monitoring

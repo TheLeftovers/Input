@@ -20,17 +20,21 @@ namespace WebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Create proxy
             GetterClient proxy = new GetterClient();
 
             proxy.Open();
+
+            //Fill array with database rows from WCF
             UnitArrayList = proxy.GetUnitListForTopSpeed();
             SpeedArrayList = proxy.GetSpeedListForTopSpeed();
 
-            HDOPArrayList = proxy.GetHDOPList();
-            SatelliteArrayList = proxy.GetNumSatellitesList();
+            HDOPArrayList = proxy.GetHDOPListForQuality();
+            SatelliteArrayList = proxy.GetNumSatellitesListForQuality();
 
             proxy.Close();
 
+            //Serialize arraylists so they can be used in JavaScript
             Serialize(UnitArrayList);
             Serialize(SpeedArrayList);
             Serialize(HDOPArrayList);

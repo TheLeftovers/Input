@@ -1,13 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
-using System.Web.UI;
-using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
 using WebApplication.GetterService;
 
@@ -26,6 +20,7 @@ namespace WebApplication
         {
             if (WebApplication.SiteMaster.LoggedIn)
             {
+                //Show divs when logged in
                 AnonymousContent.Visible = false;
                 AuthorizedContent.Visible = true;
 
@@ -34,24 +29,25 @@ namespace WebApplication
 
                 proxy.Open();
 
+                //Fill array with database rows from WCF
                 ConnBoolTrueArrayList = proxy.GetQueryList("SELECT COUNT(value) FROM connections WHERE value = 'True'");
                 ConnBoolFalseArrayList = proxy.GetQueryList("SELECT COUNT(value) FROM connections WHERE value = 'False'");
+
                 proxy.Close();
 
+                //Serialize arraylists so they can be used in JavaScript
                 Serialize(ConnBoolTrueArrayList);
                 Serialize(ConnBoolFalseArrayList);
-                
+
                 FillTable();
+                FillDropDownChart3();
+                FillDropDownChart4();
             }
             else
             {
                 AnonymousContent.Visible = true;
                 AuthorizedContent.Visible = false;
             }
-
-           
-            FillDropDownChart3();
-            FillDropDownChart4();
         }
 
         //  CREATE TABLE METHOD
@@ -63,6 +59,7 @@ namespace WebApplication
             //Open connection
             proxy.Open();
 
+            //Create table cells and place unit id's 
             for (int i = 0; i < 9; i++)
             {
                 TableRow row = new TableRow();
@@ -78,6 +75,7 @@ namespace WebApplication
         //  ADD ITEMS TO DDL METHODS
         public void FillDropDownChart3()
         {
+            //Clear dropdown to prevent duplicates
             DropDownDate.Items.Clear();
 
             ArrayList datelist = new ArrayList();
@@ -105,9 +103,10 @@ namespace WebApplication
 
             for (int i = 0; i < datelist.Count; i++)
             {
-                DropDownDate.Items.Add(datelist[i].ToString());
+                DropDownDate.Items.Add(datelist[i].ToString());     //Add dates from database to dropdown
             }
 
+            //Add dropdown items(hours)
             DropDownBegin.Items.Add("00:00");
             DropDownBegin.Items.Add("01:00");
             DropDownBegin.Items.Add("02:00");
@@ -162,6 +161,7 @@ namespace WebApplication
 
         public void FillDropDownChart4()
         {
+            //Clear dropdown to prevent duplicates
             DropDownDate2.Items.Clear();
 
             ArrayList datelist1 = new ArrayList();
@@ -189,9 +189,10 @@ namespace WebApplication
 
             for (int i = 0; i < datelist1.Count; i++)
             {
-                DropDownDate2.Items.Add(datelist1[i].ToString());
+                DropDownDate2.Items.Add(datelist1[i].ToString());   //Add dates from database to dropdown
             }
 
+            //Add dropdown items(hours)
             DropDownBegin2.Items.Add("00:00");
             DropDownBegin2.Items.Add("01:00");
             DropDownBegin2.Items.Add("02:00");
@@ -247,7 +248,7 @@ namespace WebApplication
         //  CREATE CHART METHODS
         public void CreateChart3()
         {
-
+            //Get selected items and their value from dropdowns and use to create string
             string begin = DropDownDate.SelectedValue + " " + DropDownBegin.SelectedValue;
             string end = DropDownDate.SelectedValue + " " + DropDownEnd.SelectedValue;
 
@@ -257,18 +258,20 @@ namespace WebApplication
             //Open connection
             proxy.Open();
 
+            //Get data from database with selected dates and times
             DateArrayList = proxy.GetBeginTimeListForGPSTemp(begin, end);
             TempArrayList = proxy.GetMaxListForGPSTemp(begin, end);
 
             proxy.Close();
 
+            //Serialize arraylists so they can be used in JavaScript
             Serialize(DateArrayList);
             Serialize(TempArrayList);
         }
 
         public void CreateChart4()
         {
-
+            //Get selected items and their value from dropdowns and use to create string
             string begin = DropDownDate2.SelectedValue + " " + DropDownBegin2.SelectedValue;
             string end = DropDownDate2.SelectedValue + " " + DropDownEnd2.SelectedValue;
 
@@ -278,11 +281,13 @@ namespace WebApplication
             //Open connection
             proxy.Open();
 
+            //Get data from database with selected dates and times
             CPUDateArrayList = proxy.GetBeginTimeListForCPUTemp(begin, end);
             CPUTempArrayList = proxy.GetMaxListForCPUTemp(begin, end);
 
             proxy.Close();
 
+            //Serialize arraylists so they can be used in JavaScript
             Serialize(CPUDateArrayList);
             Serialize(CPUTempArrayList);
         }
