@@ -73,31 +73,31 @@ namespace WebApplication.GetterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForGPSTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetBeginTimeListForGPSTemp(string begintime, string endtime);
+        object[] GetBeginTimeListForGPSTemp();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForGPSTempResponse")]
-        System.Threading.Tasks.Task<object[]> GetBeginTimeListForGPSTempAsync(string begintime, string endtime);
+        System.Threading.Tasks.Task<object[]> GetBeginTimeListForGPSTempAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForGPSTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMaxListForGPSTemp(string begintime, string endtime);
+        object[] GetMaxListForGPSTemp();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForGPSTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForGPSTempResponse")]
-        System.Threading.Tasks.Task<object[]> GetMaxListForGPSTempAsync(string begintime, string endtime);
+        System.Threading.Tasks.Task<object[]> GetMaxListForGPSTempAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForCPUTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetBeginTimeListForCPUTemp(string begintime, string endtime);
+        object[] GetBeginTimeListForCPUTemp();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetBeginTimeListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetBeginTimeListForCPUTempResponse")]
-        System.Threading.Tasks.Task<object[]> GetBeginTimeListForCPUTempAsync(string begintime, string endtime);
+        System.Threading.Tasks.Task<object[]> GetBeginTimeListForCPUTempAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForCPUTempResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetMaxListForCPUTemp(string begintime, string endtime);
+        object[] GetMaxListForCPUTemp();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetMaxListForCPUTemp", ReplyAction="http://tempuri.org/IGetter/GetMaxListForCPUTempResponse")]
-        System.Threading.Tasks.Task<object[]> GetMaxListForCPUTempAsync(string begintime, string endtime);
+        System.Threading.Tasks.Task<object[]> GetMaxListForCPUTempAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGetter/GetLatLon", ReplyAction="http://tempuri.org/IGetter/GetLatLonResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -198,36 +198,36 @@ namespace WebApplication.GetterService {
             return base.Channel.GetNumSatellitesListForQualityAsync();
         }
         
-        public object[] GetBeginTimeListForGPSTemp(string begintime, string endtime) {
-            return base.Channel.GetBeginTimeListForGPSTemp(begintime, endtime);
+        public object[] GetBeginTimeListForGPSTemp() {
+            return base.Channel.GetBeginTimeListForGPSTemp();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetBeginTimeListForGPSTempAsync(string begintime, string endtime) {
-            return base.Channel.GetBeginTimeListForGPSTempAsync(begintime, endtime);
+        public System.Threading.Tasks.Task<object[]> GetBeginTimeListForGPSTempAsync() {
+            return base.Channel.GetBeginTimeListForGPSTempAsync();
         }
         
-        public object[] GetMaxListForGPSTemp(string begintime, string endtime) {
-            return base.Channel.GetMaxListForGPSTemp(begintime, endtime);
+        public object[] GetMaxListForGPSTemp() {
+            return base.Channel.GetMaxListForGPSTemp();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetMaxListForGPSTempAsync(string begintime, string endtime) {
-            return base.Channel.GetMaxListForGPSTempAsync(begintime, endtime);
+        public System.Threading.Tasks.Task<object[]> GetMaxListForGPSTempAsync() {
+            return base.Channel.GetMaxListForGPSTempAsync();
         }
         
-        public object[] GetBeginTimeListForCPUTemp(string begintime, string endtime) {
-            return base.Channel.GetBeginTimeListForCPUTemp(begintime, endtime);
+        public object[] GetBeginTimeListForCPUTemp() {
+            return base.Channel.GetBeginTimeListForCPUTemp();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetBeginTimeListForCPUTempAsync(string begintime, string endtime) {
-            return base.Channel.GetBeginTimeListForCPUTempAsync(begintime, endtime);
+        public System.Threading.Tasks.Task<object[]> GetBeginTimeListForCPUTempAsync() {
+            return base.Channel.GetBeginTimeListForCPUTempAsync();
         }
         
-        public object[] GetMaxListForCPUTemp(string begintime, string endtime) {
-            return base.Channel.GetMaxListForCPUTemp(begintime, endtime);
+        public object[] GetMaxListForCPUTemp() {
+            return base.Channel.GetMaxListForCPUTemp();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetMaxListForCPUTempAsync(string begintime, string endtime) {
-            return base.Channel.GetMaxListForCPUTempAsync(begintime, endtime);
+        public System.Threading.Tasks.Task<object[]> GetMaxListForCPUTempAsync() {
+            return base.Channel.GetMaxListForCPUTempAsync();
         }
         
         public object[] GetLatLon(long unit, string date, string from, string till) {

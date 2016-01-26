@@ -1,5 +1,6 @@
-﻿<%@ Page Title="CityGIS Hard- en Software" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="True" CodeBehind="~/Citygis.aspx.cs" Inherits="WebApplication.Citygis" %>
+﻿<%@ Page Title="CityGIS Hard- en Software" Async="true" MasterPageFile="~/Site.Master" EnableSessionState="False" EnableViewState="False" Trace="false" ViewStateMode="Disabled" Language="C#" AutoEventWireup="True" CodeBehind="~/Citygis.aspx.cs" Inherits="WebApplication.Citygis" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ContentPlaceHolderID="headerPlaceHolder" ID="Head" runat="server">
     <!-- amCharts javascript sources -->
@@ -22,7 +23,7 @@
             connTrue.push(connTrueArray[i]);
         }
 
-        AmCharts.makeChart("chartdiv",      //DIV
+        AmCharts.makeChart("chartdiv1",      //DIV
             {
                 "type": "pie",              //TYPE
                 "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
@@ -136,6 +137,7 @@
 						{
 						    "bullet": "round",
 						    "id": "AmGraph-1",
+							"lineColor": "#67B7DC",
 						    "title": "graph 1",
 						    "valueField": "column-1"
 						}
@@ -153,7 +155,7 @@
 						{
 						    "id": "Title-1",
 						    "size": 15,
-						    "text": "Temperatuur GPS module over tijd"
+						    "text": "Temperatuur GPS module over tijd (10-03-2015)"
 						}
 				    ],
 				    "dataProvider": getDataForChart2(),
@@ -238,6 +240,7 @@
 						{
 						    "bullet": "round",
 						    "id": "AmGraph-1",
+							"lineColor": "#67B7DC",
 						    "title": "graph 1",
 						    "valueField": "column-1"
 						}
@@ -255,7 +258,7 @@
 						{
 						    "id": "Title-1",
 						    "size": 15,
-						    "text": "Temperatuur CPU over tijd"
+						    "text": "Temperatuur CPU over tijd (10-03-2015)"
 						}
 				    ],
 				    "dataProvider": getDataForChart3(),
@@ -265,9 +268,84 @@
 				}
 			);
         /// END OF CHART 2 ///
-
-       
     </script>
+    <script type="text/javascript">
+        /// BEGIN OF getData()  ///
+        function getDataForChart4(){
+            var unitArray = <%=citygis_aspx.Serialize(this.UnitRepairArrayList) %>;      //ArrayList with data
+            var countArray = <%=citygis_aspx.Serialize(this.CountRepairArrayList) %>;    //ArrayList with data
+
+            var unit = [];
+            var count = [];
+            var chartData = [];
+
+            for (var i = 0; i < unitArray.length; i++) {
+                unit.push(unitArray[i]);
+                count.push(countArray[i]);
+            }
+            
+            unit.reverse();
+            unit.sort();
+
+            for( var i = 0; i < unitArray.length; i++ ) {
+                chartData.push( {
+                    "unit": unit[i],
+                    "count": count[i]
+                } )};
+
+            return chartData;
+        }
+        /// END OF getData()    ///
+
+
+        ///BEGIN OF CHART 4 ////
+			AmCharts.makeChart("chartdiv",
+				{
+				    "type": "serial",
+					"categoryField": "unit",
+					"rotate": true,
+					"startDuration": 1,
+					"categoryAxis": {
+						"gridPosition": "start",
+						"title": "Unit ID"
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "[[category]]:[[value]]",
+							"fillAlphas": 1,
+							"id": "AmGraph-1",
+							"fillColors": "#67B7DC",
+							"lineAlpha": 0,
+							"title": "graph 1",
+							"type": "column",
+							"valueField": "count",
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"baseValue": -4,
+							"id": "ValueAxis-1",
+							"title": "Aantal Mislukte Starts",
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"titles": [
+						{
+							"id": "Title-1",
+							"size": 15,
+							"text": "Vereiste Reparaties"
+						}
+					],
+					"dataProvider": getDataForChart4(),
+					"export": {
+					    "enabled": true
+					}
+				}
+			);
+		</script>
 </asp:Content>
 
 
@@ -276,66 +354,15 @@
     <br />
 
     <div id="AuthorizedContent" runat="server">
-        <!----   CHART 1    ------>
-        <h4>Te Reparen Wagens</h4>
-        <asp:Table ID="Table1" runat="server" CellPadding="0" CellSpacing="0" Font-Size="13px">
-            <asp:TableHeaderRow>
-                <asp:TableHeaderCell>Unit ID</asp:TableHeaderCell>
-            </asp:TableHeaderRow>
-        </asp:Table>
-        <!----   CHART 1    ------>
 
-        <br />
-        <br />
-
-        <!----   CHART 2    ------>
         <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
-        
+        <br />       
         <br />
-
-        <!----   CHART 3    ------>
-        <asp:Table ID="Table2" runat="server">
-            <asp:TableHeaderRow>
-                <asp:TableHeaderCell>Datum</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Begintijd</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Eindtijd</asp:TableHeaderCell>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
-            </asp:TableHeaderRow>
-            <asp:TableRow>
-                <asp:TableCell><asp:DropDownList ID="DropDownDate" runat="server"></asp:DropDownList></asp:TableCell>
-                <asp:TableCell><asp:DropDownList ID="DropDownBegin" runat="server"></asp:DropDownList></asp:TableCell>
-                <asp:TableCell><asp:DropDownList ID="DropDownEnd" runat="server"></asp:DropDownList></asp:TableCell>
-                <asp:TableCell><asp:Button ID="chart3Button" runat="server" Text="Create Chart" OnClick="chart3Button_Click" /></asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
-
+        <div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
         <br />
-        
         <div id="chartdiv2" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
-        <!----   CHART 3    ------>
-
          <br />
-
-        <!----   CHART 4    ------>
-        <asp:Table ID="Table3" runat="server">
-            <asp:TableHeaderRow>
-                <asp:TableHeaderCell>Datum</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Begintijd</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Eindtijd</asp:TableHeaderCell>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
-            </asp:TableHeaderRow>
-            <asp:TableRow>
-                <asp:TableCell><asp:DropDownList ID="DropDownDate2" runat="server"></asp:DropDownList></asp:TableCell>
-                <asp:TableCell><asp:DropDownList ID="DropDownBegin2" runat="server"></asp:DropDownList></asp:TableCell>
-                <asp:TableCell><asp:DropDownList ID="DropDownEnd2" runat="server"></asp:DropDownList></asp:TableCell>
-                <asp:TableCell><asp:Button ID="Chart4Button" runat="server" Text="Create Chart" OnClick="chart4Button_Click" /></asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
-
-        <br />
-
         <div id="chartdiv3" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
-        <!----   CHART 4    ------>
 
 
 

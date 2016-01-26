@@ -101,10 +101,7 @@
   </xs:element>
   <xs:element name="GetBeginTimeListForGPSTemp">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="begintime" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="endtime" nillable="true" type="xs:string" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetBeginTimeListForGPSTempResponse">
@@ -116,10 +113,7 @@
   </xs:element>
   <xs:element name="GetMaxListForGPSTemp">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="begintime" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="endtime" nillable="true" type="xs:string" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetMaxListForGPSTempResponse">
@@ -131,10 +125,7 @@
   </xs:element>
   <xs:element name="GetBeginTimeListForCPUTemp">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="begintime" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="endtime" nillable="true" type="xs:string" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetBeginTimeListForCPUTempResponse">
@@ -146,10 +137,7 @@
   </xs:element>
   <xs:element name="GetMaxListForCPUTemp">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="begintime" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="endtime" nillable="true" type="xs:string" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetMaxListForCPUTempResponse">

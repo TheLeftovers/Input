@@ -32,18 +32,18 @@ namespace ServiceLibrary
         ArrayList GetNumSatellitesListForQuality();                                 //Positions   
 
         [OperationContract]
-        ArrayList GetBeginTimeListForGPSTemp(string begintime, string endtime);     //Monitoring
+        ArrayList GetBeginTimeListForGPSTemp();     //Monitoring
 
         [OperationContract]
-        ArrayList GetMaxListForGPSTemp(string begintime, string endtime);           //Monitoring
+        ArrayList GetMaxListForGPSTemp();           //Monitoring
 
         [OperationContract]
-        ArrayList GetBeginTimeListForCPUTemp(string begintime, string endtime);     //Monitoring
+        ArrayList GetBeginTimeListForCPUTemp();     //Monitoring
 
         [OperationContract]
-        ArrayList GetMaxListForCPUTemp(string begintime, string endtime);           //Monitoring
+        ArrayList GetMaxListForCPUTemp();           //Monitoring
 
         [OperationContract]
-        ArrayList GetLatLon(long unit, string date, string from, string till);      //Positions
+        ArrayList GetLatLon(long unit, string date, string from, string till);                 //Positions
     }
 }
