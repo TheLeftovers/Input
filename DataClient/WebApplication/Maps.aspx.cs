@@ -27,18 +27,21 @@ namespace WebApplication
                 conn.Open();
 
                 // Define query
-                NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT unit_id, DATE(date) AS ddate FROM positions ORDER BY unit_id, ddate ASC", conn);
+                NpgsqlCommand cmd = new NpgsqlCommand("SELECT DISTINCT unit_id FROM positions ORDER BY unit_id ASC", conn);
+                NpgsqlCommand cmd1 = new NpgsqlCommand("SELECT DISTINCT DATE(date) AS bdate FROM positions ORDER BY bdate ASC", conn);
 
 
                 // Execute query
                 NpgsqlDataReader dr = cmd.ExecuteReader();
+                NpgsqlDataReader dr1 = cmd1.ExecuteReader();
+
 
 
                 //Get rows and place in ArrayList
-                while (dr.Read())
+                while (dr.Read() && dr1.Read())
                 {
                     unitlist.Add(dr[0]);
-                    datelist.Add(dr[1]);
+                    datelist.Add(dr1[0]);
                 }
 
                 // Close connection
@@ -48,6 +51,10 @@ namespace WebApplication
                 for (int i = 0; i < unitlist.Count; i++)
                 {
                     DropDownUnit.Items.Add(unitlist[i].ToString());
+                }
+
+                for (int i = 0; i < datelist.Count; i++)
+                {
                     DropDownDate.Items.Add(datelist[i].ToString());
                 }
             }
